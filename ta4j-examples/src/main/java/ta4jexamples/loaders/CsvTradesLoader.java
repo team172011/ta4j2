@@ -131,7 +131,7 @@ public class CsvTradesLoader {
                 if (bar.inPeriod(tradeTimeStamp)) {
                     // add the trade to the bar
                     double tradePrice = Double.parseDouble(tradeLine[1]);
-                    long tradeVolume = Long.parseLong(tradeLine[2]);
+                    double tradeVolume = Double.parseDouble(tradeLine[2]);
                     bar.addTrade(tradeVolume, tradePrice);
                 } else {
                     // the trade happened after the end of the bar

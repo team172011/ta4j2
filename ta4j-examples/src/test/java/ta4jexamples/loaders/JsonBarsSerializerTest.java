@@ -29,7 +29,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.junit.Rule;
@@ -61,13 +60,11 @@ public class JsonBarsSerializerTest {
         Bar randomNewBar = loadedSeries.getBar(randomIndex);
 
         assertEquals(randomInitialBar.getEndTime(), randomNewBar.getEndTime());
-        assertEquals(randomInitialBar.getOpenPrice(), randomNewBar.getOpenPrice());
-        assertTrue(randomInitialBar.getOpenPrice().getDelegate() instanceof BigDecimal);
-        assertTrue(randomNewBar.getOpenPrice().getDelegate() instanceof BigDecimal);
-        assertEquals(randomInitialBar.getHighPrice(), randomNewBar.getHighPrice());
-        assertEquals(randomInitialBar.getLowPrice(), randomNewBar.getLowPrice());
-        assertEquals(randomInitialBar.getClosePrice(), randomNewBar.getClosePrice());
-        assertEquals(randomInitialBar.getVolume(), randomNewBar.getVolume());
-        assertEquals(randomInitialBar.getAmount(), randomNewBar.getAmount());
+        assertEquals(randomInitialBar.getOpenPrice(), randomNewBar.getOpenPrice(), 0.0001);
+        assertEquals(randomInitialBar.getHighPrice(), randomNewBar.getHighPrice(), 0.0001);
+        assertEquals(randomInitialBar.getLowPrice(), randomNewBar.getLowPrice(), 0.0001);
+        assertEquals(randomInitialBar.getClosePrice(), randomNewBar.getClosePrice(), 0.0001);
+        assertEquals(randomInitialBar.getVolume(), randomNewBar.getVolume(), 0.0001);
+        assertEquals(randomInitialBar.getAmount(), randomNewBar.getAmount(), 0.0001);
     }
 }

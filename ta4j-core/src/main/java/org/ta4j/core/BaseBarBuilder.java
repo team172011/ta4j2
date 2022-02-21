@@ -32,13 +32,13 @@ public class BaseBarBuilder {
 
     private Duration timePeriod;
     private ZonedDateTime endTime;
-    private Double openPrice;
-    private Double closePrice;
-    private Double highPrice;
-    private Double lowPrice;
-    private Double amount;
-    private Double volume;
-    private Double trades;
+    private double openPrice;
+    private double closePrice;
+    private double highPrice;
+    private double lowPrice;
+    private double amount;
+    private double volume;
+    private double trades;
 
     BaseBarBuilder() {
     }
@@ -89,6 +89,7 @@ public class BaseBarBuilder {
     }
 
     public BaseBar build() {
+
         return new BaseBar(timePeriod, endTime, openPrice, highPrice, lowPrice, closePrice, volume, amount, trades);
     }
 }

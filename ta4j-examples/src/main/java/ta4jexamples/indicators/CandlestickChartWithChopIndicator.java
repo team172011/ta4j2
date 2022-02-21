@@ -91,11 +91,11 @@ public class CandlestickChartWithChopIndicator {
         for (int i = 0; i < nbBars; i++) {
             Bar bar = series.getBar(i);
             dates[i] = new Date(bar.getEndTime().toEpochSecond() * 1000);
-            opens[i] = bar.getOpenPrice().doubleValue();
-            highs[i] = bar.getHighPrice().doubleValue();
-            lows[i] = bar.getLowPrice().doubleValue();
-            closes[i] = bar.getClosePrice().doubleValue();
-            volumes[i] = bar.getVolume().doubleValue();
+            opens[i] = bar.getOpenPrice();
+            highs[i] = bar.getHighPrice();
+            lows[i] = bar.getLowPrice();
+            closes[i] = bar.getClosePrice();
+            volumes[i] = bar.getVolume();
         }
 
         return new DefaultHighLowDataset("btc", dates, highs, lows, opens, closes, volumes);
@@ -138,9 +138,6 @@ public class CandlestickChartWithChopIndicator {
     /**
      * Displays a chart in a frame.
      *
-     * @param ohlcDataset
-     * @param xyDataset
-     * @param chopSeries
      */
     private static void displayChart(XYDataset ohlcDataset, XYDataset xyDataset, XYDataset chopSeries) {
         /*

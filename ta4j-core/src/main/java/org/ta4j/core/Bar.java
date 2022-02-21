@@ -132,7 +132,7 @@ public interface Bar extends Serializable {
      * @param tradeVolume the traded volume
      * @param tradePrice  the price
      */
-    void addTrade(long tradeVolume, double tradePrice);
+    void addTrade(double tradeVolume, double tradePrice);
 
     void addPrice(double price);
 }

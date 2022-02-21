@@ -188,7 +188,7 @@ public class WalkForward {
                 String name = entry.getValue();
                 // For each strategy...
                 TradingRecord tradingRecord = sliceManager.run(strategy);
-                Num profit = returnCriterion.calculate(slice, tradingRecord);
+                double profit = returnCriterion.calculate(slice, tradingRecord);
                 System.out.println("\tProfit for " + name + ": " + profit);
             }
             Strategy bestStrategy = returnCriterion.chooseBest(sliceManager, TradeType.BUY,

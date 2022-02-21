@@ -235,7 +235,7 @@ public class BaseBar implements Bar {
      * @param tradePrice  the price
      */
     @Override
-    public void addTrade(long tradeVolume, double tradePrice) {
+    public void addTrade(double tradeVolume, double tradePrice) {
         addPrice(tradePrice);
 
         volume = volume + (tradeVolume);
