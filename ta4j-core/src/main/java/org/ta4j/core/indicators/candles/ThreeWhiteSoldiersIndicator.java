@@ -83,11 +83,11 @@ public class ThreeWhiteSoldiersIndicator extends CachedIndicator<Boolean> {
      * @return true if the bar/candle has a very short upper shadow, false otherwise
      */
     private boolean hasVeryShortUpperShadow(int index) {
-        Double currentUpperShadow = upperShadowInd.getValue(index);
+        double currentUpperShadow = upperShadowInd.getValue(index);
         // We use the black candle index to remove to bias of the previous soldiers
-        Double averageUpperShadow = averageUpperShadowInd.getValue(blackCandleIndex);
+        double averageUpperShadow = averageUpperShadowInd.getValue(blackCandleIndex);
 
-        return currentUpperShadow < (averageUpperShadow*(factor));
+        return currentUpperShadow < averageUpperShadow * factor;
     }
 
     /**
@@ -97,10 +97,10 @@ public class ThreeWhiteSoldiersIndicator extends CachedIndicator<Boolean> {
     private boolean isGrowing(int index) {
         Bar prevBar = getBarSeries().getBar(index - 1);
         Bar currBar = getBarSeries().getBar(index);
-        final Double prevOpenPrice = prevBar.getOpenPrice();
-        final Double prevClosePrice = prevBar.getClosePrice();
-        final Double currOpenPrice = currBar.getOpenPrice();
-        final Double currClosePrice = currBar.getClosePrice();
+        final double prevOpenPrice = prevBar.getOpenPrice();
+        final double prevClosePrice = prevBar.getClosePrice();
+        final double currOpenPrice = currBar.getOpenPrice();
+        final double currClosePrice = currBar.getClosePrice();
 
         // Opens within the body of the previous candle
         return currOpenPrice> (prevOpenPrice) && currOpenPrice < (prevClosePrice)

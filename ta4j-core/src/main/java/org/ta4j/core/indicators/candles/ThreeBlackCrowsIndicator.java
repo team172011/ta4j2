@@ -83,11 +83,11 @@ public class ThreeBlackCrowsIndicator extends CachedIndicator<Boolean> {
      * @return true if the bar/candle has a very short lower shadow, false otherwise
      */
     private boolean hasVeryShortLowerShadow(int index) {
-        Double currentLowerShadow = lowerShadowInd.getValue(index);
+        double currentLowerShadow = lowerShadowInd.getValue(index);
         // We use the white candle index to remove to bias of the previous crows
-        Double averageLowerShadow = averageLowerShadowInd.getValue(whiteCandleIndex);
+        double averageLowerShadow = averageLowerShadowInd.getValue(whiteCandleIndex);
 
-        return currentLowerShadow < (averageLowerShadow*(factor));
+        return currentLowerShadow < averageLowerShadow * factor;
     }
 
     /**

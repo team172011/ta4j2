@@ -54,12 +54,12 @@ public class BullishHaramiIndicator extends CachedIndicator<Boolean> {
         Bar prevBar = getBarSeries().getBar(index - 1);
         Bar currBar = getBarSeries().getBar(index);
         if (prevBar.isBearish() && currBar.isBullish()) {
-            final Double prevOpenPrice = prevBar.getOpenPrice();
-            final Double prevClosePrice = prevBar.getClosePrice();
-            final Double currOpenPrice = currBar.getOpenPrice();
-            final Double currClosePrice = currBar.getClosePrice();
-            return currOpenPrice < (prevOpenPrice) && currOpenPrice> (prevClosePrice)
-                    && currClosePrice < (prevOpenPrice) && currClosePrice> (prevClosePrice);
+            final double prevOpenPrice = prevBar.getOpenPrice();
+            final double prevClosePrice = prevBar.getClosePrice();
+            final double currOpenPrice = currBar.getOpenPrice();
+            final double currClosePrice = currBar.getClosePrice();
+            return currOpenPrice < prevOpenPrice && currOpenPrice > prevClosePrice
+                    && currClosePrice < prevOpenPrice && currClosePrice > prevClosePrice;
         }
         return false;
     }

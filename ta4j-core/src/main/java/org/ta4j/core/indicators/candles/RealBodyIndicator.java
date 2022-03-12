@@ -52,6 +52,6 @@ public class RealBodyIndicator extends CachedIndicator<Double> {
     @Override
     protected Double calculate(int index) {
         Bar t = getBarSeries().getBar(index);
-        return t.getClosePrice() - (t.getOpenPrice());
+        return t.getClosePrice() - t.getOpenPrice();
     }
 }

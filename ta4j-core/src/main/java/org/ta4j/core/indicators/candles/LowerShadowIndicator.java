@@ -52,9 +52,9 @@ public class LowerShadowIndicator extends CachedIndicator<Double> {
     @Override
     protected Double calculate(int index) {
         Bar t = getBarSeries().getBar(index);
-        final Double openPrice = t.getOpenPrice();
-        final Double closePrice = t.getClosePrice();
-        if (closePrice> (openPrice)) {
+        final double openPrice = t.getOpenPrice();
+        final double closePrice = t.getClosePrice();
+        if (closePrice> openPrice) {
             // Bullish
             return openPrice - (t.getLowPrice());
         } else {
