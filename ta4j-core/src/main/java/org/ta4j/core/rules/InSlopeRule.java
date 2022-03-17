@@ -30,7 +30,6 @@ import org.ta4j.core.indicators.numeric.NumericIndicator;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * Indicator-in-slope rule.
  *
@@ -52,7 +51,8 @@ public class InSlopeRule extends AbstractRule {
 
     /**
      * Constructor.
-     *  @param ref      the reference indicator
+     * 
+     * @param ref      the reference indicator
      * @param minSlope minumum slope between reference and previous indicator
      */
     public InSlopeRule(Indicator<Double> ref, double minSlope) {
@@ -61,7 +61,8 @@ public class InSlopeRule extends AbstractRule {
 
     /**
      * Constructor.
-     *  @param ref      the reference indicator
+     * 
+     * @param ref      the reference indicator
      * @param minSlope minumum slope between value of reference and previous
      *                 indicator
      * @param maxSlope maximum slope between value of reference and previous
@@ -72,7 +73,8 @@ public class InSlopeRule extends AbstractRule {
 
     /**
      * Constructor.
-     *  @param ref         the reference indicator
+     * 
+     * @param ref         the reference indicator
      * @param nthPrevious defines the previous n-th indicator
      * @param maxSlope    maximum slope between value of reference and previous
      */
@@ -82,10 +84,11 @@ public class InSlopeRule extends AbstractRule {
 
     /**
      * Constructor.
-     *  @param ref         the reference indicator
+     * 
+     * @param ref         the reference indicator
      * @param nthPrevious defines the previous n-th indicator
      * @param minSlope    minumum slope between value of reference and previous
- *                    indicator
+     *                    indicator
      * @param maxSlope    maximum slope between value of reference and previous
      */
     public InSlopeRule(Indicator<Double> ref, int nthPrevious, double minSlope, double maxSlope) {

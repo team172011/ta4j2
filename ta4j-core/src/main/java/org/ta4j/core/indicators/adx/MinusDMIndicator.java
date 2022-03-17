@@ -27,7 +27,6 @@ import org.ta4j.core.Bar;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * -DM indicator.
  */
@@ -47,7 +46,7 @@ public class MinusDMIndicator extends CachedIndicator<Double> {
 
         final Double upMove = currentBar.getHighPrice() - (prevBar.getHighPrice());
         final Double downMove = prevBar.getLowPrice() - (currentBar.getLowPrice());
-        if (downMove> (upMove) && downMove> 0) {
+        if (downMove > (upMove) && downMove > 0) {
             return downMove;
         } else {
             return 0d;

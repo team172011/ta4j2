@@ -86,8 +86,7 @@ public class Quickstart {
         // - if the 5-bars SMA crosses under 30-bars SMA
         // - or if the price loses more than 3%
         // - or if the price earns more than 2%
-        Rule sellingRule = new CrossedDownIndicatorRule(shortSma, longSma)
-                .or(new StopLossRule(closePrice, 3d))
+        Rule sellingRule = new CrossedDownIndicatorRule(shortSma, longSma).or(new StopLossRule(closePrice, 3d))
                 .or(new StopGainRule(closePrice, 2d));
 
         // Running our juicy trading strategy...

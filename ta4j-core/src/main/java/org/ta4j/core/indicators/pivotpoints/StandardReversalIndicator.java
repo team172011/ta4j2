@@ -30,7 +30,6 @@ import java.util.List;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * Pivot Reversal Indicator.
  *
@@ -84,19 +83,19 @@ public class StandardReversalIndicator extends RecursiveCachedIndicator<Double> 
 
     private Double calculateR3(List<Integer> barsOfPreviousPeriod, int index) {
         Bar bar = getBarSeries().getBar(barsOfPreviousPeriod.get(0));
-        Double low = bar.getLowPrice();
-        Double high = bar.getHighPrice();
+        double low = bar.getLowPrice();
+        double high = bar.getHighPrice();
         for (int i : barsOfPreviousPeriod) {
             low = Math.min(getBarSeries().getBar(i).getLowPrice(), low);
             high = Math.max(getBarSeries().getBar(i).getHighPrice(), high);
         }
-        return high+(2 * ((pivotPointIndicator.getValue(index) - (low))));
+        return high + (2 * ((pivotPointIndicator.getValue(index) - (low))));
     }
 
     private Double calculateR2(List<Integer> barsOfPreviousPeriod, int index) {
         Bar bar = getBarSeries().getBar(barsOfPreviousPeriod.get(0));
-        Double low = bar.getLowPrice();
-        Double high = bar.getHighPrice();
+        double low = bar.getLowPrice();
+        double high = bar.getHighPrice();
         for (int i : barsOfPreviousPeriod) {
             low = Math.min(getBarSeries().getBar(i).getLowPrice(), low);
             high = Math.max(getBarSeries().getBar(i).getHighPrice(), high);
@@ -105,7 +104,7 @@ public class StandardReversalIndicator extends RecursiveCachedIndicator<Double> 
     }
 
     private Double calculateR1(List<Integer> barsOfPreviousPeriod, int index) {
-        Double low = getBarSeries().getBar(barsOfPreviousPeriod.get(0)).getLowPrice();
+        double low = getBarSeries().getBar(barsOfPreviousPeriod.get(0)).getLowPrice();
         for (int i : barsOfPreviousPeriod) {
             low = Math.min(getBarSeries().getBar(i).getLowPrice(), low);
         }
@@ -113,17 +112,17 @@ public class StandardReversalIndicator extends RecursiveCachedIndicator<Double> 
     }
 
     private Double calculateS1(List<Integer> barsOfPreviousPeriod, int index) {
-        Double high = getBarSeries().getBar(barsOfPreviousPeriod.get(0)).getHighPrice();
+        double high = getBarSeries().getBar(barsOfPreviousPeriod.get(0)).getHighPrice();
         for (int i : barsOfPreviousPeriod) {
-            high = Math.max(getBarSeries().getBar(i).getHighPrice(),high);
+            high = Math.max(getBarSeries().getBar(i).getHighPrice(), high);
         }
         return 2 * (pivotPointIndicator.getValue(index)) - (high);
     }
 
     private Double calculateS2(List<Integer> barsOfPreviousPeriod, int index) {
         Bar bar = getBarSeries().getBar(barsOfPreviousPeriod.get(0));
-        Double high = bar.getHighPrice();
-        Double low = bar.getLowPrice();
+        double high = bar.getHighPrice();
+        double low = bar.getLowPrice();
         for (int i : barsOfPreviousPeriod) {
             high = Math.max(getBarSeries().getBar(i).getHighPrice(), high);
             low = Math.min(getBarSeries().getBar(i).getLowPrice(), low);
@@ -133,8 +132,8 @@ public class StandardReversalIndicator extends RecursiveCachedIndicator<Double> 
 
     private Double calculateS3(List<Integer> barsOfPreviousPeriod, int index) {
         Bar bar = getBarSeries().getBar(barsOfPreviousPeriod.get(0));
-        Double high = bar.getHighPrice();
-        Double low = bar.getLowPrice();
+        double high = bar.getHighPrice();
+        double low = bar.getLowPrice();
         for (int i : barsOfPreviousPeriod) {
             high = Math.max(getBarSeries().getBar(i).getHighPrice(), high);
             low = Math.min(getBarSeries().getBar(i).getLowPrice(), low);

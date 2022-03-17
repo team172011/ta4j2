@@ -34,7 +34,6 @@ import org.ta4j.core.indicators.helpers.ConvergenceDivergenceIndicator.Convergen
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-
 public class ConvergenceDivergenceIndicatorTest {
 
     private Indicator<Double> refPosCon;

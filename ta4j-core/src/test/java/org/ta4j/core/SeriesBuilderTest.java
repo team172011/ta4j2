@@ -29,19 +29,16 @@ import java.time.ZonedDateTime;
 
 import static junit.framework.TestCase.assertEquals;
 
-
 public class SeriesBuilderTest extends AbstractIndicatorTest {
 
-    private final BaseBarSeriesBuilder seriesBuilder = new BaseBarSeriesBuilder() ;
+    private final BaseBarSeriesBuilder seriesBuilder = new BaseBarSeriesBuilder();
 
     @Test
     public void testBuilder() {
         BarSeries defaultSeries = seriesBuilder.build(); // build a new empty unnamed bar series
         BarSeries defaultSeriesName = seriesBuilder.withName("default").build(); // build a new empty bar series using
                                                                                  // BigDecimal as delegate
-        BarSeries series = seriesBuilder.withMaxBarCount(100)
-                .withName("useDouble Num")
-                .build();
+        BarSeries series = seriesBuilder.withMaxBarCount(100).withName("useDouble Num").build();
 
         for (int j = 1000; j >= 0; j--) {
             double i = j;

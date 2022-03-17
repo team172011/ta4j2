@@ -29,12 +29,8 @@ import org.ta4j.core.*;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertEquals;
 import static org.ta4j.core.TestUtils.assertIndicatorEquals;
-
-
 
 public class SMAIndicatorTest extends AbstractIndicatorTest {
 
@@ -71,6 +67,5 @@ public class SMAIndicatorTest extends AbstractIndicatorTest {
             assertEquals(data.getBar(i).getClosePrice(), indicator.getValue(i), EPS);
         }
     }
-
 
 }

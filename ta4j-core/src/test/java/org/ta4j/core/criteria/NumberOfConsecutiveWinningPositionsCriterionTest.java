@@ -27,12 +27,8 @@ import org.junit.Test;
 import org.ta4j.core.*;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
 
 public class NumberOfConsecutiveWinningPositionsCriterionTest extends AbstractCriterionTest {
 
@@ -78,6 +74,7 @@ public class NumberOfConsecutiveWinningPositionsCriterionTest extends AbstractCr
 
     @Test
     public void testCalculateOneOpenPositionShouldReturnZero() {
-        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new NumberOfConsecutiveWinningPositionsCriterion(), 0);
+        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(
+                new NumberOfConsecutiveWinningPositionsCriterion(), 0);
     }
 }

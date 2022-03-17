@@ -60,8 +60,8 @@ public class BaseBar implements Bar {
     /**
      * Constructor.
      * 
-     * @param timePeriod  the time period
-     * @param endTime     the end time of the bar period
+     * @param timePeriod the time period
+     * @param endTime    the end time of the bar period
      */
     public BaseBar(Duration timePeriod, ZonedDateTime endTime) {
         checkTimeArguments(timePeriod, endTime);
@@ -82,7 +82,7 @@ public class BaseBar implements Bar {
      * @param volume     the volume of the bar period
      */
     public BaseBar(Duration timePeriod, ZonedDateTime endTime, double openPrice, double highPrice, double lowPrice,
-                   double closePrice, double volume) {
+            double closePrice, double volume) {
         this(timePeriod, endTime, openPrice, highPrice, lowPrice, closePrice, volume, 0.0);
     }
 
@@ -99,10 +99,9 @@ public class BaseBar implements Bar {
      * @param amount     the amount of the bar period
      */
     public BaseBar(Duration timePeriod, ZonedDateTime endTime, double openPrice, double highPrice, double lowPrice,
-                   double closePrice, double volume, long amount) {
+            double closePrice, double volume, long amount) {
         this(timePeriod, endTime, openPrice, highPrice, lowPrice, closePrice, volume, (double) amount, 0d);
     }
-
 
     /**
      * Constructor.
@@ -117,7 +116,7 @@ public class BaseBar implements Bar {
      * @param amount     the amount of the bar period
      */
     public BaseBar(Duration timePeriod, ZonedDateTime endTime, double openPrice, double highPrice, double lowPrice,
-                   double closePrice, double volume, double amount) {
+            double closePrice, double volume, double amount) {
         this(timePeriod, endTime, openPrice, highPrice, lowPrice, closePrice, volume, amount, 0d);
     }
 
@@ -135,7 +134,7 @@ public class BaseBar implements Bar {
      * @param trades     the trades count of the bar period
      */
     public BaseBar(Duration timePeriod, ZonedDateTime endTime, double openPrice, double highPrice, double lowPrice,
-                   double closePrice, double volume, double amount, double trades) {
+            double closePrice, double volume, double amount, double trades) {
         checkTimeArguments(timePeriod, endTime);
         this.timePeriod = timePeriod;
         this.endTime = endTime;
@@ -261,8 +260,8 @@ public class BaseBar implements Bar {
     public String toString() {
         return String.format(
                 "{end time: %1s, close price: %2$f, open price: %3$f, low price: %4$f, high price: %5$f, volume: %6$f}",
-                endTime.withZoneSameInstant(ZoneId.systemDefault()), closePrice, openPrice,
-                lowPrice, highPrice, volume);
+                endTime.withZoneSameInstant(ZoneId.systemDefault()), closePrice, openPrice, lowPrice, highPrice,
+                volume);
     }
 
     /**

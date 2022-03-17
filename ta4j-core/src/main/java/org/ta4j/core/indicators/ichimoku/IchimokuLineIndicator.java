@@ -31,7 +31,6 @@ import org.ta4j.core.indicators.helpers.HighestValueIndicator;
 import org.ta4j.core.indicators.helpers.LowPriceIndicator;
 import org.ta4j.core.indicators.helpers.LowestValueIndicator;
 
-
 /**
  * An abstract class for Ichimoku clouds indicators.
  *

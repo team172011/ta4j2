@@ -108,8 +108,7 @@ public class PeriodicalGrowthRateIndicator extends CachedIndicator<Double> {
 
         int helpPartialTimeframe = index % barCount;
         // TODO: implement Num.floor()
-        double helpFullTimeframes =
-                Math.floor(indicator.getBarSeries().getBarCount() / barCount);
+        double helpFullTimeframes = Math.floor(indicator.getBarSeries().getBarCount() / barCount);
         double helpIndexTimeframes = (double) index / barCount;
 
         double helpPartialTimeframeHeld = (double) helpPartialTimeframe / barCount;

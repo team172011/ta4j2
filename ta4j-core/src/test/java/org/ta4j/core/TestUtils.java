@@ -28,7 +28,6 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 
-
 /**
  * Utility class for {@code Num} tests.
  */
@@ -37,8 +36,7 @@ public class TestUtils {
     /** Offset for Double equality checking */
     public static final Double GENERAL_OFFSET = 0.0001;
 
-    private static Logger log = LoggerFactory.getLogger(TestUtils.class);
-
+    private final static Logger log = LoggerFactory.getLogger(TestUtils.class);
 
     /**
      * Verifies that two indicators have the same size and values to an offset
@@ -50,8 +48,8 @@ public class TestUtils {
         org.junit.Assert.assertEquals("Size does not match,", expected.getBarSeries().getBarCount(),
                 actual.getBarSeries().getBarCount());
         for (int i = 0; i < expected.getBarSeries().getBarCount(); i++) {
-            assertEquals(String.format("Failed at index %s: %s", i, actual.toString()),
-                    expected.getValue(i), actual.getValue(i), GENERAL_OFFSET);
+            assertEquals(String.format("Failed at index %s: %s", i, actual), expected.getValue(i), actual.getValue(i),
+                    GENERAL_OFFSET);
         }
     }
 
@@ -72,7 +70,6 @@ public class TestUtils {
         throw new AssertionError("Indicators match to " + GENERAL_OFFSET);
     }
 
-
     /**
      * Verifies that two indicators have the same size and values
      * 
@@ -85,15 +82,15 @@ public class TestUtils {
         for (int i = expected.getBarSeries().getBeginIndex(); i < expected.getBarSeries().getEndIndex(); i++) {
             // convert to DecimalDouble via String (auto-precision) avoids Cast Class
             // Exception
-            Double exp = expected.getValue(i);
-            Double act = actual.getValue(i);
-            Double result = exp - Math.abs(act);
-            if (result> (delta)) {
+            double exp = expected.getValue(i);
+            double act = actual.getValue(i);
+            double result = exp - Math.abs(act);
+            if (result > (delta)) {
                 log.debug("{} expected does not match", exp);
                 log.debug("{} actual", act);
                 log.debug("{} offset", delta);
-                String expString = exp.toString();
-                String actString = act.toString();
+                String expString = String.valueOf(exp);
+                String actString = String.valueOf(act);
                 int minLen = Math.min(expString.length(), actString.length());
                 if (expString.length() > minLen)
                     expString = expString.substring(0, minLen) + "..";
@@ -121,7 +118,7 @@ public class TestUtils {
             double exp = expected.getValue(i);
             double act = actual.getValue(i);
             double result = exp - Math.abs(act);
-            if (result> (delta)) {
+            if (result > (delta)) {
                 return;
             }
         }

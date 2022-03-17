@@ -29,7 +29,6 @@ import org.ta4j.core.indicators.CachedIndicator;
 import org.ta4j.core.indicators.helpers.TypicalPriceIndicator;
 import org.ta4j.core.indicators.helpers.VolumeIndicator;
 
-
 /**
  * The volume-weighted average price (VWAP) Indicator.
  * 
@@ -71,8 +70,8 @@ public class VWAPIndicator extends CachedIndicator<Double> {
         double cumulativeVolume = 0;
         for (int i = startIndex; i <= index; i++) {
             Double currentVolume = volume.getValue(i);
-            cumulativeTPV = cumulativeTPV+(typicalPrice.getValue(i)*(currentVolume));
-            cumulativeVolume = cumulativeVolume+(currentVolume);
+            cumulativeTPV = cumulativeTPV + (typicalPrice.getValue(i) * (currentVolume));
+            cumulativeVolume = cumulativeVolume + (currentVolume);
         }
         return cumulativeTPV / (cumulativeVolume);
     }

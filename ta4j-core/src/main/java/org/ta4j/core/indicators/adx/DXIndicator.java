@@ -26,7 +26,6 @@ package org.ta4j.core.indicators.adx;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * DX indicator.
  */
@@ -50,7 +49,7 @@ public class DXIndicator extends CachedIndicator<Double> {
         if ((pdiValue + mdiValue) == 0) {
             return 0d;
         }
-        return pdiValue - Math.abs(mdiValue) / (pdiValue+(mdiValue))*(100);
+        return pdiValue - Math.abs(mdiValue) / (pdiValue + (mdiValue)) * (100);
     }
 
     @Override

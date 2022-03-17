@@ -28,7 +28,6 @@ import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.indicators.numeric.NumericIndicator;
 
-
 /**
  * A facade to create the 3 Bollinger Band indicators. A simple moving average
  * of close price is used as the middle band. The BB bandwidth and %B indicators

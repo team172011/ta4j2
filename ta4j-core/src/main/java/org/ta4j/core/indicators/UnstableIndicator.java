@@ -27,7 +27,6 @@ import org.ta4j.core.Indicator;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * Indicator that returns NaN in unstable period
  */

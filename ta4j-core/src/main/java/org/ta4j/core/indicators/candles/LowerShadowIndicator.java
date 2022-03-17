@@ -27,7 +27,6 @@ import org.ta4j.core.Bar;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Lower shadow height indicator.
  *
@@ -54,7 +53,7 @@ public class LowerShadowIndicator extends CachedIndicator<Double> {
         Bar t = getBarSeries().getBar(index);
         final double openPrice = t.getOpenPrice();
         final double closePrice = t.getClosePrice();
-        if (closePrice> openPrice) {
+        if (closePrice > openPrice) {
             // Bullish
             return openPrice - (t.getLowPrice());
         } else {

@@ -25,11 +25,8 @@ package org.ta4j.core.indicators.adx;
 
 import org.ta4j.core.*;
 
-
 import static org.ta4j.core.TestUtils.assertIndicatorEquals;
 
-
 public class ADXIndicatorTest extends AbstractIndicatorTest {
-
 
 }

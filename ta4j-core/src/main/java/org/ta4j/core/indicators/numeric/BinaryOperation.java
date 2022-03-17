@@ -36,19 +36,19 @@ import java.util.function.BinaryOperator;
 class BinaryOperation implements Indicator<Double> {
 
     public static BinaryOperation sum(Indicator<Double> left, Indicator<Double> right) {
-        return new BinaryOperation((a,b) -> a+b, left, right);
+        return new BinaryOperation((a, b) -> a + b, left, right);
     }
 
     public static BinaryOperation difference(Indicator<Double> left, Indicator<Double> right) {
-        return new BinaryOperation((a,b) -> a-b, left, right);
+        return new BinaryOperation((a, b) -> a - b, left, right);
     }
 
     public static BinaryOperation product(Indicator<Double> left, Indicator<Double> right) {
-        return new BinaryOperation((a,b) -> a*b, left, right);
+        return new BinaryOperation((a, b) -> a * b, left, right);
     }
 
     public static BinaryOperation quotient(Indicator<Double> left, Indicator<Double> right) {
-        return new BinaryOperation((a,b) -> a/b, left, right);
+        return new BinaryOperation((a, b) -> a / b, left, right);
     }
 
     public static BinaryOperation min(Indicator<Double> left, Indicator<Double> right) {

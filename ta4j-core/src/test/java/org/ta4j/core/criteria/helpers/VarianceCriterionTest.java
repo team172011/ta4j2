@@ -38,9 +38,8 @@ public class VarianceCriterionTest extends AbstractCriterionTest {
     @Test
     public void calculateVariancePnL() {
         MockBarSeries series = new MockBarSeries(100, 105, 110, 100, 95, 105);
-        TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series, 1d),
-                Trade.sellAt(2, series, 1d), Trade.buyAt(3, series, 1d),
-                Trade.sellAt(5, series, 1d));
+        TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series, 1d), Trade.sellAt(2, series, 1d),
+                Trade.buyAt(3, series, 1d), Trade.sellAt(5, series, 1d));
 
         AnalysisCriterion variance = new VarianceCriterion(new ProfitLossCriterion());
         assertEquals(6.25, variance.calculate(series, tradingRecord));
@@ -55,7 +54,8 @@ public class VarianceCriterionTest extends AbstractCriterionTest {
 
     @Test
     public void testCalculateOneOpenPositionShouldReturnZero() {
-        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new VarianceCriterion(new ProfitLossCriterion()), 0);
+        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(
+                new VarianceCriterion(new ProfitLossCriterion()), 0);
     }
 
 }

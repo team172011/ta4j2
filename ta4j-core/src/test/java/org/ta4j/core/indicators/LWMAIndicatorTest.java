@@ -30,19 +30,13 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
-
-
-
 public class LWMAIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries data;
 
     @Before
     public void setUp() {
-        data = new MockBarSeries(37.08, 36.7, 36.11, 35.85, 35.71, 36.04, 36.41, 37.67, 38.01, 37.79,
-                36.83);
+        data = new MockBarSeries(37.08, 36.7, 36.11, 35.85, 35.71, 36.04, 36.41, 37.67, 38.01, 37.79, 36.83);
     }
 
     @Test

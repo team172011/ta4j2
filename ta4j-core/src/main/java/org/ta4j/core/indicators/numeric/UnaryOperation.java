@@ -33,20 +33,20 @@ import java.util.function.UnaryOperator;
  * 
  * There may be other unary operations on Double that could be added here.
  */
-class UnaryOperation implements Indicator<Double>{
+class UnaryOperation implements Indicator<Double> {
 
-    public static UnaryOperation sqrt(Indicator<Double>operand) {
+    public static UnaryOperation sqrt(Indicator<Double> operand) {
         return new UnaryOperation(Math::sqrt, operand);
     }
 
-    public static UnaryOperation abs(Indicator<Double>operand) {
+    public static UnaryOperation abs(Indicator<Double> operand) {
         return new UnaryOperation(Math::abs, operand);
     }
 
-    private final UnaryOperator<Double>operator;
-    private final Indicator<Double>operand;
+    private final UnaryOperator<Double> operator;
+    private final Indicator<Double> operand;
 
-    private UnaryOperation(UnaryOperator<Double>operator, Indicator<Double>operand) {
+    private UnaryOperation(UnaryOperator<Double> operator, Indicator<Double> operand) {
         this.operator = operator;
         this.operand = operand;
     }

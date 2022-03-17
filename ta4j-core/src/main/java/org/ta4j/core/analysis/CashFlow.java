@@ -32,7 +32,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
 /**
  * The cash flow.
  *
@@ -157,7 +156,7 @@ public class CashFlow implements Indicator<Double> {
             for (int i = startingIndex; i < endIndex; i++) {
                 Double intermediateNetPrice = addCost(barSeries.getBar(i).getClosePrice(), avgCost, isLongTrade);
                 Double ratio = getIntermediateRatio(isLongTrade, netEntryPrice, intermediateNetPrice);
-                values.add(values.get(entryIndex)*(ratio));
+                values.add(values.get(entryIndex) * (ratio));
             }
 
             // add net cash flow at exit position
@@ -168,7 +167,7 @@ public class CashFlow implements Indicator<Double> {
                 exitPrice = barSeries.getBar(endIndex).getClosePrice();
             }
             Double ratio = getIntermediateRatio(isLongTrade, netEntryPrice, addCost(exitPrice, avgCost, isLongTrade));
-            values.add(values.get(entryIndex)*(ratio));
+            values.add(values.get(entryIndex) * (ratio));
         }
     }
 
@@ -228,7 +227,7 @@ public class CashFlow implements Indicator<Double> {
         if (isLongTrade) {
             netPrice = rawPrice - (holdingCost);
         } else {
-            netPrice = rawPrice+(holdingCost);
+            netPrice = rawPrice + (holdingCost);
         }
         return netPrice;
     }

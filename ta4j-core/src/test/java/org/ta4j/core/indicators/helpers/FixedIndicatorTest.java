@@ -29,8 +29,6 @@ import org.ta4j.core.AbstractIndicatorTest;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.BaseBarSeries;
 
-
-
 public class FixedIndicatorTest extends AbstractIndicatorTest {
 
     @Test

@@ -34,7 +34,6 @@ import org.ta4j.core.indicators.helpers.BooleanTransformIndicator.BooleanTransfo
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-
 public class BooleanTransformIndicatorTest extends AbstractIndicatorTest {
 
     private BooleanTransformIndicator transEquals;
@@ -50,19 +49,16 @@ public class BooleanTransformIndicatorTest extends AbstractIndicatorTest {
     private BooleanTransformIndicator transIsPositiveOrZero;
     private BooleanTransformIndicator transIsZero;
 
-
     @Before
     public void setUp() {
         BarSeries series = new BaseBarSeries();
         ConstantIndicator<Double> constantIndicator = new ConstantIndicator<>(series, 4d);
 
         transEquals = new BooleanTransformIndicator(constantIndicator, 4d, BooleanTransformType.equals);
-        transIsGreaterThan = new BooleanTransformIndicator(constantIndicator, 3d,
-                BooleanTransformType.isGreaterThan );
+        transIsGreaterThan = new BooleanTransformIndicator(constantIndicator, 3d, BooleanTransformType.isGreaterThan);
         transIsGreaterThanOrEqual = new BooleanTransformIndicator(constantIndicator, 4d,
                 BooleanTransformType.isGreaterThanOrEqual);
-        transIsLessThan = new BooleanTransformIndicator(constantIndicator, 10d,
-                BooleanTransformType.isLessThan );
+        transIsLessThan = new BooleanTransformIndicator(constantIndicator, 10d, BooleanTransformType.isLessThan);
         transIsLessThanOrEqual = new BooleanTransformIndicator(constantIndicator, 4d,
                 BooleanTransformType.isLessThanOrEqual);
 

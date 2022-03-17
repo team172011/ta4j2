@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * Zero-lag exponential moving average indicator.
  *
@@ -59,7 +58,7 @@ public class ZLEMAIndicator extends RecursiveCachedIndicator<Double> {
             return indicator.getValue(0);
         }
         double zlemaPrev = getValue(index - 1);
-        return k*(2 * indicator.getValue(index) - indicator.getValue(index - lag)) + ((1 - k) * zlemaPrev);
+        return k * (2 * indicator.getValue(index) - indicator.getValue(index - lag)) + ((1 - k) * zlemaPrev);
     }
 
     @Override

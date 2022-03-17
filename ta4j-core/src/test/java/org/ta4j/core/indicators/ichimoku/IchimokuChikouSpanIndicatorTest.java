@@ -30,13 +30,11 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.BaseBarSeries;
 import org.ta4j.core.mocks.MockBar;
 
-
 import java.util.List;
 
 import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
-
 
 public class IchimokuChikouSpanIndicatorTest extends AbstractIndicatorTest {
 

@@ -26,7 +26,6 @@ package org.ta4j.core.indicators.aroon;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Aroon Oscillator.
  *

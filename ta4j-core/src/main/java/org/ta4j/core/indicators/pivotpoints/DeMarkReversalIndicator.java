@@ -30,7 +30,6 @@ import java.util.List;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * DeMark Reversal Indicator.
  *
@@ -43,7 +42,7 @@ public class DeMarkReversalIndicator extends RecursiveCachedIndicator<Double> {
     private final DeMarkPivotPointIndicator pivotPointIndicator;
     private final DeMarkPivotLevel level;
 
-    public enum  DeMarkPivotLevel {
+    public enum DeMarkPivotLevel {
         RESISTANCE, SUPPORT,
     }
 
@@ -65,7 +64,7 @@ public class DeMarkReversalIndicator extends RecursiveCachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        Double x = pivotPointIndicator.getValue(index)*((4));
+        Double x = pivotPointIndicator.getValue(index) * ((4));
         Double result;
 
         if (level == DeMarkPivotLevel.SUPPORT) {
@@ -84,7 +83,7 @@ public class DeMarkReversalIndicator extends RecursiveCachedIndicator<Double> {
             return NaN;
         }
         Bar bar = getBarSeries().getBar(barsOfPreviousPeriod.get(0));
-        Double low = bar.getLowPrice();
+        double low = bar.getLowPrice();
         for (int i : barsOfPreviousPeriod) {
             low = Math.min(getBarSeries().getBar(i).getLowPrice(), low);
         }
@@ -98,7 +97,7 @@ public class DeMarkReversalIndicator extends RecursiveCachedIndicator<Double> {
             return NaN;
         }
         Bar bar = getBarSeries().getBar(barsOfPreviousPeriod.get(0));
-        Double high = bar.getHighPrice();
+        double high = bar.getHighPrice();
         for (int i : barsOfPreviousPeriod) {
             high = Math.max(getBarSeries().getBar(i).getHighPrice(), high);
         }

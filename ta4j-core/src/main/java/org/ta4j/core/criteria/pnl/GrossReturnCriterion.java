@@ -28,7 +28,6 @@ import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.AbstractAnalysisCriterion;
 
-
 /**
  * Gross return criterion (with commissions).
  *
@@ -48,13 +47,13 @@ public class GrossReturnCriterion extends AbstractAnalysisCriterion {
         return tradingRecord.getPositions()
                 .stream()
                 .map(position -> calculateProfit(series, position))
-                .reduce(1d, (a,b)->a*b);
+                .reduce(1d, (a, b) -> a * b);
     }
 
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > (criterionValue2);
     }
 
     /**

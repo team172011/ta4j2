@@ -28,7 +28,6 @@ import org.ta4j.core.indicators.CachedIndicator;
 import org.ta4j.core.indicators.helpers.CloseLocationValueIndicator;
 import org.ta4j.core.indicators.helpers.VolumeIndicator;
 
-
 /**
  * Chaikin Money Flow (CMF) indicator.
  *
@@ -57,7 +56,7 @@ public class ChaikinMoneyFlowIndicator extends CachedIndicator<Double> {
         int startIndex = Math.max(0, index - barCount + 1);
         double sumOfMoneyFlowVolume = 0;
         for (int i = startIndex; i <= index; i++) {
-            sumOfMoneyFlowVolume = sumOfMoneyFlowVolume+(getMoneyFlowVolume(i));
+            sumOfMoneyFlowVolume = sumOfMoneyFlowVolume + (getMoneyFlowVolume(i));
         }
         Double sumOfVolume = volumeIndicator.getValue(index);
 
@@ -69,7 +68,7 @@ public class ChaikinMoneyFlowIndicator extends CachedIndicator<Double> {
      * @return the money flow volume for the i-th period/bar
      */
     private Double getMoneyFlowVolume(int index) {
-        return clvIndicator.getValue(index)*(getBarSeries().getBar(index).getVolume());
+        return clvIndicator.getValue(index) * (getBarSeries().getBar(index).getVolume());
     }
 
     @Override

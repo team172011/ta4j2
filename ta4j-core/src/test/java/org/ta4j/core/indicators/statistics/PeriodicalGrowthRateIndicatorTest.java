@@ -31,8 +31,6 @@ import org.ta4j.core.mocks.MockBarSeries;
 import org.ta4j.core.rules.CrossedDownIndicatorRule;
 import org.ta4j.core.rules.CrossedUpIndicatorRule;
 
-
-
 import static org.junit.Assert.assertEquals;
 
 import static java.lang.Double.NaN;
@@ -44,9 +42,9 @@ public class PeriodicalGrowthRateIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() {
-        BarSeries mockSeries = new MockBarSeries(29.49, 28.30, 27.74, 27.65, 27.60, 28.70, 28.60, 28.19,
-                27.40, 27.20, 27.28, 27.00, 27.59, 26.20, 25.75, 24.75, 23.33, 24.45, 24.25, 25.02, 23.60, 24.20, 24.28,
-                25.70, 25.46, 25.10, 25.00, 25.00, 25.85);
+        BarSeries mockSeries = new MockBarSeries(29.49, 28.30, 27.74, 27.65, 27.60, 28.70, 28.60, 28.19, 27.40, 27.20,
+                27.28, 27.00, 27.59, 26.20, 25.75, 24.75, 23.33, 24.45, 24.25, 25.02, 23.60, 24.20, 24.28, 25.70, 25.46,
+                25.10, 25.00, 25.00, 25.85);
         seriesManager = new BarSeriesManager(mockSeries);
         closePrice = new ClosePriceIndicator(mockSeries);
     }

@@ -29,7 +29,6 @@ import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.indicators.helpers.PreviousValueIndicator;
 import org.ta4j.core.indicators.numeric.NumericIndicator;
 
-
 /**
  * The Detrended Price Oscillator (DPO) indicator.
  *

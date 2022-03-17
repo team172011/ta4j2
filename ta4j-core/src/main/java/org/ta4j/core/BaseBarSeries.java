@@ -281,8 +281,8 @@ public class BaseBarSeries implements BarSeries {
 
     /**
      * @param bar the <code>Bar</code> to be added
-     * @apiNote to add bar data directly use #addBar(Duration, ZonedDateTime, Double ,
-     *          Double , Double , Double , Double )
+     * @apiNote to add bar data directly use #addBar(Duration, ZonedDateTime, Double
+     *          , Double , Double , Double , Double )
      */
     @Override
     public void addBar(Bar bar, boolean replace) {
@@ -316,30 +316,29 @@ public class BaseBarSeries implements BarSeries {
     }
 
     @Override
-    public void addBar(ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice, Double volume) {
-        this.addBar(
-                new BaseBar(Duration.ofDays(1), endTime, openPrice, highPrice, lowPrice, closePrice, volume,0));
+    public void addBar(ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice,
+            Double volume) {
+        this.addBar(new BaseBar(Duration.ofDays(1), endTime, openPrice, highPrice, lowPrice, closePrice, volume, 0));
     }
 
     @Override
-    public void addBar(ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice, Double volume,
-                       Double amount) {
+    public void addBar(ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice,
+            Double volume, Double amount) {
         this.addBar(
                 new BaseBar(Duration.ofDays(1), endTime, openPrice, highPrice, lowPrice, closePrice, volume, amount));
     }
 
     @Override
     public void addBar(Duration timePeriod, ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice,
-                       Double closePrice, Double volume) {
+            Double closePrice, Double volume) {
         this.addBar(new BaseBar(timePeriod, endTime, openPrice, highPrice, lowPrice, closePrice, volume, 0));
     }
 
     @Override
     public void addBar(Duration timePeriod, ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice,
-                       Double closePrice, Double volume, Double amount) {
+            Double closePrice, Double volume, Double amount) {
         this.addBar(new BaseBar(timePeriod, endTime, openPrice, highPrice, lowPrice, closePrice, volume, amount));
     }
-
 
     @Override
     public void addTrade(long tradeVolume, double tradePrice) {

@@ -26,14 +26,13 @@ package org.ta4j.core.indicators.helpers;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Returns the previous (n-th) value of an indicator
  */
 public class PreviousValueIndicator extends CachedIndicator<Double> {
 
     private final int n;
-    private Indicator<Double> indicator;
+    private final Indicator<Double> indicator;
 
     /**
      * Constructor.

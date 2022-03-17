@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 
-
 /**
  * Number of maximum consecutive winning position criterion.
  */
@@ -64,7 +63,7 @@ public class NumberOfConsecutiveWinningPositionsCriterion extends AbstractAnalys
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > criterionValue2;
     }
 
     private boolean isWinningPosition(Position position) {

@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 
-
 /**
  * Number of position criterion.
  */

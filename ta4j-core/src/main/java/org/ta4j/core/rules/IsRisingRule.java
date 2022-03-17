@@ -79,7 +79,7 @@ public class IsRisingRule extends AbstractRule {
             }
         }
 
-        double ratio = count / (double ) barCount;
+        double ratio = count / (double) barCount;
 
         final boolean satisfied = ratio >= minStrenght;
         traceIsSatisfied(index, satisfied);

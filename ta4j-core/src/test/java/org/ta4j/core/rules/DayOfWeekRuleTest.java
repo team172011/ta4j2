@@ -33,10 +33,8 @@ import java.time.DayOfWeek;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 
 public class DayOfWeekRuleTest extends AbstractIndicatorTest {
 

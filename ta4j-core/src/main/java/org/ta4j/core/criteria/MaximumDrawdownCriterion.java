@@ -28,7 +28,6 @@ import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.analysis.CashFlow;
 
-
 /**
  * Maximum drawdown criterion.
  *
@@ -55,7 +54,7 @@ public class MaximumDrawdownCriterion extends AbstractAnalysisCriterion {
     /** The lower the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1 < (criterionValue2);
+        return criterionValue1 < criterionValue2;
     }
 
     /**
@@ -72,7 +71,7 @@ public class MaximumDrawdownCriterion extends AbstractAnalysisCriterion {
             // The series is not empty
             for (int i = series.getBeginIndex(); i <= series.getEndIndex(); i++) {
                 double value = cashFlow.getValue(i);
-                if (value > maxPeak ) {
+                if (value > maxPeak) {
                     maxPeak = value;
                 }
 

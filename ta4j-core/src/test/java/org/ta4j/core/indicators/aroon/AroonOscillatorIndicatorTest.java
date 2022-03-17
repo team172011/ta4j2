@@ -37,7 +37,6 @@ import java.util.Locale;
 
 import static org.junit.Assert.assertNotNull;
 
-
 public class AroonOscillatorIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries data;
@@ -212,7 +211,8 @@ public class AroonOscillatorIndicatorTest extends AbstractIndicatorTest {
         for (int i = dataLine.length - 1; i >= 0; i--) {
             String[] tickData = dataLine[i].split(",");
             ZonedDateTime date = LocalDate.parse(tickData[0], dtf).atStartOfDay(ZoneId.systemDefault());
-            data.addBar(date, Double.parseDouble(tickData[3]), Double.parseDouble(tickData[4]), Double.parseDouble(tickData[5]), Double.parseDouble(tickData[1]), Double.parseDouble(tickData[2]));
+            data.addBar(date, Double.parseDouble(tickData[3]), Double.parseDouble(tickData[4]),
+                    Double.parseDouble(tickData[5]), Double.parseDouble(tickData[1]), Double.parseDouble(tickData[2]));
         }
 
     }

@@ -35,9 +35,7 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import static org.junit.Assert.assertEquals;
-
 
 public class KeltnerChannelFacadeTest extends AbstractIndicatorTest {
 

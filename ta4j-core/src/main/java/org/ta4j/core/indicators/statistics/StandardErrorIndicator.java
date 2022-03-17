@@ -26,15 +26,14 @@ package org.ta4j.core.indicators.statistics;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Standard error indicator.
  */
 public class StandardErrorIndicator extends CachedIndicator<Double> {
 
-    private int barCount;
+    private final int barCount;
 
-    private StandardDeviationIndicator sdev;
+    private final StandardDeviationIndicator sdev;
 
     /**
      * Constructor.

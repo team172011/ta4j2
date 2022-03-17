@@ -33,7 +33,6 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import static org.junit.Assert.assertEquals;
 import static org.ta4j.core.TestUtils.assertIndicatorEquals;
 
@@ -43,8 +42,7 @@ public class EMAIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() {
-        data = new MockBarSeries(64.75, 63.79, 63.73, 63.73, 63.55, 63.19, 63.91, 63.85, 62.95, 63.37,
-                61.33, 61.51);
+        data = new MockBarSeries(64.75, 63.79, 63.73, 63.73, 63.55, 63.19, 63.91, 63.85, 62.95, 63.37, 61.33, 61.51);
     }
 
     @Test

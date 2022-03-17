@@ -33,8 +33,6 @@ import java.time.ZonedDateTime;
 import static java.lang.Double.NaN;
 import static org.junit.Assert.assertEquals;
 
-
-
 public class AroonDownIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries data;
@@ -100,7 +98,7 @@ public class AroonDownIndicatorTest extends AbstractIndicatorTest {
 
     @Test
     public void naNValuesInIntervall() {
-        BarSeries series = new BaseBarSeriesBuilder() .withName("NaN test").build();
+        BarSeries series = new BaseBarSeriesBuilder().withName("NaN test").build();
         for (long i = 10; i >= 0; i--) { // (10, NaN, 9, NaN, 8, NaN, 7, NaN)
             Double lowPrice = i % 2 == 0 ? i : NaN;
             series.addBar(ZonedDateTime.now().plusDays(10 - i), NaN, NaN, lowPrice, NaN, 0);

@@ -31,7 +31,6 @@ import org.ta4j.core.analysis.Returns;
 import java.util.Collections;
 import java.util.List;
 
-
 /**
  * Expected Shortfall criterion.
  *
@@ -92,7 +91,7 @@ public class ExpectedShortfallCriterion extends AbstractAnalysisCriterion {
             List<Double> tailEvents = returnRates.subList(0, nInTail);
             double sum = 0;
             for (int i = 0; i < nInTail; i++) {
-                sum = sum+(tailEvents.get(i));
+                sum = sum + tailEvents.get(i);
             }
             expectedShortfall = sum / nInTail;
 
@@ -107,6 +106,6 @@ public class ExpectedShortfallCriterion extends AbstractAnalysisCriterion {
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > criterionValue2;
     }
 }

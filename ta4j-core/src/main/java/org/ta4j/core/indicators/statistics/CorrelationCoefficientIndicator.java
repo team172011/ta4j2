@@ -26,7 +26,6 @@ package org.ta4j.core.indicators.statistics;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Correlation coefficient indicator.
  *

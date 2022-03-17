@@ -36,7 +36,6 @@ import java.time.ZonedDateTime;
 
 import static org.junit.Assert.assertEquals;
 
-
 public class CovarianceIndicatorTest extends AbstractIndicatorTest {
 
     private ClosePriceIndicator close;

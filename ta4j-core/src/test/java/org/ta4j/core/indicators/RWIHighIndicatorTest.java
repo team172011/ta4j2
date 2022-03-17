@@ -28,10 +28,7 @@ import org.ta4j.core.AbstractIndicatorTest;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.ExternalIndicatorTest;
 
-
-
 import static org.ta4j.core.TestUtils.assertIndicatorEquals;
-
 
 /**
  * Testing the RWIHighIndicator

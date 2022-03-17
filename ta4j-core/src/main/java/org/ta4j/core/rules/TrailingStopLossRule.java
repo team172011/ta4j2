@@ -29,7 +29,6 @@ import org.ta4j.core.TradingRecord;
 import org.ta4j.core.indicators.helpers.HighestValueIndicator;
 import org.ta4j.core.indicators.helpers.LowestValueIndicator;
 
-
 /**
  * A trailing stop-loss rule
  *
@@ -114,7 +113,7 @@ public class TrailingStopLossRule extends AbstractRule {
     private boolean isSellSatisfied(Double currentPrice, int index, int positionIndex) {
         LowestValueIndicator lowest = new LowestValueIndicator(priceIndicator,
                 getValueIndicatorBarCount(index, positionIndex));
-        Double lowestClose= lowest.getValue(index);
+        Double lowestClose = lowest.getValue(index);
         Double lossRatioThreshold = (100 + lossPercentage) / 100;
         currentStopLossLimitActivation = lowestClose * lossRatioThreshold;
         return currentPrice >= currentStopLossLimitActivation;

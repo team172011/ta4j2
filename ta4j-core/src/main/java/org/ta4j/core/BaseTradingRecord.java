@@ -30,7 +30,6 @@ import org.ta4j.core.analysis.cost.ZeroCostModel;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * Base implementation of a {@link TradingRecord}.
  *
@@ -110,9 +109,9 @@ public class BaseTradingRecord implements TradingRecord {
     /**
      * Constructor.
      *
-     * @param name           the name of the trading record
-     * @param tradeType the {@link TradeType trade type} of entries in the
-     *                       trading session
+     * @param name      the name of the trading record
+     * @param tradeType the {@link TradeType trade type} of entries in the trading
+     *                  session
      */
     public BaseTradingRecord(String name, TradeType tradeType) {
         this(tradeType, new ZeroCostModel(), new ZeroCostModel());
@@ -122,8 +121,8 @@ public class BaseTradingRecord implements TradingRecord {
     /**
      * Constructor.
      *
-     * @param tradeType the {@link TradeType trade type} of entries in the
-     *                       trading session
+     * @param tradeType the {@link TradeType trade type} of entries in the trading
+     *                  session
      */
     public BaseTradingRecord(TradeType tradeType) {
         this(tradeType, new ZeroCostModel(), new ZeroCostModel());

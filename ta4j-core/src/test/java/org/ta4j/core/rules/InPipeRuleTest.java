@@ -33,7 +33,6 @@ import org.ta4j.core.indicators.helpers.FixedDecimalIndicator;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-
 public class InPipeRuleTest {
 
     private InPipeRule rule;
@@ -41,7 +40,8 @@ public class InPipeRuleTest {
     @Before
     public void setUp() {
         BarSeries series = new BaseBarSeries("I am empty");
-        Indicator<Double> indicator = new FixedDecimalIndicator(series, 50d, 70d, 80d, 90d, 99d, 60d, 30d, 20d, 10d, 0d);
+        Indicator<Double> indicator = new FixedDecimalIndicator(series, 50d, 70d, 80d, 90d, 99d, 60d, 30d, 20d, 10d,
+                0d);
         rule = new InPipeRule(indicator, (80), (20));
     }
 

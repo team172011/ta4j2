@@ -37,7 +37,6 @@ import java.util.stream.Stream;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-
 public class IndicatorTest extends AbstractIndicatorTest {
 
     double[] typicalPrices = { 23.98, 23.92, 23.79, 23.67, 23.54, 23.36, 23.65, 23.72, 24.16, 23.91, 23.81, 23.92,
@@ -51,13 +50,14 @@ public class IndicatorTest extends AbstractIndicatorTest {
     }
 
     @Test
-    public void toDouble () {
-        List<Double> expectedValues = Arrays.stream(typicalPrices).mapToObj(Double ::valueOf)
+    public void toDouble() {
+        List<Double> expectedValues = Arrays.stream(typicalPrices)
+                .mapToObj(Double::valueOf)
                 .collect(Collectors.toList());
         MockIndicator closePriceMockIndicator = new MockIndicator(data, expectedValues);
 
         int barCount = 10, index = 20;
-        Double[] values = Indicator.toDouble (closePriceMockIndicator, index, barCount);
+        Double[] values = Indicator.toDouble(closePriceMockIndicator, index, barCount);
         assertTrue(values.length == barCount);
 
         for (int i = 0; i < barCount; i++) {
@@ -68,7 +68,7 @@ public class IndicatorTest extends AbstractIndicatorTest {
     @Test
     public void shouldProvideStream() {
         List<Double> expectedValues = Arrays.stream(typicalPrices)
-                .mapToObj(Double ::valueOf)
+                .mapToObj(Double::valueOf)
                 .collect(Collectors.toList());
         MockIndicator closePriceMockIndicator = new MockIndicator(data, expectedValues);
 

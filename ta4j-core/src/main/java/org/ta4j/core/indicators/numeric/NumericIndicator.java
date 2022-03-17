@@ -41,8 +41,8 @@ import org.ta4j.core.rules.UnderIndicatorRule;
  * (hopefully) natural-looking and expressive series of method calls.
  * <p>
  * Methods like plus(), minus() and sqrt() correspond directly to methods in the
- * Double interface. These methods create "lightweight" (not cached) indicators to
- * add, subtract, etc. Many methods are overloaded to accept either
+ * Double interface. These methods create "lightweight" (not cached) indicators
+ * to add, subtract, etc. Many methods are overloaded to accept either
  * Indicator<Double> or Number arguments.
  * <p>
  * Methods like sma() and ema() simply create the corresponding indicator
@@ -50,8 +50,8 @@ import org.ta4j.core.rules.UnderIndicatorRule;
  * argument. These methods usually instantiate cached objects.
  * <p>
  * Another set of methods, like crossedOver() and isGreaterThan() create Rule
- * objects. These are also overloaded to accept both Indicator<Double> and Number
- * arguments.
+ * objects. These are also overloaded to accept both Indicator<Double> and
+ * Number arguments.
  */
 public class NumericIndicator implements Indicator<Double> {
 
@@ -216,7 +216,7 @@ public class NumericIndicator implements Indicator<Double> {
     }
 
     private Indicator<Double> createConstant(Number n) {
-        return new ConstantIndicator<Double>(getBarSeries(), n.doubleValue());
+        return new ConstantIndicator<>(getBarSeries(), n.doubleValue());
     }
 
     @Override

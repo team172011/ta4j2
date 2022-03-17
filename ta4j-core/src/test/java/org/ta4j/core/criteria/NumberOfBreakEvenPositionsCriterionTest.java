@@ -29,7 +29,6 @@ import org.ta4j.core.mocks.MockBarSeries;
 
 public class NumberOfBreakEvenPositionsCriterionTest extends AbstractCriterionTest {
 
-
     @Test
     public void calculateWithNoPositions() {
         MockBarSeries series = new MockBarSeries(100, 105, 110, 100, 95, 105);
@@ -72,6 +71,7 @@ public class NumberOfBreakEvenPositionsCriterionTest extends AbstractCriterionTe
 
     @Test
     public void testCalculateOneOpenPositionShouldReturnZero() {
-        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new NumberOfBreakEvenPositionsCriterion(), 0);
+        new OpenedPositionUtils()
+                .testCalculateOneOpenPositionShouldReturnExpectedValue(new NumberOfBreakEvenPositionsCriterion(), 0);
     }
 }

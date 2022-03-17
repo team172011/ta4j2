@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * Ulcer index indicator.
  *
@@ -60,11 +59,11 @@ public class UlcerIndexIndicator extends CachedIndicator<Double> {
         double highestValue = indicator.getValue(startIndex);
         for (int i = startIndex; i <= index; i++) {
             double currentValue = indicator.getValue(i);
-            if (currentValue> (highestValue)) {
+            if (currentValue > (highestValue)) {
                 highestValue = currentValue;
             }
             double percentageDrawdown = (currentValue - highestValue) / (highestValue) * 100;
-            squaredAverage = squaredAverage+Math.pow(percentageDrawdown, 2);
+            squaredAverage = squaredAverage + Math.pow(percentageDrawdown, 2);
         }
         squaredAverage = squaredAverage / numberOfObservations;
         return Math.sqrt(squaredAverage);

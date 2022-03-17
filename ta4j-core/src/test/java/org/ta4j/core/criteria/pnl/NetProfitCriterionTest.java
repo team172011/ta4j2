@@ -32,12 +32,8 @@ import org.ta4j.core.criteria.AbstractCriterionTest;
 import org.ta4j.core.criteria.OpenedPositionUtils;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
 
 public class NetProfitCriterionTest extends AbstractCriterionTest {
 

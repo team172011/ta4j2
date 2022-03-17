@@ -38,7 +38,6 @@ import org.ta4j.core.Trade.TradeType;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.pnl.GrossReturnCriterion;
 
-
 import ta4jexamples.loaders.CsvTradesLoader;
 import ta4jexamples.strategies.CCICorrectionStrategy;
 import ta4jexamples.strategies.GlobalExtremaStrategy;
@@ -192,7 +191,7 @@ public class WalkForward {
                 System.out.println("\tProfit for " + name + ": " + profit);
             }
             Strategy bestStrategy = returnCriterion.chooseBest(sliceManager, TradeType.BUY,
-                    new ArrayList<Strategy>(strategies.keySet()));
+                    new ArrayList<>(strategies.keySet()));
             System.out.println("\t\t--> Best strategy: " + strategies.get(bestStrategy) + "\n");
         }
     }

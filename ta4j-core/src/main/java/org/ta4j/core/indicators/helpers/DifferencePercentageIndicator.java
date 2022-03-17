@@ -28,7 +28,6 @@ import org.ta4j.core.indicators.CachedIndicator;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * Difference Change Indicator.
  *

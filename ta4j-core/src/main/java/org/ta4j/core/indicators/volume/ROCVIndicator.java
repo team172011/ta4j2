@@ -26,7 +26,6 @@ package org.ta4j.core.indicators.volume;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Rate of change of volume (ROCVIndicator) indicator. Aka. Momentum of Volume
  *

@@ -37,10 +37,9 @@ public class SumIndicatorTest extends AbstractIndicatorTest {
     public void setUp() {
         BarSeries series = new BaseBarSeries();
         ConstantIndicator<Double> constantIndicator = new ConstantIndicator<>(series, (6d));
-        FixedIndicator<Double> mockIndicator = new FixedIndicator<>(series, (-2.0), (0.00),
-                (1.00), (2.53), (5.87), (6.00), (10.0));
-        FixedIndicator<Double> mockIndicator2 = new FixedIndicator<>(series, 0d, 1d,
-                2d, (3d), (10d), (-42d), (-1337d));
+        FixedIndicator<Double> mockIndicator = new FixedIndicator<>(series, (-2.0), (0.00), (1.00), (2.53), (5.87),
+                (6.00), (10.0));
+        FixedIndicator<Double> mockIndicator2 = new FixedIndicator<>(series, 0d, 1d, 2d, (3d), (10d), (-42d), (-1337d));
         sumIndicator = new SumIndicator(constantIndicator, mockIndicator, mockIndicator2);
     }
 

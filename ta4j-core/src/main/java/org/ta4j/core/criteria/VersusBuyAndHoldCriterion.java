@@ -25,7 +25,6 @@ package org.ta4j.core.criteria;
 
 import org.ta4j.core.*;
 
-
 /**
  * Versus "buy and hold" criterion.
  *
@@ -48,19 +47,19 @@ public class VersusBuyAndHoldCriterion extends AbstractAnalysisCriterion {
     @Override
     public double calculate(BarSeries series, Position position) {
         TradingRecord fakeRecord = createBuyAndHoldTradingRecord(series);
-        return criterion.calculate(series, position) / (criterion.calculate(series, fakeRecord));
+        return criterion.calculate(series, position) / criterion.calculate(series, fakeRecord);
     }
 
     @Override
     public double calculate(BarSeries series, TradingRecord tradingRecord) {
         TradingRecord fakeRecord = createBuyAndHoldTradingRecord(series);
-        return criterion.calculate(series, tradingRecord) / (criterion.calculate(series, fakeRecord));
+        return criterion.calculate(series, tradingRecord) / criterion.calculate(series, fakeRecord);
     }
 
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > criterionValue2;
     }
 
     private TradingRecord createBuyAndHoldTradingRecord(BarSeries series) {

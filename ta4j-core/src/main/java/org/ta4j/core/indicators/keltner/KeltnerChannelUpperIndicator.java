@@ -26,7 +26,6 @@ package org.ta4j.core.indicators.keltner;
 import org.ta4j.core.indicators.ATRIndicator;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Keltner Channel (upper line) indicator
  *
@@ -55,8 +54,7 @@ public class KeltnerChannelUpperIndicator extends CachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        return keltnerMiddleIndicator.getValue(index)
-                +(ratio*(averageTrueRangeIndicator.getValue(index)));
+        return keltnerMiddleIndicator.getValue(index) + (ratio * (averageTrueRangeIndicator.getValue(index)));
     }
 
     public int getBarCount() {

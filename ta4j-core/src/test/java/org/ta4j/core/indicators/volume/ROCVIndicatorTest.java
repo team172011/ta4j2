@@ -34,14 +34,13 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ROCVIndicatorTest extends AbstractIndicatorTest {
 
     BarSeries series;
 
     @Before
     public void setUp() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(new MockBar(1355.69, 1000d));
         bars.add(new MockBar(1325.51, 3000d));
         bars.add(new MockBar(1335.02, 3500d));

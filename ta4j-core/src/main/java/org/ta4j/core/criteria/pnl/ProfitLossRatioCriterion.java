@@ -28,7 +28,6 @@ import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.AbstractAnalysisCriterion;
 
-
 /**
  * Ratio Profit Loss Criterion = Average gross profit (with commissions) /
  * Average gross loss (with commissions)
@@ -71,7 +70,7 @@ public class ProfitLossRatioCriterion extends AbstractAnalysisCriterion {
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > (criterionValue2);
     }
 
 }

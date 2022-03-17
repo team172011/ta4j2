@@ -34,10 +34,6 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class IIIIndicatorTest extends AbstractIndicatorTest {
 
     @Test

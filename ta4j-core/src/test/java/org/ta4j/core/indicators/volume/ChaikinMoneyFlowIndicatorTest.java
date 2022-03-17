@@ -5,7 +5,7 @@
  * authors (see AUTHORS)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
- * this software and associated documentation files (the Software), to deal in
+ * this software and associated documentation files (the "Software"), to deal in
  * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
@@ -14,7 +14,7 @@
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
  * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
@@ -29,8 +29,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.BaseBarSeries;
 
 import java.time.ZonedDateTime;
-
-
 
 public class ChaikinMoneyFlowIndicatorTest extends AbstractIndicatorTest {
 
@@ -70,7 +68,7 @@ public class ChaikinMoneyFlowIndicatorTest extends AbstractIndicatorTest {
         series.addBar(now.minusSeconds(sec--), 0d, 65.23, 63.21, 63.28, 9411.620);
         series.addBar(now.minusSeconds(sec--), 0d, 63.40, 61.88, 62.40, 10391.690);
         series.addBar(now.minusSeconds(sec--), 0d, 63.18, 61.11, 61.55, 8926.512);
-        series.addBar(now.minusSeconds(sec--), 0d, 62.70, 61.25, 62.69, 7459.575);
+        series.addBar(now.minusSeconds(sec), 0d, 62.70, 61.25, 62.69, 7459.575);
 
         ChaikinMoneyFlowIndicator cmf = new ChaikinMoneyFlowIndicator(series, 20);
 

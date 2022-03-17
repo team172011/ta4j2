@@ -29,7 +29,6 @@ import org.ta4j.core.indicators.AbstractIndicator;
 import org.ta4j.core.indicators.EMAIndicator;
 import org.ta4j.core.indicators.helpers.TypicalPriceIndicator;
 
-
 /**
  * Keltner Channel (middle line) indicator
  *

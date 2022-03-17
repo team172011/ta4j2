@@ -33,16 +33,12 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class NVIIndicatorTest extends AbstractIndicatorTest {
 
     @Test
     public void getValue() {
 
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(new MockBar(1355.69, 2739.55));
         bars.add(new MockBar(1325.51, 3119.46));
         bars.add(new MockBar(1335.02, 3466.88));

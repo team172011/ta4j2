@@ -33,13 +33,9 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import static junit.framework.TestCase.assertEquals;
 
-
-
 public class VolumeIndicatorTest extends AbstractIndicatorTest {
-
 
     @Test
     public void indicatorShouldRetrieveBarVolume() {
@@ -52,7 +48,7 @@ public class VolumeIndicatorTest extends AbstractIndicatorTest {
 
     @Test
     public void sumOfVolume() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(new MockBar(0, 10));
         bars.add(new MockBar(0, 11));
         bars.add(new MockBar(0, 12));

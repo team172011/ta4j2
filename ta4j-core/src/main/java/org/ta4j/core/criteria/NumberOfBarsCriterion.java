@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 
-
 /**
  * Number of bars criterion.
  *
@@ -51,12 +50,12 @@ public class NumberOfBarsCriterion extends AbstractAnalysisCriterion {
                 .stream()
                 .filter(Position::isClosed)
                 .map(t -> calculate(series, t))
-                .reduce(0d, (a,b) -> a+b);
+                .reduce(0d, (a, b) -> a + b);
     }
 
     /** The lower the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1 < (criterionValue2);
+        return criterionValue1 < criterionValue2;
     }
 }

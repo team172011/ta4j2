@@ -28,11 +28,10 @@ import org.ta4j.core.Indicator;
 
 import java.util.List;
 
-
 public class MockIndicator implements Indicator<Double> {
 
-    private BarSeries series;
-    private List<Double> values;
+    private final BarSeries series;
+    private final List<Double> values;
 
     /**
      * Constructor.

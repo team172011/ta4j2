@@ -34,10 +34,8 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 
 public class BullishHaramiIndicatorTest extends AbstractIndicatorTest {
 
@@ -45,7 +43,7 @@ public class BullishHaramiIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         // open, close, high, low
         bars.add(new MockBar(10, 18, 20, 10));
         bars.add(new MockBar(21, 15, 22, 14));

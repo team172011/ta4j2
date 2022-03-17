@@ -27,12 +27,8 @@ import org.junit.Test;
 import org.ta4j.core.*;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
 
 public class WinningPositionsRatioCriterionTest extends AbstractCriterionTest {
 
@@ -79,6 +75,7 @@ public class WinningPositionsRatioCriterionTest extends AbstractCriterionTest {
 
     @Test
     public void testCalculateOneOpenPositionShouldReturnZero() {
-        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new WinningPositionsRatioCriterion(), 0);
+        new OpenedPositionUtils()
+                .testCalculateOneOpenPositionShouldReturnExpectedValue(new WinningPositionsRatioCriterion(), 0);
     }
 }

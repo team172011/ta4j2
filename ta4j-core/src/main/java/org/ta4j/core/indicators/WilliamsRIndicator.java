@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.*;
 
-
 /**
  * William's R indicator.
  *
@@ -66,8 +65,8 @@ public class WilliamsRIndicator extends CachedIndicator<Double> {
         Double highestHighPrice = highestHigh.getValue(index);
         Double lowestLowPrice = lowestMin.getValue(index);
 
-        return ((highestHighPrice - (closePriceIndicator.getValue(index)))
-                 / (highestHighPrice - (lowestLowPrice)))*(multiplier);
+        return ((highestHighPrice - (closePriceIndicator.getValue(index))) / (highestHighPrice - (lowestLowPrice)))
+                * (multiplier);
     }
 
     @Override

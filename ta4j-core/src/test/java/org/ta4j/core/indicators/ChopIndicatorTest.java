@@ -33,8 +33,6 @@ import org.ta4j.core.BaseBarSeriesBuilder;
 
 import java.time.ZonedDateTime;
 
-
-
 /**
  * @author jtomkinson
  *
@@ -42,17 +40,17 @@ import java.time.ZonedDateTime;
 public class ChopIndicatorTest extends AbstractIndicatorTest {
 
     protected BarSeries series;
-    protected final BaseBarSeriesBuilder BarSeriesBuilder = new BaseBarSeriesBuilder() ;
+    protected final BaseBarSeriesBuilder BarSeriesBuilder = new BaseBarSeriesBuilder();
 
     /**
      * this will assert that choppiness is high if market price is not moving
      */
     @Test
     public void testChoppy() {
-        series = BarSeriesBuilder.withName("low volatility series") .build();
+        series = BarSeriesBuilder.withName("low volatility series").build();
         for (int i = 0; i < 50; i++) {
             ZonedDateTime date = ZonedDateTime.now().minusSeconds(100000 - i);
-            series.addBar(date, 21.5, 21.5 + 1, 21.5 - 1, 21.5,0);
+            series.addBar(date, 21.5, 21.5 + 1, 21.5 - 1, 21.5, 0);
         }
         ChopIndicator ci1 = new ChopIndicator(series, 14, 100);
         int HIGH_CHOPPINESS_VALUE = 85;
@@ -65,7 +63,7 @@ public class ChopIndicatorTest extends AbstractIndicatorTest {
      */
     @Test
     public void testTradeableTrend() {
-        series = BarSeriesBuilder.withName("low volatility series") .build();
+        series = BarSeriesBuilder.withName("low volatility series").build();
         float value = 21.5f;
         for (int i = 0; i < 50; i++) {
             ZonedDateTime date = ZonedDateTime.now().minusSeconds(100000 - i);

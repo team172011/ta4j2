@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * The Class RandomWalkIndexLowIndicator.
  *
@@ -56,7 +55,7 @@ public class RWILowIndicator extends CachedIndicator<Double> {
             return NaN;
         }
 
-        double minRWIL =0;
+        double minRWIL = 0;
         for (int n = 2; n <= barCount; n++) {
             minRWIL = Math.max(minRWIL, calcRWIHFor(index, n));
         }
@@ -71,7 +70,7 @@ public class RWILowIndicator extends CachedIndicator<Double> {
         double atrN = new ATRIndicator(series, n).getValue(index);
         double sqrtN = Math.sqrt(n);
 
-        return highN - (low) / (atrN*(sqrtN));
+        return highN - (low) / (atrN * (sqrtN));
     }
 
     @Override

@@ -71,6 +71,7 @@ public class NumberOfLosingPositionsCriterionTest extends AbstractCriterionTest 
 
     @Test
     public void testCalculateOneOpenPositionShouldReturnZero() {
-        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new NumberOfLosingPositionsCriterion(), 0);
+        new OpenedPositionUtils()
+                .testCalculateOneOpenPositionShouldReturnExpectedValue(new NumberOfLosingPositionsCriterion(), 0);
     }
 }

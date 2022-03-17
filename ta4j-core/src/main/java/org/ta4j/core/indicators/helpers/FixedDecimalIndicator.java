@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 
 import java.math.BigDecimal;
 
-
 /**
  * A fixed decimal indicator.
  */
@@ -38,7 +37,7 @@ public class FixedDecimalIndicator extends FixedIndicator<Double> {
      * 
      * @param values the values to be returned by this indicator
      */
-    public FixedDecimalIndicator(BarSeries series, double ... values) {
+    public FixedDecimalIndicator(BarSeries series, double... values) {
         super(series);
         for (Double value : values) {
             addValue((value));

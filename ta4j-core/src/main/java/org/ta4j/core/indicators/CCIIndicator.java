@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.helpers.TypicalPriceIndicator;
 import org.ta4j.core.indicators.statistics.MeanDeviationIndicator;
 
-
 /**
  * Commodity Channel Index (CCI) indicator.
  *

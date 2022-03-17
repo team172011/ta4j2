@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * Double exponential moving average indicator.
  * </p/>
@@ -55,7 +54,7 @@ public class DoubleEMAIndicator extends CachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        return ema.getValue(index)*2 - (emaEma.getValue(index));
+        return ema.getValue(index) * 2 - (emaEma.getValue(index));
     }
 
     @Override

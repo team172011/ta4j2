@@ -28,7 +28,6 @@ import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.pnl.GrossReturnCriterion;
 
-
 /**
  * Calculates the average return per bar criterion.
  *
@@ -44,11 +43,11 @@ public class AverageReturnPerBarCriterion extends AbstractAnalysisCriterion {
     @Override
     public double calculate(BarSeries series, Position position) {
         double bars = numberOfBars.calculate(series, position);
-        if (bars==0) {
+        if (bars == 0) {
             return 1d;
         }
 
-        return Math.pow(grossReturn.calculate(series, position),1/ bars);
+        return Math.pow(grossReturn.calculate(series, position), 1 / bars);
     }
 
     @Override
@@ -64,6 +63,6 @@ public class AverageReturnPerBarCriterion extends AbstractAnalysisCriterion {
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > criterionValue2;
     }
 }

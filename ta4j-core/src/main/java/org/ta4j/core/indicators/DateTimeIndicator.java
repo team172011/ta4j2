@@ -29,7 +29,6 @@ import org.ta4j.core.BarSeries;
 import java.time.ZonedDateTime;
 import java.util.function.Function;
 
-
 /**
  * DateTime indicator.
  */

@@ -33,10 +33,6 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class ChaikinOscillatorIndicatorTest extends AbstractIndicatorTest {
 
     @Test

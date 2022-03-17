@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.MedianPriceIndicator;
 
-
 /**
  * Awesome oscillator. (AO)
  *

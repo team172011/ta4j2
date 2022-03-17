@@ -28,7 +28,6 @@ import org.slf4j.LoggerFactory;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.Indicator;
 
-
 /**
  * Abstract {@link Indicator indicator}.
  */

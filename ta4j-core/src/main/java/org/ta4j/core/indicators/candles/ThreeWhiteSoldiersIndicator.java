@@ -28,7 +28,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 import org.ta4j.core.indicators.SMAIndicator;
 
-
 /**
  * Three white soldiers indicator.
  *
@@ -103,9 +102,9 @@ public class ThreeWhiteSoldiersIndicator extends CachedIndicator<Boolean> {
         final double currClosePrice = currBar.getClosePrice();
 
         // Opens within the body of the previous candle
-        return currOpenPrice> (prevOpenPrice) && currOpenPrice < (prevClosePrice)
+        return currOpenPrice > (prevOpenPrice) && currOpenPrice < (prevClosePrice)
         // Closes above the previous close price
-                && currClosePrice> (prevClosePrice);
+                && currClosePrice > (prevClosePrice);
     }
 
     /**
@@ -118,7 +117,7 @@ public class ThreeWhiteSoldiersIndicator extends CachedIndicator<Boolean> {
         if (currBar.isBullish()) {
             if (prevBar.isBearish()) {
                 // First soldier case
-                return hasVeryShortUpperShadow(index) && currBar.getOpenPrice()> (prevBar.getLowPrice());
+                return hasVeryShortUpperShadow(index) && currBar.getOpenPrice() > (prevBar.getLowPrice());
             } else {
                 return hasVeryShortUpperShadow(index) && isGrowing(index);
             }

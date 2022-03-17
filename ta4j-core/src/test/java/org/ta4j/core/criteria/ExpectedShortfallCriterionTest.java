@@ -27,16 +27,12 @@ import org.junit.Test;
 import org.ta4j.core.*;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
 import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.List;
 
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-
-
 
 public class ExpectedShortfallCriterionTest extends AbstractCriterionTest {
     private MockBarSeries series;

@@ -30,7 +30,6 @@ import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.AbstractAnalysisCriterion;
 import org.ta4j.core.criteria.NumberOfPositionsCriterion;
 
-
 /**
  * Average criterion.
  * 
@@ -69,7 +68,7 @@ public class AverageCriterion extends AbstractAnalysisCriterion {
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > (criterionValue2);
     }
 
 }

@@ -29,11 +29,7 @@ import org.ta4j.core.AbstractIndicatorTest;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertEquals;
-
-
 
 public class ROCIndicatorTest extends AbstractIndicatorTest {
 

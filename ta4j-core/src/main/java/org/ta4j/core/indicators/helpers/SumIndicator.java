@@ -26,7 +26,6 @@ package org.ta4j.core.indicators.helpers;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Sum indicator.
  *
@@ -50,9 +49,9 @@ public class SumIndicator extends CachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        double sum =0;
+        double sum = 0;
         for (Indicator<Double> operand : operands) {
-            sum = sum+(operand.getValue(index));
+            sum = sum + (operand.getValue(index));
         }
         return sum;
     }

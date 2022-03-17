@@ -32,11 +32,7 @@ import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.ta4j.core.TestUtils.assertIndicatorEquals;
-
-
 
 public class StochasticRSIIndicatorTest extends AbstractIndicatorTest {
     private BarSeries data;
@@ -44,9 +40,8 @@ public class StochasticRSIIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() {
-        data = new MockBarSeries(50.45, 50.30, 50.20, 50.15, 50.05, 50.06, 50.10, 50.08, 50.03, 50.07,
-                50.01, 50.14, 50.22, 50.43, 50.50, 50.56, 50.52, 50.70, 50.55, 50.62, 50.90, 50.82, 50.86, 51.20, 51.30,
-                51.10);
+        data = new MockBarSeries(50.45, 50.30, 50.20, 50.15, 50.05, 50.06, 50.10, 50.08, 50.03, 50.07, 50.01, 50.14,
+                50.22, 50.43, 50.50, 50.56, 50.52, 50.70, 50.55, 50.62, 50.90, 50.82, 50.86, 51.20, 51.30, 51.10);
     }
 
     @Test

@@ -29,7 +29,6 @@ import org.ta4j.core.indicators.helpers.ConstantIndicator;
 
 import java.util.Objects;
 
-
 /**
  * Indicator-equal-indicator rule.
  *

@@ -26,7 +26,6 @@ package org.ta4j.core.indicators.helpers;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Simple boolean transform indicator.
  *
@@ -47,20 +46,20 @@ public class BooleanTransformIndicator extends CachedIndicator<Boolean> {
         equals,
 
         /**
-         * Transforms the decimal indicator to a boolean indicator by
-         * indicator> (coefficient).
+         * Transforms the decimal indicator to a boolean indicator by indicator>
+         * (coefficient).
          */
         isGreaterThan,
 
         /**
-         * Transforms the decimal indicator to a boolean indicator by
-         * indicator >= (coefficient).
+         * Transforms the decimal indicator to a boolean indicator by indicator >=
+         * (coefficient).
          */
         isGreaterThanOrEqual,
 
         /**
-         * Transforms the decimal indicator to a boolean indicator by
-         * indicator < (coefficient).
+         * Transforms the decimal indicator to a boolean indicator by indicator <
+         * (coefficient).
          */
         isLessThan,
 
@@ -93,8 +92,7 @@ public class BooleanTransformIndicator extends CachedIndicator<Boolean> {
         isNegativeOrZero,
 
         /**
-         * Transforms the decimal indicator to a boolean indicator by
-         * indicator > 0.
+         * Transforms the decimal indicator to a boolean indicator by indicator > 0.
          */
         isPositive,
 
@@ -105,13 +103,12 @@ public class BooleanTransformIndicator extends CachedIndicator<Boolean> {
         isPositiveOrZero,
 
         /**
-         * Transforms the decimal indicator to a boolean indicator by
-         * indicator == 0.
+         * Transforms the decimal indicator to a boolean indicator by indicator == 0.
          */
         isZero
     }
 
-    private Indicator<Double> indicator;
+    private final Indicator<Double> indicator;
     private Double coefficient;
     private BooleanTransformType type;
     private BooleanTransformSimpleType simpleType;
@@ -152,13 +149,13 @@ public class BooleanTransformIndicator extends CachedIndicator<Boolean> {
             case equals:
                 return val.equals(coefficient);
             case isGreaterThan:
-                return val> (coefficient);
+                return val > (coefficient);
             case isGreaterThanOrEqual:
-                return val>=(coefficient);
+                return val >= (coefficient);
             case isLessThan:
-                return val<(coefficient);
+                return val < (coefficient);
             case isLessThanOrEqual:
-                return val<=(coefficient);
+                return val <= (coefficient);
             default:
                 break;
             }

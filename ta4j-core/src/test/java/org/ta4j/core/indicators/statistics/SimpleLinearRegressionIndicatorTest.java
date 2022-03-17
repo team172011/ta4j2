@@ -31,11 +31,7 @@ import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertTrue;
-
-
 
 public class SimpleLinearRegressionIndicatorTest extends AbstractIndicatorTest {
 
@@ -107,7 +103,7 @@ public class SimpleLinearRegressionIndicatorTest extends AbstractIndicatorTest {
      * @param values values
      * @return a simple linear regression based on provided values
      */
-    private static SimpleRegression buildSimpleRegression(double ... values) {
+    private static SimpleRegression buildSimpleRegression(double... values) {
         SimpleRegression simpleReg = new SimpleRegression();
         for (int i = 0; i < values.length; i++) {
             simpleReg.addData(i, values[i]);

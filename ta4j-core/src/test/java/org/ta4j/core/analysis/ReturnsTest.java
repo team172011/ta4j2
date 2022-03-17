@@ -105,18 +105,16 @@ public class ReturnsTest extends AbstractIndicatorTest {
         BarSeries series = new MockBarSeries(1.2d, 1.1d);
 
         TradingRecord fullRecordDouble = new BaseTradingRecord();
-        fullRecordDouble .enter(series.getBeginIndex(), series.getBar(0).getClosePrice(), 1d);
-        fullRecordDouble .exit(series.getEndIndex(), series.getBar(1).getClosePrice(), 1d);
-
+        fullRecordDouble.enter(series.getBeginIndex(), series.getBar(0).getClosePrice(), 1d);
+        fullRecordDouble.exit(series.getEndIndex(), series.getBar(1).getClosePrice(), 1d);
 
         // Return calculation Double Double vs PrecisionNum
-        Double arithDouble = new Returns(series, fullRecordDouble , Returns.ReturnType.ARITHMETIC).getValue(1);
+        Double arithDouble = new Returns(series, fullRecordDouble, Returns.ReturnType.ARITHMETIC).getValue(1);
 
-        Double logDouble = new Returns(series, fullRecordDouble , Returns.ReturnType.LOG).getValue(1);
+        Double logDouble = new Returns(series, fullRecordDouble, Returns.ReturnType.LOG).getValue(1);
 
-        assertEquals(arithDouble , -0.08333333333333326);
+        assertEquals(arithDouble, -0.08333333333333326);
 
-
-        assertEquals(logDouble , -0.08701137698962969);
+        assertEquals(logDouble, -0.08701137698962969);
     }
 }

@@ -139,8 +139,7 @@ public class CashFlowTest extends AbstractIndicatorTest {
 
     @Test
     public void cashFlowShortSellWith100PercentLoss() {
-        BarSeries sampleBarSeries = new MockBarSeries(90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190,
-                200);
+        BarSeries sampleBarSeries = new MockBarSeries(90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200);
         TradingRecord tradingRecord = new BaseTradingRecord(Trade.sellAt(1, sampleBarSeries),
                 Trade.buyAt(11, sampleBarSeries));
 
@@ -232,8 +231,7 @@ public class CashFlowTest extends AbstractIndicatorTest {
     @Test
     public void cashFlowValue() {
         // First sample series
-        BarSeries sampleBarSeries = new MockBarSeries(3d, 2d, 5d, 1000d, 5000d, 0.0001d, 4d, 7d, 6d, 7d,
-                8d, 5d, 6d);
+        BarSeries sampleBarSeries = new MockBarSeries(3d, 2d, 5d, 1000d, 5000d, 0.0001d, 4d, 7d, 6d, 7d, 8d, 5d, 6d);
         TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, sampleBarSeries),
                 Trade.sellAt(2, sampleBarSeries), Trade.buyAt(6, sampleBarSeries), Trade.sellAt(8, sampleBarSeries),
                 Trade.buyAt(9, sampleBarSeries), Trade.sellAt(11, sampleBarSeries));

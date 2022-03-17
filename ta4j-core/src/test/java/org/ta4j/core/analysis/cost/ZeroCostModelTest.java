@@ -28,11 +28,8 @@ import org.ta4j.core.AbstractIndicatorTest;
 import org.ta4j.core.Position;
 import org.ta4j.core.Trade;
 
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
 
 public class ZeroCostModelTest extends AbstractIndicatorTest {
 

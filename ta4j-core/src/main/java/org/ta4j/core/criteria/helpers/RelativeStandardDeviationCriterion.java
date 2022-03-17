@@ -29,7 +29,6 @@ import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.AbstractAnalysisCriterion;
 
-
 /**
  * Standard deviation criterion in percentage (also known as Coefficient of
  * Variation (CV)).
@@ -74,7 +73,7 @@ public class RelativeStandardDeviationCriterion extends AbstractAnalysisCriterio
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > (criterionValue2);
     }
 
 }

@@ -28,7 +28,6 @@ import org.ta4j.core.indicators.ATRIndicator;
 import org.ta4j.core.indicators.CachedIndicator;
 import org.ta4j.core.indicators.MMAIndicator;
 
-
 /**
  * +DI indicator. Part of the Directional Movement System
  *
@@ -53,7 +52,7 @@ public class PlusDIIndicator extends CachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        return avgPlusDMIndicator.getValue(index) / (atrIndicator.getValue(index))*100;
+        return avgPlusDMIndicator.getValue(index) / (atrIndicator.getValue(index)) * 100;
     }
 
     @Override

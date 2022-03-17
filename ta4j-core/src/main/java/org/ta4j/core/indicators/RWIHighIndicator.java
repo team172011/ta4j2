@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * The RandomWalkIndexHighIndicator.
  *
@@ -71,7 +70,7 @@ public class RWIHighIndicator extends CachedIndicator<Double> {
         Double atrN = new ATRIndicator(series, n).getValue(index);
         Double sqrtN = Math.sqrt(n);
 
-        return high - (lowN) / (atrN*(sqrtN));
+        return high - (lowN) / (atrN * (sqrtN));
     }
 
     @Override

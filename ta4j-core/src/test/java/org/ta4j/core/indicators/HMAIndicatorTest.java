@@ -30,19 +30,14 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
-
-
-
 public class HMAIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries data;
 
     @Before
     public void setUp() {
-        data = new MockBarSeries(84.53, 87.39, 84.55, 82.83, 82.58, 83.74, 83.33, 84.57, 86.98, 87.10,
-                83.11, 83.60, 83.66, 82.76, 79.22, 79.03, 78.18, 77.42, 74.65, 77.48, 76.87);
+        data = new MockBarSeries(84.53, 87.39, 84.55, 82.83, 82.58, 83.74, 83.33, 84.57, 86.98, 87.10, 83.11, 83.60,
+                83.66, 82.76, 79.22, 79.03, 78.18, 77.42, 74.65, 77.48, 76.87);
     }
 
     @Test

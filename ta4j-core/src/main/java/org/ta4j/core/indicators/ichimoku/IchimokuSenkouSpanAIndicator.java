@@ -26,8 +26,6 @@ package org.ta4j.core.indicators.ichimoku;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
-
 /**
  * Ichimoku clouds: Senkou Span A (Leading Span A) indicator
  *

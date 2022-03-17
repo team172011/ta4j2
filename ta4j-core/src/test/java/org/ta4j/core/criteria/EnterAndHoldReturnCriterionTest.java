@@ -28,12 +28,8 @@ import org.ta4j.core.*;
 import org.ta4j.core.Trade.TradeType;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
 
 public class EnterAndHoldReturnCriterionTest extends AbstractCriterionTest {
 

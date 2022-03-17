@@ -28,7 +28,6 @@ import org.ta4j.core.BaseBar;
 import java.time.Duration;
 import java.time.ZonedDateTime;
 
-
 /**
  * A mock bar with sample data.
  */
@@ -73,26 +72,29 @@ public class MockBar extends BaseBar {
     }
 
     public MockBar(double openPrice, double closePrice, double highPrice, double lowPrice, int volume) {
-        super(Duration.ofDays(1), ZonedDateTime.now(), openPrice, highPrice, lowPrice, closePrice, (double) volume, 0d, 0d);
+        super(Duration.ofDays(1), ZonedDateTime.now(), openPrice, highPrice, lowPrice, closePrice, (double) volume, 0d,
+                0d);
     }
 
-    public MockBar(ZonedDateTime endTime, int openPrice, int  closePrice, int  highPrice, int  lowPrice,
-                   int  amount, Double volume, Double trades) {
-        super(Duration.ofDays(1), endTime, (double) openPrice, (double) highPrice, (double) lowPrice, (double) closePrice, volume, (double) amount, 0d);
+    public MockBar(ZonedDateTime endTime, int openPrice, int closePrice, int highPrice, int lowPrice, int amount,
+            Double volume, Double trades) {
+        super(Duration.ofDays(1), endTime, (double) openPrice, (double) highPrice, (double) lowPrice,
+                (double) closePrice, volume, (double) amount, 0d);
     }
 
     public MockBar(ZonedDateTime endTime, Number openPrice, Number closePrice, Number highPrice, Number lowPrice,
-                   Number amount, Number volume, Number trades) {
-        super(Duration.ofDays(1), endTime, openPrice.doubleValue(), highPrice.doubleValue(), lowPrice.doubleValue(), closePrice.doubleValue(), volume.doubleValue(), amount.doubleValue(), 0d);
+            Number amount, Number volume, Number trades) {
+        super(Duration.ofDays(1), endTime, openPrice.doubleValue(), highPrice.doubleValue(), lowPrice.doubleValue(),
+                closePrice.doubleValue(), volume.doubleValue(), amount.doubleValue(), 0d);
     }
 
     public MockBar(ZonedDateTime endTime, double openPrice, double closePrice, double highPrice, double lowPrice,
-                   long amount, Double volume, Double trades) {
+            long amount, Double volume, Double trades) {
         super(Duration.ofDays(1), endTime, openPrice, highPrice, lowPrice, closePrice, volume, (double) amount, 0d);
     }
 
     public MockBar(ZonedDateTime endTime, double openPrice, double closePrice, double highPrice, double lowPrice,
-                   double amount, Double volume, Double trades) {
+            double amount, Double volume, Double trades) {
         super(Duration.ofDays(1), endTime, openPrice, highPrice, lowPrice, closePrice, volume, amount, 0d);
     }
 }

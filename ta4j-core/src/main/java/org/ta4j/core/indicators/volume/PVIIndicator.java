@@ -27,7 +27,6 @@ import org.ta4j.core.Bar;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.RecursiveCachedIndicator;
 
-
 /**
  * Positive Volume Index (PVI) indicator.
  *
@@ -53,11 +52,11 @@ public class PVIIndicator extends RecursiveCachedIndicator<Double> {
         Bar previousBar = getBarSeries().getBar(index - 1);
         Double previousValue = getValue(index - 1);
 
-        if (currentBar.getVolume()> (previousBar.getVolume())) {
+        if (currentBar.getVolume() > (previousBar.getVolume())) {
             Double currentPrice = currentBar.getClosePrice();
             Double previousPrice = previousBar.getClosePrice();
             Double priceChangeRatio = (currentPrice - previousPrice) / (previousPrice);
-            return previousValue+(priceChangeRatio*(previousValue));
+            return previousValue + (priceChangeRatio * (previousValue));
         }
         return previousValue;
     }

@@ -27,7 +27,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.ta4j.core.*;
 
-
 public class LinearTransactionCostModelTest extends AbstractIndicatorTest {
 
     private CostModel transactionModel;
@@ -60,7 +59,7 @@ public class LinearTransactionCostModelTest extends AbstractIndicatorTest {
         Double costFromSell = exit.getCost();
         Double costsFromModel = transactionModel.calculate(position, holdingPeriod);
 
-        assertEquals(costsFromModel, costFromBuy+(costFromSell));
+        assertEquals(costsFromModel, costFromBuy + (costFromSell));
         assertEquals(costsFromModel, (2.1));
         assertEquals(costFromBuy, (1));
     }
@@ -78,7 +77,7 @@ public class LinearTransactionCostModelTest extends AbstractIndicatorTest {
         Double costFromSell = exit.getCost();
         Double costsFromModel = transactionModel.calculate(position, holdingPeriod);
 
-        assertEquals(costsFromModel, costFromBuy+(costFromSell));
+        assertEquals(costsFromModel, costFromBuy + (costFromSell));
         assertEquals(costsFromModel, (2.1));
         assertEquals(costFromBuy, (1));
     }

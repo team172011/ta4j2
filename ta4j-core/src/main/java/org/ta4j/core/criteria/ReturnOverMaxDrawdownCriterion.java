@@ -29,9 +29,7 @@ import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.pnl.GrossReturnCriterion;
 
-
 import static java.lang.Double.NaN;
-
 
 /**
  * Reward risk ratio criterion, defined as the {@link GrossReturnCriterion gross
@@ -49,7 +47,7 @@ public class ReturnOverMaxDrawdownCriterion extends AbstractAnalysisCriterion {
             return NaN;
         } else {
             final Double totalProfit = grossReturnCriterion.calculate(series, position);
-            return totalProfit / (maxDrawdown);
+            return totalProfit / maxDrawdown;
         }
     }
 
@@ -60,13 +58,13 @@ public class ReturnOverMaxDrawdownCriterion extends AbstractAnalysisCriterion {
             return NaN;
         } else {
             final Double totalProfit = grossReturnCriterion.calculate(series, tradingRecord);
-            return totalProfit / (maxDrawdown);
+            return totalProfit / maxDrawdown;
         }
     }
 
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > criterionValue2;
     }
 }

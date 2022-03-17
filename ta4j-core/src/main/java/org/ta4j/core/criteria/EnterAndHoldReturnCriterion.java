@@ -28,7 +28,6 @@ import org.ta4j.core.Position;
 import org.ta4j.core.Trade.TradeType;
 import org.ta4j.core.TradingRecord;
 
-
 /**
  * Enter and hold criterion.
  *
@@ -81,7 +80,7 @@ public class EnterAndHoldReturnCriterion extends AbstractAnalysisCriterion {
     /** The higher the criterion value the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > criterionValue2;
     }
 
     private Position createEnterAndHoldTrade(BarSeries series) {

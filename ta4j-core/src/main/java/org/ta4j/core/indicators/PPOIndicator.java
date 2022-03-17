@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * Percentage price oscillator (PPO) indicator. <br/>
  * Aka. MACD Percentage Price Oscillator (MACD-PPO).

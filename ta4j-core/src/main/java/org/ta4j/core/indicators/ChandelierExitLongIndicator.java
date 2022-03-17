@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.helpers.HighPriceIndicator;
 import org.ta4j.core.indicators.helpers.HighestValueIndicator;
 
-
 /**
  * The Chandelier Exit (long) Indicator.
  *
@@ -66,6 +65,6 @@ public class ChandelierExitLongIndicator extends CachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        return high.getValue(index) - (atr.getValue(index)*(k));
+        return high.getValue(index) - (atr.getValue(index) * (k));
     }
 }

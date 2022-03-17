@@ -33,7 +33,6 @@ import java.util.List;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * DeMark Pivot Point indicator.
  *
@@ -90,23 +89,23 @@ public class DeMarkPivotPointIndicator extends RecursiveCachedIndicator<Double> 
         if (barsOfPreviousPeriod.isEmpty())
             return NaN;
         Bar bar = getBarSeries().getBar(barsOfPreviousPeriod.get(0));
-        Double open = getBarSeries().getBar(barsOfPreviousPeriod.get(barsOfPreviousPeriod.size() - 1)).getOpenPrice();
-        Double close = bar.getClosePrice();
-        Double high = bar.getHighPrice();
-        Double low = bar.getLowPrice();
+        double open = getBarSeries().getBar(barsOfPreviousPeriod.get(barsOfPreviousPeriod.size() - 1)).getOpenPrice();
+        double close = bar.getClosePrice();
+        double high = bar.getHighPrice();
+        double low = bar.getLowPrice();
 
         for (int i : barsOfPreviousPeriod) {
             high = Math.max(getBarSeries().getBar(i).getHighPrice(), high);
             low = Math.min(getBarSeries().getBar(i).getLowPrice(), low);
         }
 
-        Double x;
+        double x;
         if (close < (open)) {
-            x = high+(2*(low))+(close);
-        } else if (close> (open)) {
-            x = 2*(high)+(low)+(close);
+            x = high + (2 * (low)) + (close);
+        } else if (close > (open)) {
+            x = 2 * (high) + (low) + (close);
         } else {
-            x = high+(low)+(2*(close));
+            x = high + (low) + (2 * (close));
         }
 
         return x / ((4));
