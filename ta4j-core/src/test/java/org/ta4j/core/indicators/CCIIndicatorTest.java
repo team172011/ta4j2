@@ -32,13 +32,9 @@ import org.ta4j.core.mocks.MockBarSeries;
 
 import java.util.ArrayList;
 
-
-
-
-
 public class CCIIndicatorTest extends AbstractIndicatorTest {
 
-    private double[] typicalPrices = new double[] { 23.98, 23.92, 23.79, 23.67, 23.54, 23.36, 23.65, 23.72, 24.16,
+    private final double[] typicalPrices = new double[] { 23.98, 23.92, 23.79, 23.67, 23.54, 23.36, 23.65, 23.72, 24.16,
             23.91, 23.81, 23.92, 23.74, 24.68, 24.94, 24.93, 25.10, 25.12, 25.20, 25.06, 24.50, 24.31, 24.57, 24.62,
             24.49, 24.37, 24.41, 24.35, 23.75, 24.09 };
 
@@ -46,7 +42,7 @@ public class CCIIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() {
-        ArrayList<Bar> bars = new ArrayList<Bar>();
+        ArrayList<Bar> bars = new ArrayList<>();
         for (Double price : typicalPrices) {
             bars.add(new MockBar(price, price, price, price));
         }
@@ -65,8 +61,8 @@ public class CCIIndicatorTest extends AbstractIndicatorTest {
         assertEquals(54.25442291491223, cci.getValue(11));
 
         // Complete time frame
-        double[] results20to30 = new double[] { 101.91846522781749, 31.1946, 6.5578, 33.6078, 34.9686, 13.6027, -10.6789, -11.471,
-                -29.2567, -128.6, -72.7273 };
+        double[] results20to30 = new double[] { 101.91846522781749, 31.1946, 6.5578, 33.6078, 34.9686, 13.6027,
+                -10.6789, -11.471, -29.2567, -128.6, -72.7273 };
         for (int i = 0; i < results20to30.length; i++) {
             assertEquals(results20to30[i], cci.getValue(i + 19), 0.0001);
         }

@@ -27,7 +27,6 @@ import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.GainIndicator;
 import org.ta4j.core.indicators.helpers.LossIndicator;
 
-
 /**
  * Chande Momentum Oscillator indicator.
  *
@@ -59,14 +58,14 @@ public class CMOIndicator extends CachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        double sumOfGains =0;
+        double sumOfGains = 0;
         for (int i = Math.max(1, index - barCount + 1); i <= index; i++) {
             sumOfGains = sumOfGains + gainIndicator.getValue(i);
         }
-        double sumOfLosses =0;
+        double sumOfLosses = 0;
         for (int i = Math.max(1, index - barCount + 1); i <= index; i++) {
             sumOfLosses = sumOfLosses + lossIndicator.getValue(i);
         }
-        return ((sumOfGains - sumOfLosses) / (sumOfGains+sumOfLosses)) * 100;
+        return ((sumOfGains - sumOfLosses) / (sumOfGains + sumOfLosses)) * 100;
     }
 }

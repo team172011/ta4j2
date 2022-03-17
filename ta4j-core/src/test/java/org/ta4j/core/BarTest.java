@@ -32,7 +32,6 @@ import java.time.ZonedDateTime;
 
 import static org.junit.Assert.*;
 
-
 public class BarTest extends AbstractIndicatorTest {
 
     private Bar bar;

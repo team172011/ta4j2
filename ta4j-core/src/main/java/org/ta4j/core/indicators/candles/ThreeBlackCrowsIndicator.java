@@ -28,7 +28,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 import org.ta4j.core.indicators.SMAIndicator;
 
-
 /**
  * Three black crows indicator.
  *
@@ -97,13 +96,13 @@ public class ThreeBlackCrowsIndicator extends CachedIndicator<Boolean> {
     private boolean isDeclining(int index) {
         Bar prevBar = getBarSeries().getBar(index - 1);
         Bar currBar = getBarSeries().getBar(index);
-        final Double prevOpenPrice = prevBar.getOpenPrice();
-        final Double prevClosePrice = prevBar.getClosePrice();
-        final Double currOpenPrice = currBar.getOpenPrice();
-        final Double currClosePrice = currBar.getClosePrice();
+        final double prevOpenPrice = prevBar.getOpenPrice();
+        final double prevClosePrice = prevBar.getClosePrice();
+        final double currOpenPrice = currBar.getOpenPrice();
+        final double currClosePrice = currBar.getClosePrice();
 
         // Opens within the body of the previous candle
-        return currOpenPrice < (prevOpenPrice) && currOpenPrice> (prevClosePrice)
+        return currOpenPrice < (prevOpenPrice) && currOpenPrice > (prevClosePrice)
         // Closes below the previous close price
                 && currClosePrice < (prevClosePrice);
     }

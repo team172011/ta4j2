@@ -40,7 +40,7 @@ public class AroonFacadeTest extends AbstractIndicatorTest {
 
     @Before
     public void init() {
-        data = new BaseBarSeriesBuilder() .withName("Aroon data").build();
+        data = new BaseBarSeriesBuilder().withName("Aroon data").build();
         data.addBar(ZonedDateTime.now().plusDays(1), 168.28, 169.87, 167.15, 169.64, 0);
         data.addBar(ZonedDateTime.now().plusDays(2), 168.84, 169.36, 168.2, 168.71, 0);
         data.addBar(ZonedDateTime.now().plusDays(3), 168.88, 169.29, 166.41, 167.74, 0);
@@ -60,7 +60,7 @@ public class AroonFacadeTest extends AbstractIndicatorTest {
         data.addBar(ZonedDateTime.now().plusDays(17), 172.26, 172.28, 170.5, 170.96, 0);
         data.addBar(ZonedDateTime.now().plusDays(18), 170.88, 172.34, 170.26, 171.64, 0);
         data.addBar(ZonedDateTime.now().plusDays(19), 171.85, 172.07, 169.34, 170.01, 0);
-        data.addBar(ZonedDateTime.now() .plusDays(20), 170.75, 172.56, 170.36, 172.52, 0); // FB, daily, 9.19.'17
+        data.addBar(ZonedDateTime.now().plusDays(20), 170.75, 172.56, 170.36, 172.52, 0); // FB, daily, 9.19.'17
 
     }
 

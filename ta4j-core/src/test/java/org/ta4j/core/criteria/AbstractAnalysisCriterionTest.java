@@ -37,7 +37,6 @@ import org.ta4j.core.rules.FixedRule;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import static junit.framework.TestCase.assertEquals;
 
 public class AbstractAnalysisCriterionTest extends AbstractCriterionTest {

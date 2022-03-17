@@ -35,17 +35,13 @@ import org.ta4j.core.mocks.MockBar;
 
 import java.time.ZonedDateTime;
 
-
-
-
-
 public class PearsonCorrelationIndicatorTest extends AbstractIndicatorTest {
 
     private Indicator<Double> close, volume;
 
     @Before
     public void setUp() {
-        BarSeries data = new BaseBarSeriesBuilder() .build();
+        BarSeries data = new BaseBarSeriesBuilder().build();
         int i = 20;
         // close, volume
         data.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 6, 100d));

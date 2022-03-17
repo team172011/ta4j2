@@ -42,12 +42,9 @@ import org.ta4j.core.rules.CrossedUpIndicatorRule;
 import org.ta4j.core.rules.OverIndicatorRule;
 import org.ta4j.core.rules.UnderIndicatorRule;
 
-
-
 public class NumericIndicatorTest extends AbstractIndicatorTest {
 
-    private final BarSeries series = new MockBarSeries(1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4, 3, 2, 1,
-            0, -1, -2);
+    private final BarSeries series = new MockBarSeries(1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2);
     private final ClosePriceIndicator cp1 = new ClosePriceIndicator(series);
     private final EMAIndicator ema = new EMAIndicator(cp1, 3);
 
@@ -60,8 +57,8 @@ public class NumericIndicatorTest extends AbstractIndicatorTest {
         assertEquals(9 + 5, staticOp.getValue(8));
 
         final NumericIndicator dynamicOp = numericIndicator.plus(ema);
-        assertEquals(cp1.getValue(0)+(ema.getValue(0)), dynamicOp.getValue(0));
-        assertEquals(cp1.getValue(8)+(ema.getValue(8)), dynamicOp.getValue(8));
+        assertEquals(cp1.getValue(0) + (ema.getValue(0)), dynamicOp.getValue(0));
+        assertEquals(cp1.getValue(8) + (ema.getValue(8)), dynamicOp.getValue(8));
     }
 
     @Test
@@ -86,8 +83,8 @@ public class NumericIndicatorTest extends AbstractIndicatorTest {
         assertEquals(9 * 5, staticOp.getValue(8));
 
         final NumericIndicator dynamicOp = numericIndicator.multipliedBy(ema);
-        assertEquals(cp1.getValue(0)*(ema.getValue(0)), dynamicOp.getValue(0));
-        assertEquals(cp1.getValue(8)*(ema.getValue(8)), dynamicOp.getValue(8));
+        assertEquals(cp1.getValue(0) * (ema.getValue(0)), dynamicOp.getValue(0));
+        assertEquals(cp1.getValue(8) * (ema.getValue(8)), dynamicOp.getValue(8));
     }
 
     @Test

@@ -31,10 +31,8 @@ import org.ta4j.core.indicators.helpers.GainIndicator;
 import org.ta4j.core.indicators.helpers.LossIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
 import static org.junit.Assert.assertEquals;
 import static org.ta4j.core.TestUtils.assertIndicatorEquals;
-
 
 public class RSIIndicatorTest extends AbstractIndicatorTest {
 
@@ -42,9 +40,8 @@ public class RSIIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() throws Exception {
-        data = new MockBarSeries( 50.45, 50.30, 50.20, 50.15, 50.05, 50.06, 50.10, 50.08, 50.03, 50.07,
-                50.01, 50.14, 50.22, 50.43, 50.50, 50.56, 50.52, 50.70, 50.55, 50.62, 50.90, 50.82, 50.86, 51.20, 51.30,
-                51.10);
+        data = new MockBarSeries(50.45, 50.30, 50.20, 50.15, 50.05, 50.06, 50.10, 50.08, 50.03, 50.07, 50.01, 50.14,
+                50.22, 50.43, 50.50, 50.56, 50.52, 50.70, 50.55, 50.62, 50.90, 50.82, 50.86, 51.20, 51.30, 51.10);
     }
 
     @Test
@@ -88,9 +85,9 @@ public class RSIIndicatorTest extends AbstractIndicatorTest {
         // from
         // http://cns.bu.edu/~gsc/CN710/fincast/Technical%20_indicators/Relative%20Strength%20Index%20(RSI).htm
         // which uses a different calculation of RSI than ta4j
-        BarSeries series = new MockBarSeries(46.1250, 47.1250, 46.4375, 46.9375, 44.9375, 44.2500, 44.6250,
-                45.7500, 47.8125, 47.5625, 47.0000, 44.5625, 46.3125, 47.6875, 46.6875, 45.6875, 43.0625, 43.5625,
-                44.8750, 43.6875);
+        BarSeries series = new MockBarSeries(46.1250, 47.1250, 46.4375, 46.9375, 44.9375, 44.2500, 44.6250, 45.7500,
+                47.8125, 47.5625, 47.0000, 44.5625, 46.3125, 47.6875, 46.6875, 45.6875, 43.0625, 43.5625, 44.8750,
+                43.6875);
         // ta4j RSI uses MMA for average gain and loss
         // then uses simple division of the two for RS
         Indicator<Double> indicator = new RSIIndicator(new ClosePriceIndicator(series), 14);

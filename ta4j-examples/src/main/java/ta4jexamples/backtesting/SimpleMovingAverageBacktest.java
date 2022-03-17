@@ -51,11 +51,11 @@ public class SimpleMovingAverageBacktest {
         Strategy strategy3DaySma = create3DaySmaStrategy(series);
 
         BarSeriesManager seriesManager = new BarSeriesManager(series);
-        TradingRecord tradingRecord3DaySma = seriesManager.run(strategy3DaySma, Trade.TradeType.BUY,50);
+        TradingRecord tradingRecord3DaySma = seriesManager.run(strategy3DaySma, Trade.TradeType.BUY, 50);
         System.out.println(tradingRecord3DaySma);
 
         Strategy strategy2DaySma = create2DaySmaStrategy(series);
-        TradingRecord tradingRecord2DaySma = seriesManager.run(strategy2DaySma, Trade.TradeType.BUY,50);
+        TradingRecord tradingRecord2DaySma = seriesManager.run(strategy2DaySma, Trade.TradeType.BUY, 50);
         System.out.println(tradingRecord2DaySma);
 
         AnalysisCriterion criterion = new GrossReturnCriterion();
@@ -80,7 +80,7 @@ public class SimpleMovingAverageBacktest {
     }
 
     private static BaseBar createBar(ZonedDateTime endTime, double openPrice, double highPrice, double lowPrice,
-                                     double closePrice, double volume) {
+            double closePrice, double volume) {
         return BaseBar.builder()
                 .timePeriod(Duration.ofDays(1))
                 .endTime(endTime)
@@ -93,7 +93,7 @@ public class SimpleMovingAverageBacktest {
     }
 
     private static ZonedDateTime CreateDay(int day) {
-        return ZonedDateTime.of(2018, 01, day, 12, 0, 0, 0, ZoneId.systemDefault());
+        return ZonedDateTime.of(2018, 1, day, 12, 0, 0, 0, ZoneId.systemDefault());
     }
 
     private static Strategy create3DaySmaStrategy(BarSeries series) {

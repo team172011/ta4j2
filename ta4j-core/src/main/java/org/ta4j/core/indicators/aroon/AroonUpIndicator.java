@@ -33,7 +33,6 @@ import java.util.Objects;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * Aroon up indicator.
  *
@@ -86,7 +85,7 @@ public class AroonUpIndicator extends CachedIndicator<Double> {
             nbBars++;
         }
 
-        return  ((((double)barCount - nbBars) / barCount) * 100);
+        return ((((double) barCount - nbBars) / barCount) * 100);
     }
 
     @Override

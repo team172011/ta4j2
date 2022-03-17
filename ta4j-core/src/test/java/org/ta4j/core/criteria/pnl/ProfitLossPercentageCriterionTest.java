@@ -32,15 +32,11 @@ import org.ta4j.core.criteria.AbstractCriterionTest;
 import org.ta4j.core.criteria.OpenedPositionUtils;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-
-
 public class ProfitLossPercentageCriterionTest extends AbstractCriterionTest {
-    
+
     @Test
     public void calculateWithWinningLongPositions() {
         MockBarSeries series = new MockBarSeries(100, 105, 110, 100, 95, 105);
@@ -97,6 +93,7 @@ public class ProfitLossPercentageCriterionTest extends AbstractCriterionTest {
 
     @Test
     public void testCalculateOneOpenPositionShouldReturnZero() {
-        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new ProfitLossPercentageCriterion(), 0);
+        new OpenedPositionUtils()
+                .testCalculateOneOpenPositionShouldReturnExpectedValue(new ProfitLossPercentageCriterion(), 0);
     }
 }

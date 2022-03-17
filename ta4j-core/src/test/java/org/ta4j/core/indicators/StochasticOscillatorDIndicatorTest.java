@@ -34,9 +34,7 @@ import org.ta4j.core.mocks.MockBar;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import static junit.framework.TestCase.assertEquals;
-
 
 public class StochasticOscillatorDIndicatorTest extends AbstractIndicatorTest {
 
@@ -45,7 +43,7 @@ public class StochasticOscillatorDIndicatorTest extends AbstractIndicatorTest {
     @Before
     public void setUp() {
 
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(new MockBar(44.98, 119.13, 119.50, 116.00));
         bars.add(new MockBar(45.05, 116.75, 119.94, 116.00));
         bars.add(new MockBar(45.11, 113.50, 118.44, 111.63));

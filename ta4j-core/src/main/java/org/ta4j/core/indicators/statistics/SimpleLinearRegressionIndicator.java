@@ -40,7 +40,7 @@ public class SimpleLinearRegressionIndicator extends CachedIndicator<Double> {
     /**
      * The type for the outcome of the {@link SimpleLinearRegressionIndicator}
      */
-    public enum  SimpleLinearRegressionType {
+    public enum SimpleLinearRegressionType {
         Y, SLOPE, INTERCEPT
     }
 

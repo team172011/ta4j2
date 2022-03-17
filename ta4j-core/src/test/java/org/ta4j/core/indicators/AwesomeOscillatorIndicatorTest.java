@@ -35,17 +35,13 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class AwesomeOscillatorIndicatorTest extends AbstractIndicatorTest {
     private BarSeries series;
 
     @Before
     public void setUp() {
 
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
 
         bars.add(new MockBar(0, 0, 16, 8));
         bars.add(new MockBar(0, 0, 12, 6));

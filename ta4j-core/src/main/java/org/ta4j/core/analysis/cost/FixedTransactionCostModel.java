@@ -28,7 +28,6 @@ import org.ta4j.core.Trade;
 
 import java.util.Objects;
 
-
 public class FixedTransactionCostModel implements CostModel {
 
     private static final long serialVersionUID = 3486293523619720786L;

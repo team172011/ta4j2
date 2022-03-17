@@ -26,7 +26,6 @@ package org.ta4j.core.indicators.helpers;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.AbstractIndicator;
 
-
 /**
  * Close price indicator.
  */

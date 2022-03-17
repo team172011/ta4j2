@@ -26,7 +26,6 @@ package org.ta4j.core.indicators;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.numeric.NumericIndicator;
 
-
 /**
  * Hull moving average (HMA) indicator.
  *
@@ -45,7 +44,8 @@ public class HMAIndicator extends CachedIndicator<Double> {
         WMAIndicator halfWma = new WMAIndicator(indicator, barCount / 2);
         WMAIndicator origWma = new WMAIndicator(indicator, barCount);
 
-        Indicator<Double> indicatorForSqrtWma = NumericIndicator.of(NumericIndicator.of(halfWma).multipliedBy(2).minus(origWma));
+        Indicator<Double> indicatorForSqrtWma = NumericIndicator
+                .of(NumericIndicator.of(halfWma).multipliedBy(2).minus(origWma));
         sqrtWma = new WMAIndicator(indicatorForSqrtWma, (int) Math.sqrt(barCount));
     }
 

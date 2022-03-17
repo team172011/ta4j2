@@ -325,7 +325,7 @@ public class ConvergenceDivergenceIndicator extends CachedIndicator<Boolean> {
         boolean isConvergent = cc.getValue(index) >= (minStrength);
 
         Double slope = calculateSlopeRel(index);
-        boolean isNegative = slope <= Math.abs(minSlope)*-1;
+        boolean isNegative = slope <= Math.abs(minSlope) * -1;
 
         return isConvergent && isNegative;
     }
@@ -337,7 +337,7 @@ public class ConvergenceDivergenceIndicator extends CachedIndicator<Boolean> {
     private Boolean calculatePositiveDivergence(int index) {
 
         CorrelationCoefficientIndicator cc = new CorrelationCoefficientIndicator(ref, other, barCount);
-        boolean isDivergent = cc.getValue(index) <= (minStrength*-1);
+        boolean isDivergent = cc.getValue(index) <= (minStrength * -1);
 
         if (isDivergent) {
             // If "isDivergent" and "ref" is positive, then "other" must be negative.

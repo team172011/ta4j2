@@ -29,5 +29,4 @@ import org.ta4j.core.AbstractIndicatorTest;
 
 public abstract class AbstractCriterionTest extends AbstractIndicatorTest {
 
-
 }

@@ -28,7 +28,6 @@ import org.ta4j.core.indicators.RecursiveCachedIndicator;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * Indicator-Pearson-Correlation
  *
@@ -61,32 +60,31 @@ public class PearsonCorrelationIndicator extends RecursiveCachedIndicator<Double
 
         double n = barCount;
 
-        double Sx =0;
-        double Sy =0;
-        double Sxx =0;
-        double Syy =0;
-        double Sxy =0;
+        double Sx = 0;
+        double Sy = 0;
+        double Sxx = 0;
+        double Syy = 0;
+        double Sxy = 0;
 
         for (int i = Math.max(getBarSeries().getBeginIndex(), index - barCount + 1); i <= index; i++) {
 
-            Double x = indicator1.getValue(i);
-            Double y = indicator2.getValue(i);
+            double x = indicator1.getValue(i);
+            double y = indicator2.getValue(i);
 
-            Sx = Sx+(x);
-            Sy = Sy+(y);
-            Sxy = Sxy+(x*(y));
-            Sxx = Sxx+(x*(x));
-            Syy = Syy+(y*(y));
+            Sx = Sx + (x);
+            Sy = Sy + (y);
+            Sxy = Sxy + (x * (y));
+            Sxx = Sxx + (x * (x));
+            Syy = Syy + (y * (y));
         }
 
         // (n * Sxx - Sx * Sx) * (n * Syy - Sy * Sy)
-        Double toSqrt = (n*(Sxx) - (Sx*(Sx)))
-                *(n*(Syy) - (Sy*(Sy)));
+        double toSqrt = (n * (Sxx) - (Sx * (Sx))) * (n * (Syy) - (Sy * (Sy)));
 
-        if (toSqrt> ((0))) {
+        if (toSqrt > ((0))) {
             // pearson = (n * Sxy - Sx * Sy) / sqrt((n * Sxx - Sx * Sx) * (n * Syy - Sy *
             // Sy))
-            return (n*(Sxy) - (Sx*(Sy))) / Math.sqrt(toSqrt);
+            return (n * (Sxy) - (Sx * (Sy))) / Math.sqrt(toSqrt);
         }
 
         return NaN;

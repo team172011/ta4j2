@@ -27,7 +27,6 @@ import org.ta4j.core.Indicator;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.indicators.helpers.HighestValueIndicator;
 
-
 /**
  * Indicator-highest-indicator rule.
  *

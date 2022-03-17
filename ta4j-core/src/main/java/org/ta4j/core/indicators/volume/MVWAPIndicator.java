@@ -27,7 +27,6 @@ import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.CachedIndicator;
 import org.ta4j.core.indicators.SMAIndicator;
 
-
 /**
  * The Moving volume weighted average price (MVWAP) Indicator.
  * 

@@ -29,7 +29,6 @@ import org.ta4j.core.indicators.helpers.HighestValueIndicator;
 import org.ta4j.core.indicators.helpers.LowPriceIndicator;
 import org.ta4j.core.indicators.helpers.LowestValueIndicator;
 
-
 /**
  * The "CHOP" index is used to indicate side-ways markets see <a href=
  * "https://www.tradingview.com/wiki/Choppiness_Index_(CHOP)">https://www.tradingview.com/wiki/Choppiness_Index_(CHOP)</a>
@@ -71,12 +70,12 @@ public class ChopIndicator extends CachedIndicator<Double> {
 
     @Override
     public Double calculate(int index) {
-        Double summ = atrIndicator.getValue(index);
+        double summ = atrIndicator.getValue(index);
         for (int i = 1; i < timeFrame; ++i) {
-            summ = summ+(atrIndicator.getValue(index - i));
+            summ = summ + (atrIndicator.getValue(index - i));
         }
-        Double a = summ / ((hvi.getValue(index) - (lvi.getValue(index))));
+        double a = summ / ((hvi.getValue(index) - (lvi.getValue(index))));
         // TODO: implement Num.log10(Num)
-        return scaleUpTo*(Math.log10(a)) / (log10n);
+        return scaleUpTo * (Math.log10(a)) / (log10n);
     }
 }

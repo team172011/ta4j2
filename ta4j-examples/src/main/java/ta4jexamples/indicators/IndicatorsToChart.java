@@ -45,7 +45,6 @@ import org.ta4j.core.indicators.bollinger.BollingerBandsUpperIndicator;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.indicators.statistics.StandardDeviationIndicator;
 
-
 import ta4jexamples.loaders.CsvBarsLoader;
 
 /**

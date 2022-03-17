@@ -33,14 +33,12 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class PVIIndicatorTest extends AbstractIndicatorTest {
-
 
     @Test
     public void getValue() {
 
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(new MockBar(1355.69, 2739));
         bars.add(new MockBar(1325.51, 3119));
         bars.add(new MockBar(1335.02, 3466));

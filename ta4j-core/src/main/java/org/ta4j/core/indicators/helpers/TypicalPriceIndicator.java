@@ -27,7 +27,6 @@ import org.ta4j.core.Bar;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Typical price indicator.
  */
@@ -43,6 +42,6 @@ public class TypicalPriceIndicator extends CachedIndicator<Double> {
         final double highPrice = bar.getHighPrice();
         final double lowPrice = bar.getLowPrice();
         final double closePrice = bar.getClosePrice();
-        return (highPrice+ lowPrice + closePrice) / 3;
+        return (highPrice + lowPrice + closePrice) / 3;
     }
 }

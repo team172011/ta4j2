@@ -26,7 +26,6 @@ package org.ta4j.core.indicators.helpers;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * True range indicator.
  */
@@ -38,11 +37,11 @@ public class TRIndicator extends CachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        Double ts = getBarSeries().getBar(index).getHighPrice() - (getBarSeries().getBar(index).getLowPrice());
-        Double ys = index == 0 ? 0
+        final double ts = getBarSeries().getBar(index).getHighPrice() - (getBarSeries().getBar(index).getLowPrice());
+        final double ys = index == 0 ? 0
                 : getBarSeries().getBar(index).getHighPrice() - (getBarSeries().getBar(index - 1).getClosePrice());
-        Double yst = index == 0 ? 0
+        final double yst = index == 0 ? 0
                 : getBarSeries().getBar(index - 1).getClosePrice() - (getBarSeries().getBar(index).getLowPrice());
-        return Math.max(Math.max(Math.abs(ts), (Math.abs(ys))),(Math.abs(yst)));
+        return Math.max(Math.max(Math.abs(ts), (Math.abs(ys))), (Math.abs(yst)));
     }
 }

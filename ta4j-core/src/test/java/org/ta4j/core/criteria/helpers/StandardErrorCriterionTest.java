@@ -33,21 +33,16 @@ import org.ta4j.core.criteria.OpenedPositionUtils;
 import org.ta4j.core.criteria.pnl.ProfitLossCriterion;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
 
 public class StandardErrorCriterionTest extends AbstractCriterionTest {
 
     @Test
     public void calculateStandardErrorPnL() {
         MockBarSeries series = new MockBarSeries(100, 105, 110, 100, 95, 105);
-        TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series, 1d),
-                Trade.sellAt(2, series, 1d), Trade.buyAt(3, series, 1d),
-                Trade.sellAt(5, series, 1d));
+        TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series, 1d), Trade.sellAt(2, series, 1d),
+                Trade.buyAt(3, series, 1d), Trade.sellAt(5, series, 1d));
 
         AnalysisCriterion criterion = new StandardErrorCriterion(new ProfitLossCriterion());
         assertEquals(1.7677669529663687, criterion.calculate(series, tradingRecord));

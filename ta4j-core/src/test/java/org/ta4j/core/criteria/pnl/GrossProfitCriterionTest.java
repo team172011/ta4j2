@@ -27,7 +27,6 @@ import org.junit.Test;
 import org.ta4j.core.criteria.AbstractCriterionTest;
 import org.ta4j.core.criteria.OpenedPositionUtils;
 
-
 public class GrossProfitCriterionTest extends AbstractCriterionTest {
 
     @Test

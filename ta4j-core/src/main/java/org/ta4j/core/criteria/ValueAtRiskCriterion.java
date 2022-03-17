@@ -31,7 +31,6 @@ import org.ta4j.core.analysis.Returns;
 import java.util.Collections;
 import java.util.List;
 
-
 /**
  * Value at Risk criterion.
  *
@@ -99,6 +98,6 @@ public class ValueAtRiskCriterion extends AbstractAnalysisCriterion {
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
         // because it represents a loss, VaR is non-positive
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > criterionValue2;
     }
 }

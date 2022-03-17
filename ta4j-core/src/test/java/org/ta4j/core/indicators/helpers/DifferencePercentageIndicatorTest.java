@@ -34,8 +34,8 @@ public class DifferencePercentageIndicatorTest extends AbstractIndicatorTest {
     @Test
     public void getValueWithoutThreshold() {
         BarSeries series = new MockBarSeries();
-        FixedIndicator<Double> mockIndicator = new FixedIndicator<>(series, 100d, 101d, 98.98d,
-                (102.186952), (91.9682568), (100.5213046824), (101.526517729224));
+        FixedIndicator<Double> mockIndicator = new FixedIndicator<>(series, 100d, 101d, 98.98d, (102.186952),
+                (91.9682568), (100.5213046824), (101.526517729224));
 
         percentageChangeIndicator = new DifferencePercentageIndicator(mockIndicator);
         assertEquals(Double.NaN, percentageChangeIndicator.getValue(0));
@@ -50,9 +50,8 @@ public class DifferencePercentageIndicatorTest extends AbstractIndicatorTest {
     @Test
     public void getValueWithNumThreshold() {
         BarSeries series = new MockBarSeries();
-        FixedIndicator<Double> mockIndicator = new FixedIndicator<>(series, (1000d), (1010d), (1020d),
-                (1050d), (1060.5), (1081.5), (1102.5), (1091.475), (1113.525),
-                (1036.35), (1067.4405));
+        FixedIndicator<Double> mockIndicator = new FixedIndicator<>(series, (1000d), (1010d), (1020d), (1050d),
+                (1060.5), (1081.5), (1102.5), (1091.475), (1113.525), (1036.35), (1067.4405));
 
         percentageChangeIndicator = new DifferencePercentageIndicator(mockIndicator, (5));
         assertEquals(Double.NaN, percentageChangeIndicator.getValue(0));
@@ -71,8 +70,8 @@ public class DifferencePercentageIndicatorTest extends AbstractIndicatorTest {
     @Test
     public void getValueWithNumberThreshold() {
         BarSeries series = new MockBarSeries();
-        FixedIndicator<Double> mockIndicator = new FixedIndicator<Double>(series, (1000d), (1000d), (1010d),
-                (1025d), (1038.325));
+        FixedIndicator<Double> mockIndicator = new FixedIndicator<>(series, (1000d), (1000d), (1010d), (1025d),
+                (1038.325));
 
         percentageChangeIndicator = new DifferencePercentageIndicator(mockIndicator, 1.5);
         assertEquals(Double.NaN, percentageChangeIndicator.getValue(0));

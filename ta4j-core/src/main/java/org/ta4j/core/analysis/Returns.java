@@ -28,13 +28,11 @@ import org.ta4j.core.Indicator;
 import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import static java.lang.Double.NaN;
-
 
 /**
  * The return rates.
@@ -43,7 +41,7 @@ import static java.lang.Double.NaN;
  */
 public class Returns implements Indicator<Double> {
 
-    public enum  ReturnType {
+    public enum ReturnType {
         LOG {
             @Override
             public Double calculate(Double xNew, Double xOld) {
@@ -170,7 +168,7 @@ public class Returns implements Indicator<Double> {
             if (position.getEntry().isBuy()) {
                 strategyReturn = assetReturn;
             } else {
-                strategyReturn = assetReturn*(-1);
+                strategyReturn = assetReturn * (-1);
             }
             values.add(strategyReturn);
             // update base price
@@ -190,7 +188,7 @@ public class Returns implements Indicator<Double> {
         if (position.getEntry().isBuy()) {
             strategyReturn = assetReturn;
         } else {
-            strategyReturn = assetReturn*(-1);
+            strategyReturn = assetReturn * (-1);
         }
         values.add(strategyReturn);
     }

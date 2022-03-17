@@ -31,13 +31,8 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.mocks.MockBar;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
 import java.util.ArrayList;
 import java.util.List;
-
-
-
-
 
 public class IchimokuIndicatorTest extends AbstractIndicatorTest {
 

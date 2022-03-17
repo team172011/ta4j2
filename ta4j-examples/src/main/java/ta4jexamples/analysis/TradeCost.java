@@ -75,9 +75,9 @@ public class TradeCost {
                         + df.format(position.getHoldingCost().doubleValue())));
         System.out.println("------------ Transaction Costs ------------");
         tradingRecord.getPositions()
-                .forEach(position -> System.out.println("Transaction cost for selling: "
-                        + df.format(position.getEntry().getCost()) + " -- Transaction cost for buying: "
-                        + df.format(position.getExit().getCost())));
+                .forEach(position -> System.out
+                        .println("Transaction cost for selling: " + df.format(position.getEntry().getCost())
+                                + " -- Transaction cost for buying: " + df.format(position.getExit().getCost())));
     }
 
     private static Strategy buildShortSellingMomentumStrategy(BarSeries series) {

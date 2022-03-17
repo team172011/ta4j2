@@ -233,7 +233,7 @@ public class Position implements Serializable {
         if (isOpened()) {
             return 0d;
         } else {
-            return getGrossProfit(exit.getPricePerAsset())- getPositionCost();
+            return getGrossProfit(exit.getPricePerAsset()) - getPositionCost();
         }
     }
 
@@ -283,7 +283,7 @@ public class Position implements Serializable {
      * price are <code>NaN</code>, the close price from the supplied
      * {@link BarSeries} is used.
      * 
-     * @param barSeries
+     * @param barSeries the bar series
      * @return the gross return in percent with entry and exit prices from the
      *         barSeries
      */

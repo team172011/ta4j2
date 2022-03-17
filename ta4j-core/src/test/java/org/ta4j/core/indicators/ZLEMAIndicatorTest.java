@@ -30,11 +30,7 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static junit.framework.TestCase.assertEquals;
-
-
 
 public class ZLEMAIndicatorTest extends AbstractIndicatorTest {
 

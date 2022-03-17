@@ -47,15 +47,15 @@ public interface Indicator<T> {
 
     /**
      * Returns all values from an {@link Indicator} as an array of Double s. The
-     * returned Double s could have a minor loss of precise, if {@link Indicator} was
-     * based on {@link Double Double }.
+     * returned Double s could have a minor loss of precise, if {@link Indicator}
+     * was based on {@link Double Double }.
      *
      * @param ref      the indicator
      * @param index    the index
      * @param barCount the barCount
      * @return array of Double s within the barCount
      */
-    static Double[] toDouble (Indicator<Double> ref, int index, int barCount) {
+    static Double[] toDouble(Indicator<Double> ref, int index, int barCount) {
         int startIndex = Math.max(0, index - barCount + 1);
         return IntStream.range(startIndex, startIndex + barCount)
                 .mapToObj(ref::getValue)

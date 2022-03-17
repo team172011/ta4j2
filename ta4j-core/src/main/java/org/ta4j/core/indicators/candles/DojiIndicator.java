@@ -29,7 +29,6 @@ import org.ta4j.core.indicators.CachedIndicator;
 import org.ta4j.core.indicators.SMAIndicator;
 import org.ta4j.core.indicators.numeric.NumericIndicator;
 
-
 /**
  * Doji indicator.
  *

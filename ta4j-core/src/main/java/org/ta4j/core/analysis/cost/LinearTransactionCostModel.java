@@ -26,14 +26,13 @@ package org.ta4j.core.analysis.cost;
 import org.ta4j.core.Position;
 import org.ta4j.core.Trade;
 
-
 public class LinearTransactionCostModel implements CostModel {
 
     private static final long serialVersionUID = -8808559507754156097L;
     /**
      * Slope of the linear model - fee per position
      */
-    private double feePerPosition;
+    private final double feePerPosition;
 
     /**
      * Constructor. (feePerPosition * x)
@@ -66,13 +65,13 @@ public class LinearTransactionCostModel implements CostModel {
      */
     @Override
     public double calculate(Position position) {
-        Double totalPositionCost = null;
+        double totalPositionCost = 0;
         Trade entryTrade = position.getEntry();
         if (entryTrade != null) {
             // transaction costs of entry trade
             totalPositionCost = entryTrade.getCost();
             if (position.getExit() != null) {
-                totalPositionCost = totalPositionCost+(position.getExit().getCost());
+                totalPositionCost = totalPositionCost + (position.getExit().getCost());
             }
         }
         return totalPositionCost;

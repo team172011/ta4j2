@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * WMA indicator.
  */
@@ -46,11 +45,11 @@ public class WMAIndicator extends CachedIndicator<Double> {
             return indicator.getValue(0);
         }
 
-        double value =0;
+        double value = 0;
         int loopLength = (index - barCount < 0) ? index + 1 : barCount;
         int actualIndex = index;
         for (int i = loopLength; i > 0; i--) {
-            value = value+((i)*(indicator.getValue(actualIndex)));
+            value = value + ((i) * (indicator.getValue(actualIndex)));
             actualIndex--;
         }
 

@@ -34,10 +34,8 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 
 public class ThreeWhiteSoldiersIndicatorTest extends AbstractIndicatorTest {
 
@@ -45,7 +43,7 @@ public class ThreeWhiteSoldiersIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         // open, close, high, low
         bars.add(new MockBar(19, 19, 22, 15));
         bars.add(new MockBar(10, 18, 20, 8));

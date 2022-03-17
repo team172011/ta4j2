@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * Rate of change (ROCIndicator) indicator. Aka. Momentum
  *
@@ -57,7 +56,7 @@ public class ROCIndicator extends CachedIndicator<Double> {
         int nIndex = Math.max(index - barCount, 0);
         double nPeriodsAgoValue = indicator.getValue(nIndex);
         double currentValue = indicator.getValue(index);
-        return ((currentValue - nPeriodsAgoValue) / nPeriodsAgoValue)*100;
+        return ((currentValue - nPeriodsAgoValue) / nPeriodsAgoValue) * 100;
     }
 
     @Override

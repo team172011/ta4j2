@@ -27,9 +27,6 @@ import org.junit.Test;
 import org.ta4j.core.*;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
-
 public class NumberOfBarsCriterionTest extends AbstractCriterionTest {
 
     @Test

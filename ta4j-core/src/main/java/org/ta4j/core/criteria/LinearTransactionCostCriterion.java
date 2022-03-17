@@ -29,7 +29,6 @@ import org.ta4j.core.Trade;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.pnl.GrossReturnCriterion;
 
-
 /**
  * A linear transaction cost criterion.
  *
@@ -47,7 +46,8 @@ public class LinearTransactionCostCriterion extends AbstractAnalysisCriterion {
 
     /**
      * Constructor. (a * x)
-     *  @param initialAmount the initially traded amount
+     * 
+     * @param initialAmount the initially traded amount
      * @param a             the a coefficient (e.g. 0.005 for 0.5% per {@link Trade
      *                      trade})
      */
@@ -136,8 +136,7 @@ public class LinearTransactionCostCriterion extends AbstractAnalysisCriterion {
                     // To calculate the new traded amount:
                     // - Remove the cost of the first trade
                     // - Multiply by the profit ratio
-                    double newTradedAmount = (initialAmount - totalTradeCost)
-                            * grossReturn.calculate(series, position);
+                    double newTradedAmount = (initialAmount - totalTradeCost) * grossReturn.calculate(series, position);
                     totalTradeCost = totalTradeCost + getTradeCost(position.getExit(), newTradedAmount);
                 }
             }

@@ -37,9 +37,10 @@ import java.util.List;
 public class DojiIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries series;
+
     @Before
     public void setUp() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         // open, close, high, low
         bars.add(new MockBar(19, 19, 22, 16));
         bars.add(new MockBar(10, 18, 20, 10));

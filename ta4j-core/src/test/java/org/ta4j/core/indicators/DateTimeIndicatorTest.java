@@ -35,9 +35,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
-
 import static org.junit.Assert.assertEquals;
-
 
 public class DateTimeIndicatorTest extends AbstractIndicatorTest {
 

@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * The Kaufman's Adaptive Moving Average (KAMA) Indicator.
  * 
@@ -86,7 +85,7 @@ public class KAMAIndicator extends RecursiveCachedIndicator<Double> {
          */
         int startChangeIndex = Math.max(0, index - barCountEffectiveRatio);
         double change = Math.abs(currentPrice - price.getValue(startChangeIndex));
-        double volatility =0;
+        double volatility = 0;
         for (int i = startChangeIndex; i < index; i++) {
             volatility = volatility + Math.abs(price.getValue(i + 1) - price.getValue(i));
         }

@@ -26,7 +26,6 @@ package org.ta4j.core.rules;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.TradingRecord;
 
-
 /**
  * Indicator-falling-indicator rule.
  *

@@ -44,7 +44,7 @@ import java.util.stream.IntStream;
 import static org.junit.Assert.*;
 import static org.ta4j.core.AbstractIndicatorTest.EPS;
 
-public class BarSeriesTest extends AbstractIndicatorTest{
+public class BarSeriesTest extends AbstractIndicatorTest {
 
     private BarSeries defaultSeries;
     private BarSeries subSeries;
@@ -64,10 +64,7 @@ public class BarSeriesTest extends AbstractIndicatorTest{
 
         defaultName = "Series Name";
 
-        defaultSeries = new BaseBarSeriesBuilder()
-                .withName(defaultName)
-                .withBars(bars)
-                .build();
+        defaultSeries = new BaseBarSeriesBuilder().withName(defaultName).withBars(bars).build();
 
         subSeries = defaultSeries.getSubSeries(2, 5);
         emptySeries = new BaseBarSeriesBuilder().build();
@@ -249,8 +246,7 @@ public class BarSeriesTest extends AbstractIndicatorTest{
 
     @Test(expected = IllegalArgumentException.class)
     public void addBarWithEndTimePriorToSeriesEndTimeShouldThrowExceptionTest() {
-        defaultSeries.addBar(
-                new MockBar(ZonedDateTime.of(2000, 1, 1, 0, 0, 0, 0, ZoneId.systemDefault()), 99d));
+        defaultSeries.addBar(new MockBar(ZonedDateTime.of(2000, 1, 1, 0, 0, 0, 0, ZoneId.systemDefault()), 99d));
     }
 
     @Test
@@ -317,8 +313,7 @@ public class BarSeriesTest extends AbstractIndicatorTest{
 
     @Test
     public void subSeriesOfMaxBarCountSeriesTest() {
-        final BarSeries series = new BaseBarSeriesBuilder()
-                .withName("Series with maxBar count")
+        final BarSeries series = new BaseBarSeriesBuilder().withName("Series with maxBar count")
                 .withMaxBarCount(20)
                 .build();
         final int timespan = 5;

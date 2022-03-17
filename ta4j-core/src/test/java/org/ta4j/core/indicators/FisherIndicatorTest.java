@@ -34,7 +34,6 @@ import java.time.ZonedDateTime;
 
 import static org.junit.Assert.assertEquals;
 
-
 public class FisherIndicatorTest extends AbstractIndicatorTest {
 
     protected BarSeries series;
@@ -42,49 +41,29 @@ public class FisherIndicatorTest extends AbstractIndicatorTest {
     @Before
     public void setUp() {
 
-        series = new BaseBarSeriesBuilder() .withName("NaN test").build();
+        series = new BaseBarSeriesBuilder().withName("NaN test").build();
         int i = 20;
         // open, close, max, min
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 44.98, 45.05, 45.17, 44.96, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.05, 45.10, 45.15, 44.99, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.11, 45.19, 45.32, 45.11, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.19, 45.14, 45.25, 45.04, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.12, 45.15, 45.20, 45.10, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.15, 45.14, 45.20, 45.10, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.13, 45.10, 45.16, 45.07, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.12, 45.15, 45.22, 45.10, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.15, 45.22, 45.27, 45.14, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.24, 45.43, 45.45, 45.20, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.43, 45.44, 45.50, 45.39, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.43, 45.55, 45.60, 45.35, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.58, 45.55, 45.61, 45.39, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.45, 45.01, 45.55, 44.80, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.03, 44.23, 45.04, 44.17, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 44.23, 43.95, 44.29, 43.81, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 43.91, 43.08, 43.99, 43.08, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 43.07, 43.55, 43.65, 43.06, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i--), 43.56, 43.95, 43.99, 43.53, 0, 1, 0));
-        series.addBar(
-                new MockBar(ZonedDateTime.now().minusSeconds(i), 43.93, 44.47, 44.58, 43.93, 0d, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 44.98, 45.05, 45.17, 44.96, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.05, 45.10, 45.15, 44.99, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.11, 45.19, 45.32, 45.11, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.19, 45.14, 45.25, 45.04, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.12, 45.15, 45.20, 45.10, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.15, 45.14, 45.20, 45.10, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.13, 45.10, 45.16, 45.07, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.12, 45.15, 45.22, 45.10, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.15, 45.22, 45.27, 45.14, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.24, 45.43, 45.45, 45.20, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.43, 45.44, 45.50, 45.39, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.43, 45.55, 45.60, 45.35, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.58, 45.55, 45.61, 45.39, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.45, 45.01, 45.55, 44.80, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 45.03, 44.23, 45.04, 44.17, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 44.23, 43.95, 44.29, 43.81, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 43.91, 43.08, 43.99, 43.08, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 43.07, 43.55, 43.65, 43.06, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 43.56, 43.95, 43.99, 43.53, 0, 1, 0));
+        series.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i), 43.93, 44.47, 44.58, 43.93, 0d, 1, 0));
     }
 
     @Test

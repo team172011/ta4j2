@@ -36,7 +36,7 @@ public class ParabolicSarIndicatorTest extends AbstractIndicatorTest {
 
     @Test
     public void startUpAndDownTrendTest() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
 
         bars.add(new MockBar(74.5, 75.1, 75.11, 74.06));
         bars.add(new MockBar(75.09, 75.9, 76.030000, 74.640000));
@@ -87,10 +87,10 @@ public class ParabolicSarIndicatorTest extends AbstractIndicatorTest {
 
     @Test
     public void startWithDownAndUpTrendTest() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(new MockBar(4261.48, 4285.08, 4485.39, 4200.74)); // The first daily candle of BTCUSDT in
-                                                                                // the Binance cryptocurrency exchange.
-                                                                                // 17 Aug 2017
+                                                                   // the Binance cryptocurrency exchange.
+                                                                   // 17 Aug 2017
         bars.add(new MockBar(4285.08, 4108.37, 4371.52, 3938.77)); // starting with down trend
         bars.add(new MockBar(4108.37, 4139.98, 4184.69, 3850.00)); // hold trend...
         bars.add(new MockBar(4120.98, 4086.29, 4211.08, 4032.62));

@@ -32,12 +32,8 @@ import org.ta4j.core.criteria.AbstractCriterionTest;
 import org.ta4j.core.criteria.OpenedPositionUtils;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
 
 public class AverageProfitCriterionTest extends AbstractCriterionTest {
 
@@ -80,6 +76,7 @@ public class AverageProfitCriterionTest extends AbstractCriterionTest {
 
     @Test
     public void testCalculateOneOpenPositionShouldReturnZero() {
-        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new AverageProfitCriterion(), 0);
+        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new AverageProfitCriterion(),
+                0);
     }
 }

@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.*;
 
-
 /**
  * The Fisher Indicator.
  *
@@ -38,7 +37,7 @@ import org.ta4j.core.indicators.helpers.*;
  *      https://www.investopedia.com/terms/f/fisher-transform.asp</a>
  */
 public class FisherIndicator extends RecursiveCachedIndicator<Double> {
-    
+
     private static final Double VALUE_MAX = 0.999;
     private static final Double VALUE_MIN = -0.999;
 
@@ -89,7 +88,8 @@ public class FisherIndicator extends RecursiveCachedIndicator<Double> {
      * @param gamma    the gamma (usually 0.25 or 0.5)
      * @param delta    the delta (usually 0.5)
      */
-    public FisherIndicator(Indicator<Double> price, int barCount, Double alpha, Double beta, Double gamma, Double delta) {
+    public FisherIndicator(Indicator<Double> price, int barCount, Double alpha, Double beta, Double gamma,
+            Double delta) {
         this(price, barCount, alpha, beta, gamma, delta, 1d, true);
     }
 
@@ -158,7 +158,7 @@ public class FisherIndicator extends RecursiveCachedIndicator<Double> {
                 double maxH = periodHigh.getValue(index);
                 double term1 = ((currentRef - minL) / (maxH - minL)) - 0.5;
                 double term2 = alpha * 2 * term1;
-                double term3 = term2+(beta*(getValue(index - 1)));
+                double term3 = term2 + (beta * (getValue(index - 1)));
                 return term3 / FisherIndicator.this.densityFactor;
             }
         };
@@ -172,14 +172,14 @@ public class FisherIndicator extends RecursiveCachedIndicator<Double> {
 
         double value = intermediateValue.getValue(index);
 
-        if (value> (VALUE_MAX)) {
+        if (value > (VALUE_MAX)) {
             value = VALUE_MAX;
         } else if (value < VALUE_MIN) {
             value = VALUE_MIN;
         }
 
         // Fisher = gamma * Log((1 + Value) / (1 - Value)) + delta * priorFisher
-        double term1 = Math.log((1+value) / (1 - value));
+        double term1 = Math.log((1 + value) / (1 - value));
         double term2 = getValue(index - 1);
         return gamma * term1 + delta * term2;
     }

@@ -30,20 +30,15 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
-
-
-
 public class CMOIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries series;
 
     @Before
     public void setUp() {
-        series = new MockBarSeries(21.27, 22.19, 22.08, 22.47, 22.48, 22.53, 22.23, 21.43, 21.24, 21.29,
-                22.15, 22.39, 22.38, 22.61, 23.36, 24.05, 24.75, 24.83, 23.95, 23.63, 23.82, 23.87, 23.15, 23.19, 23.10,
-                22.65, 22.48, 22.87, 22.93, 22.91);
+        series = new MockBarSeries(21.27, 22.19, 22.08, 22.47, 22.48, 22.53, 22.23, 21.43, 21.24, 21.29, 22.15, 22.39,
+                22.38, 22.61, 23.36, 24.05, 24.75, 24.83, 23.95, 23.63, 23.82, 23.87, 23.15, 23.19, 23.10, 22.65, 22.48,
+                22.87, 22.93, 22.91);
     }
 
     @Test

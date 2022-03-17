@@ -29,13 +29,10 @@ import org.ta4j.core.Position;
 import org.ta4j.core.Trade;
 import org.ta4j.core.Trade.TradeType;
 
-
 import java.util.Random;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
 
 public class FixedTransactionCostModelTest extends AbstractIndicatorTest {
 
@@ -46,7 +43,7 @@ public class FixedTransactionCostModelTest extends AbstractIndicatorTest {
     @Test
     public void calculatePerPositionWhenPositionIsOpen() {
         double positionTrades = 1;
-        Double feePerTrade = RANDOM.nextDouble ();
+        Double feePerTrade = RANDOM.nextDouble();
         FixedTransactionCostModel model = new FixedTransactionCostModel(feePerTrade);
 
         Position position = new Position(TradeType.BUY, model, null);
@@ -59,7 +56,7 @@ public class FixedTransactionCostModelTest extends AbstractIndicatorTest {
     @Test
     public void calculatePerPositionWhenPositionIsClosed() {
         double positionTrades = 2;
-        Double feePerTrade = RANDOM.nextDouble ();
+        Double feePerTrade = RANDOM.nextDouble();
         FixedTransactionCostModel model = new FixedTransactionCostModel(feePerTrade);
 
         int holdingPeriod = 2;
@@ -74,7 +71,7 @@ public class FixedTransactionCostModelTest extends AbstractIndicatorTest {
 
     @Test
     public void calculatePerPrice() {
-        Double feePerTrade = RANDOM.nextDouble ();
+        Double feePerTrade = RANDOM.nextDouble();
         FixedTransactionCostModel model = new FixedTransactionCostModel(feePerTrade);
         Double cost = model.calculate(PRICE, AMOUNT);
 
@@ -83,7 +80,7 @@ public class FixedTransactionCostModelTest extends AbstractIndicatorTest {
 
     @Test
     public void testEquality() {
-        Double randomFee = RANDOM.nextDouble ();
+        Double randomFee = RANDOM.nextDouble();
         FixedTransactionCostModel model = new FixedTransactionCostModel(randomFee);
         CostModel modelSame = new FixedTransactionCostModel(randomFee);
         CostModel modelOther = new LinearTransactionCostModel(randomFee);

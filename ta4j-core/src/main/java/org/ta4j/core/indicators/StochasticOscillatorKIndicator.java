@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.*;
 
-
 /**
  * Stochastic oscillator K.
  *
@@ -50,8 +49,8 @@ public class StochasticOscillatorKIndicator extends CachedIndicator<Double> {
                 new LowPriceIndicator(barSeries));
     }
 
-    public StochasticOscillatorKIndicator(Indicator<Double> indicator, int barCount, HighPriceIndicator highPriceIndicator,
-            LowPriceIndicator lowPriceIndicator) {
+    public StochasticOscillatorKIndicator(Indicator<Double> indicator, int barCount,
+            HighPriceIndicator highPriceIndicator, LowPriceIndicator lowPriceIndicator) {
         super(indicator);
         this.indicator = indicator;
         this.barCount = barCount;
@@ -67,7 +66,7 @@ public class StochasticOscillatorKIndicator extends CachedIndicator<Double> {
         double highestHighPrice = highestHigh.getValue(index);
         double lowestLowPrice = lowestMin.getValue(index);
 
-        return ((indicator.getValue(index) - lowestLowPrice) / (highestHighPrice - lowestLowPrice))*100;
+        return ((indicator.getValue(index) - lowestLowPrice) / (highestHighPrice - lowestLowPrice)) * 100;
     }
 
     @Override

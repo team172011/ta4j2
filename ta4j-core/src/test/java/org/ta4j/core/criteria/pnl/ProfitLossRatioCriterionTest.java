@@ -73,6 +73,7 @@ public class ProfitLossRatioCriterionTest extends AbstractCriterionTest {
 
     @Test
     public void testCalculateOneOpenPositionShouldReturnZero() {
-        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new ProfitLossRatioCriterion(), 0);
+        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new ProfitLossRatioCriterion(),
+                0);
     }
 }

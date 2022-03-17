@@ -28,7 +28,6 @@ import org.ta4j.core.TradingRecord;
 import org.ta4j.core.indicators.helpers.ConstantIndicator;
 import org.ta4j.core.indicators.helpers.CrossIndicator;
 
-
 /**
  * Crossed-down indicator rule.
  *

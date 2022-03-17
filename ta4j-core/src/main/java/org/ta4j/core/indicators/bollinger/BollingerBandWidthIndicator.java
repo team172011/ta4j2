@@ -25,7 +25,6 @@ package org.ta4j.core.indicators.bollinger;
 
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Bollinger BandWidth indicator.
  *
@@ -56,6 +55,6 @@ public class BollingerBandWidthIndicator extends CachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        return ((bbu.getValue(index) - bbl.getValue(index)) / bbm.getValue(index))*100;
+        return ((bbu.getValue(index) - bbl.getValue(index)) / bbm.getValue(index)) * 100;
     }
 }

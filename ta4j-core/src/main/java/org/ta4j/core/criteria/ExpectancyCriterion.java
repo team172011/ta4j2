@@ -28,7 +28,6 @@ import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.pnl.ProfitLossRatioCriterion;
 
-
 /**
  * Expectancy criterion (Kelly Criterion).
  *
@@ -48,34 +47,34 @@ public class ExpectancyCriterion extends AbstractAnalysisCriterion {
 
     @Override
     public double calculate(BarSeries series, Position position) {
-        Double profitLossRatio = profitLossRatioCriterion.calculate(series, position);
-        Double numberOfPositions = numberOfPositionsCriterion.calculate(series, position);
-        Double numberOfWinningPositions = numberOfWinningPositionsCriterion.calculate(series, position);
+        double profitLossRatio = profitLossRatioCriterion.calculate(series, position);
+        double numberOfPositions = numberOfPositionsCriterion.calculate(series, position);
+        double numberOfWinningPositions = numberOfWinningPositionsCriterion.calculate(series, position);
         return calculate(series, profitLossRatio, numberOfWinningPositions, numberOfPositions);
     }
 
     @Override
     public double calculate(BarSeries series, TradingRecord tradingRecord) {
-        Double profitLossRatio = profitLossRatioCriterion.calculate(series, tradingRecord);
-        Double numberOfPositions = numberOfPositionsCriterion.calculate(series, tradingRecord);
-        Double numberOfWinningPositions = numberOfWinningPositionsCriterion.calculate(series, tradingRecord);
+        double profitLossRatio = profitLossRatioCriterion.calculate(series, tradingRecord);
+        double numberOfPositions = numberOfPositionsCriterion.calculate(series, tradingRecord);
+        double numberOfWinningPositions = numberOfWinningPositionsCriterion.calculate(series, tradingRecord);
         return calculate(series, profitLossRatio, numberOfWinningPositions, numberOfPositions);
     }
 
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > (criterionValue2);
     }
 
-    private Double calculate(BarSeries series, Double profitLossRatio, Double numberOfWinningPositions,
-            Double numberOfAllPositions) {
-        if (numberOfAllPositions == 0|| profitLossRatio == 0) {
+    private Double calculate(BarSeries series, double profitLossRatio, double numberOfWinningPositions,
+                             double numberOfAllPositions) {
+        if (numberOfAllPositions == 0 || profitLossRatio == 0) {
             return 0d;
         }
         // Expectancy = (1 + AW/AL) * (ProbabilityToWinOnePosition - 1)
-        Double probabiltyToWinOnePosition = numberOfWinningPositions / (numberOfAllPositions);
-        return (1+(profitLossRatio))*((probabiltyToWinOnePosition) - 1);
+        double probabiltyToWinOnePosition = numberOfWinningPositions / (numberOfAllPositions);
+        return (1 + profitLossRatio) * (probabiltyToWinOnePosition - 1);
     }
 
 }

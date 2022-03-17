@@ -34,9 +34,7 @@ import java.time.ZonedDateTime;
 
 import static org.junit.Assert.assertEquals;
 
-
 public class ATRIndicatorTest extends AbstractIndicatorTest {
-
 
     @Test
     public void testDummy() throws Exception {
@@ -49,15 +47,10 @@ public class ATRIndicatorTest extends AbstractIndicatorTest {
         ATRIndicator indicator = new ATRIndicator(series, 3);
 
         assertEquals(7d, indicator.getValue(0), TestUtils.GENERAL_OFFSET);
-        assertEquals(6d / 3 + (1 - 1d / 3) * indicator.getValue(0), indicator.getValue(1),
-                TestUtils.GENERAL_OFFSET);
-        assertEquals(9d / 3 + (1 - 1d / 3) * indicator.getValue(1), indicator.getValue(2),
-                TestUtils.GENERAL_OFFSET);
-        assertEquals(3d / 3 + (1 - 1d / 3) * indicator.getValue(2), indicator.getValue(3),
-                TestUtils.GENERAL_OFFSET);
-        assertEquals(15d / 3 + (1 - 1d / 3) * indicator.getValue(3), indicator.getValue(4),
-                TestUtils.GENERAL_OFFSET);
+        assertEquals(6d / 3 + (1 - 1d / 3) * indicator.getValue(0), indicator.getValue(1), TestUtils.GENERAL_OFFSET);
+        assertEquals(9d / 3 + (1 - 1d / 3) * indicator.getValue(1), indicator.getValue(2), TestUtils.GENERAL_OFFSET);
+        assertEquals(3d / 3 + (1 - 1d / 3) * indicator.getValue(2), indicator.getValue(3), TestUtils.GENERAL_OFFSET);
+        assertEquals(15d / 3 + (1 - 1d / 3) * indicator.getValue(3), indicator.getValue(4), TestUtils.GENERAL_OFFSET);
     }
-
 
 }

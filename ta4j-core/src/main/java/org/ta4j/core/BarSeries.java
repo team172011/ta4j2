@@ -126,9 +126,9 @@ public interface BarSeries extends Serializable {
     /**
      * Sets the maximum Double ber of bars that will be retained in the series.
      *
-     * If a new bar is added to the series such that the Double ber of bars will exceed
-     * the maximum bar count, then the FIRST bar in the series is automatically
-     * removed, ensuring that the maximum bar count is not exceeded.
+     * If a new bar is added to the series such that the Double ber of bars will
+     * exceed the maximum bar count, then the FIRST bar in the series is
+     * automatically removed, ensuring that the maximum bar count is not exceeded.
      *
      * @param maximumBarCount the maximum bar count
      */
@@ -148,8 +148,8 @@ public interface BarSeries extends Serializable {
      * Exceeding bars are removed.
      *
      * @param bar the bar to be added
-     * @apiNote use #addBar(Duration, ZonedDateTime, Double , Double , Double , Double , Double ) to add
-     *          bar data directly
+     * @apiNote use #addBar(Duration, ZonedDateTime, Double , Double , Double ,
+     *          Double , Double ) to add bar data directly
      * @see BarSeries#setMaximumBarCount(int)
      */
     default void addBar(Bar bar) {
@@ -168,8 +168,8 @@ public interface BarSeries extends Serializable {
      * @param replace true to replace the latest bar. Some exchange provide
      *                continuous new bar data in the time period. (eg. 1s in 1m
      *                Duration)<br>
-     * @apiNote use #addBar(Duration, ZonedDateTime, Double , Double , Double , Double , Double ) to add
-     *          bar data directly
+     * @apiNote use #addBar(Duration, ZonedDateTime, Double , Double , Double ,
+     *          Double , Double ) to add bar data directly
      * @see BarSeries#setMaximumBarCount(int)
      */
     void addBar(Bar bar, boolean replace);
@@ -182,12 +182,13 @@ public interface BarSeries extends Serializable {
      */
     void addBar(Duration timePeriod, ZonedDateTime endTime);
 
-
-    default void addBar(ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice, Double volume) {
+    default void addBar(ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice,
+            Double volume) {
         this.addBar(endTime, openPrice, highPrice, lowPrice, closePrice, volume, 0d);
     }
 
-    default void addBar(ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice, int volume) {
+    default void addBar(ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice,
+            int volume) {
         this.addBar(endTime, openPrice, highPrice, lowPrice, closePrice, (double) volume, 0d);
     }
 
@@ -202,8 +203,8 @@ public interface BarSeries extends Serializable {
      * @param volume     the volume (default zero)
      * @param amount     the amount (default zero)
      */
-    void addBar(ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice, Double volume,
-                Double amount);
+    void addBar(ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice,
+            Double volume, Double amount);
 
     /**
      * Adds a new <code>Bar</code> to the bar series.
@@ -215,8 +216,8 @@ public interface BarSeries extends Serializable {
      * @param closePrice the last/close price
      * @param volume     the volume (default zero)
      */
-    void addBar(Duration timePeriod, ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice,
-                Double volume);
+    void addBar(Duration timePeriod, ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice,
+            Double closePrice, Double volume);
 
     /**
      * Adds a new <code>Bar</code> to the bar series.
@@ -230,8 +231,8 @@ public interface BarSeries extends Serializable {
      * @param volume     the volume (default zero)
      * @param amount     the amount (default zero)
      */
-    void addBar(Duration timePeriod, ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice, Double closePrice,
-                Double volume, Double amount);
+    void addBar(Duration timePeriod, ZonedDateTime endTime, Double openPrice, Double highPrice, Double lowPrice,
+            Double closePrice, Double volume, Double amount);
 
     /**
      * Adds a trade at the end of bar period.
@@ -247,7 +248,6 @@ public interface BarSeries extends Serializable {
      * @param price the price for the bar
      */
     void addPrice(double price);
-
 
     /**
      * Returns a new {@link BarSeries} instance that is a subset of this BarSeries

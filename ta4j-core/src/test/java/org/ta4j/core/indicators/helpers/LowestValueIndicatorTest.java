@@ -34,7 +34,6 @@ import java.time.ZonedDateTime;
 
 import static java.lang.Double.NaN;
 
-
 public class LowestValueIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries data;
@@ -78,7 +77,7 @@ public class LowestValueIndicatorTest extends AbstractIndicatorTest {
     public void onlyNaNValues() {
         BaseBarSeries series = new BaseBarSeries("NaN test");
         for (long i = 0; i <= 10000; i++) {
-            series.addBar(ZonedDateTime.now() .plusDays(i), NaN, NaN, NaN, NaN, 0);
+            series.addBar(ZonedDateTime.now().plusDays(i), NaN, NaN, NaN, NaN, 0);
         }
 
         LowestValueIndicator lowestValue = new LowestValueIndicator(new ClosePriceIndicator(series), 5);
@@ -91,7 +90,7 @@ public class LowestValueIndicatorTest extends AbstractIndicatorTest {
     public void naNValuesInIntervall() {
         BaseBarSeries series = new BaseBarSeries("NaN test");
         for (long i = 0; i <= 10; i++) { // (NaN, 1, NaN, 2, NaN, 3, NaN, 4, ...)
-            series.addBar(ZonedDateTime.now() .plusDays(i), NaN, NaN, NaN, NaN, 0);
+            series.addBar(ZonedDateTime.now().plusDays(i), NaN, NaN, NaN, NaN, 0);
         }
 
         LowestValueIndicator lowestValue = new LowestValueIndicator(new ClosePriceIndicator(series), 2);

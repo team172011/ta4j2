@@ -30,7 +30,6 @@ import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.helpers.StandardDeviationCriterion;
 import org.ta4j.core.criteria.pnl.ProfitLossCriterion;
 
-
 /**
  * The SQN ("System Quality Number") Criterion.
  * 
@@ -86,15 +85,15 @@ public class SqnCriterion extends AbstractAnalysisCriterion {
 
     @Override
     public double calculate(BarSeries series, Position position) {
-        Double numberOfPositions = numberOfPositionsCriterion.calculate(series, position);
-        Double pnl = criterion.calculate(series, position);
-        Double avgPnl = pnl / (numberOfPositions);
-        Double stdDevPnl = standardDeviationCriterion.calculate(series, position);
+        double numberOfPositions = numberOfPositionsCriterion.calculate(series, position);
+        double pnl = criterion.calculate(series, position);
+        double avgPnl = pnl / numberOfPositions;
+        double stdDevPnl = standardDeviationCriterion.calculate(series, position);
         if (stdDevPnl == 0) {
             return 0d;
         }
         // SQN = (Average (PnL) / StdDev(PnL)) * SquareRoot(NumberOfTrades)
-        return avgPnl / (stdDevPnl)*(Math.sqrt(numberOfPositions));
+        return avgPnl / stdDevPnl * Math.sqrt(numberOfPositions);
     }
 
     @Override
@@ -103,22 +102,22 @@ public class SqnCriterion extends AbstractAnalysisCriterion {
             return 0d;
         double numberOfPositions = numberOfPositionsCriterion.calculate(series, tradingRecord);
         double pnl = criterion.calculate(series, tradingRecord);
-        double avgPnl = pnl / (numberOfPositions);
+        double avgPnl = pnl / numberOfPositions;
         double stdDevPnl = standardDeviationCriterion.calculate(series, tradingRecord);
         if (stdDevPnl == 0) {
             return 0d;
         }
-        if (nPositions != null && numberOfPositions> (100)) {
+        if (nPositions != null && numberOfPositions > (100)) {
             numberOfPositions = nPositions;
         }
         // SQN = (Average (PnL) / StdDev(PnL)) * SquareRoot(NumberOfTrades)
-        return avgPnl / (stdDevPnl)*(Math.sqrt(numberOfPositions));
+        return avgPnl / stdDevPnl * Math.sqrt(numberOfPositions);
     }
 
     /** The higher the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > criterionValue2;
     }
 
 }

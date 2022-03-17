@@ -26,7 +26,6 @@ package org.ta4j.core.indicators;
 import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.SumIndicator;
 
-
 /**
  * Coppock Curve indicator.
  *
@@ -58,7 +57,8 @@ public class CoppockCurveIndicator extends CachedIndicator<Double> {
      * @param shortRoCBarCount the time frame for short term RoC
      * @param wmaBarCount      the time frame (for WMA)
      */
-    public CoppockCurveIndicator(Indicator<Double> indicator, int longRoCBarCount, int shortRoCBarCount, int wmaBarCount) {
+    public CoppockCurveIndicator(Indicator<Double> indicator, int longRoCBarCount, int shortRoCBarCount,
+            int wmaBarCount) {
         super(indicator);
         SumIndicator sum = new SumIndicator(new ROCIndicator(indicator, longRoCBarCount),
                 new ROCIndicator(indicator, shortRoCBarCount));

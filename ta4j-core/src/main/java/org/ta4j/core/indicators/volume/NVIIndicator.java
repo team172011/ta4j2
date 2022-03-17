@@ -27,7 +27,6 @@ import org.ta4j.core.Bar;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.RecursiveCachedIndicator;
 
-
 /**
  * Negative Volume Index (NVI) indicator.
  *
@@ -60,7 +59,7 @@ public class NVIIndicator extends RecursiveCachedIndicator<Double> {
             Double currentPrice = currentBar.getClosePrice();
             Double previousPrice = previousBar.getClosePrice();
             Double priceChangeRatio = (currentPrice - previousPrice) / (previousPrice);
-            return previousValue+(priceChangeRatio*(previousValue));
+            return previousValue + (priceChangeRatio * (previousValue));
         }
         return previousValue;
     }

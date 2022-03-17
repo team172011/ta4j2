@@ -27,7 +27,6 @@ import org.ta4j.core.Indicator;
 import org.ta4j.core.indicators.helpers.GainIndicator;
 import org.ta4j.core.indicators.helpers.LossIndicator;
 
-
 /**
  * Relative strength index indicator.
  *

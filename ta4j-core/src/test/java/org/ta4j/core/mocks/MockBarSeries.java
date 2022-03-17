@@ -30,7 +30,6 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * A bar series with sample data. TODO: add Builder
  */
@@ -38,7 +37,7 @@ public class MockBarSeries extends BaseBarSeries {
 
     private static final long serialVersionUID = -1216549934945189371L;
 
-    public MockBarSeries(double ... data) {
+    public MockBarSeries(double... data) {
         super(doublesToBars(data));
     }
 
@@ -66,7 +65,7 @@ public class MockBarSeries extends BaseBarSeries {
         return bars;
     }
 
-    private static List<Bar> doublesToBars(double ... data) {
+    private static List<Bar> doublesToBars(double... data) {
         ArrayList<Bar> bars = new ArrayList<>();
         for (int i = 0; i < data.length; i++) {
             bars.add(new MockBar(ZonedDateTime.now().minusSeconds((data.length + 1 - i)), data[i]));

@@ -34,14 +34,11 @@ import org.ta4j.core.rules.UnderIndicatorRule;
 
 import java.util.Arrays;
 
-
 import static org.junit.Assert.*;
-
 
 public class CachedIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries series;
-    
 
     @Before
     public void setUp() {
@@ -59,8 +56,7 @@ public class CachedIndicatorTest extends AbstractIndicatorTest {
     @Test // should be not null
     public void getValueWithNullBarSeries() {
 
-        ConstantIndicator<Double> constant = new ConstantIndicator<>(
-                new BaseBarSeriesBuilder().build(), 10d);
+        ConstantIndicator<Double> constant = new ConstantIndicator<>(new BaseBarSeriesBuilder().build(), 10d);
         assertEquals(10, constant.getValue(0));
         assertEquals(10, constant.getValue(100));
         assertNotNull(constant.getBarSeries());
@@ -99,8 +95,7 @@ public class CachedIndicatorTest extends AbstractIndicatorTest {
         barSeries.setMaximumBarCount(6);
         // Theoretical values for SMA(2) cache: null, null, 2, 2.5, 3.5, 4.5, 5.5, 6.5
 
-        Strategy strategy = new BaseStrategy(new OverIndicatorRule(sma, 3),
-                new UnderIndicatorRule(sma, 3));
+        Strategy strategy = new BaseStrategy(new OverIndicatorRule(sma, 3), new UnderIndicatorRule(sma, 3));
         // Theoretical shouldEnter results: false, false, false, false, true, true,
         // true, true
         // Theoretical shouldExit results: false, false, true, true, false, false,

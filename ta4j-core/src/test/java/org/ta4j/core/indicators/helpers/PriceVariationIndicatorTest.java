@@ -29,17 +29,12 @@ import org.ta4j.core.AbstractIndicatorTest;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static junit.framework.TestCase.assertEquals;
-
-
 
 public class PriceVariationIndicatorTest extends AbstractIndicatorTest {
 
     private PriceVariationIndicator variationIndicator;
     private BarSeries barSeries;
-
 
     @Before
     public void setUp() {

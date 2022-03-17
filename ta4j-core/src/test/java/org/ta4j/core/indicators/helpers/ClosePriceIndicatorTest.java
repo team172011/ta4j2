@@ -29,10 +29,7 @@ import org.ta4j.core.AbstractIndicatorTest;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static junit.framework.TestCase.assertEquals;
-
 
 public class ClosePriceIndicatorTest extends AbstractIndicatorTest {
     private ClosePriceIndicator closePrice;

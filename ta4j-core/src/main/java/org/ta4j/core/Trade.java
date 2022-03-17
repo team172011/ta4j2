@@ -53,7 +53,7 @@ public class Trade implements Serializable {
      * A BUY corresponds to a <i>BID</i> trade. A SELL corresponds to an <i>ASK</i>
      * trade.
      */
-    public enum  TradeType {
+    public enum TradeType {
 
         BUY {
             @Override
@@ -221,7 +221,7 @@ public class Trade implements Serializable {
      *         from the supplied {@link BarSeries}.
      */
     public double getPricePerAsset(BarSeries barSeries) {
-        if(Double.isNaN(pricePerAsset)) {
+        if (Double.isNaN(pricePerAsset)) {
             return barSeries.getBar(index).getClosePrice();
         }
         return pricePerAsset;

@@ -28,13 +28,10 @@ import org.ta4j.core.*;
 import org.ta4j.core.criteria.pnl.GrossReturnCriterion;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import static java.lang.Double.NaN;
-
 
 public class VersusBuyAndHoldCriterionTest extends AbstractCriterionTest {
 
@@ -95,7 +92,7 @@ public class VersusBuyAndHoldCriterionTest extends AbstractCriterionTest {
 
         AnalysisCriterion buyAndHold = new VersusBuyAndHoldCriterion(new NumberOfBarsCriterion());
 
-        assertEquals(6d / 6d, buyAndHold.calculate(series, tradingRecord));
+        assertEquals(1.0, buyAndHold.calculate(series, tradingRecord));
     }
 
     @Test

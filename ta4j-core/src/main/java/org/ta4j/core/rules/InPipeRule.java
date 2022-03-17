@@ -27,7 +27,6 @@ import org.ta4j.core.Indicator;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.indicators.helpers.ConstantIndicator;
 
-
 /**
  * Indicator-between-indicators rule.
  *
@@ -82,7 +81,7 @@ public class InPipeRule extends AbstractRule {
     /** This rule does not use the {@code tradingRecord}. */
     @Override
     public boolean isSatisfied(int index, TradingRecord tradingRecord) {
-        final boolean satisfied = ref.getValue(index)<=(upper.getValue(index))
+        final boolean satisfied = ref.getValue(index) <= (upper.getValue(index))
                 && ref.getValue(index) >= (lower.getValue(index));
         traceIsSatisfied(index, satisfied);
         return satisfied;

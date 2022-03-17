@@ -32,21 +32,16 @@ import org.ta4j.core.criteria.AbstractCriterionTest;
 import org.ta4j.core.criteria.OpenedPositionUtils;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
 
 public class ProfitLossCriterionTest extends AbstractCriterionTest {
 
     @Test
     public void calculateOnlyWithProfitPositions() {
         MockBarSeries series = new MockBarSeries(100, 105, 110, 100, 95, 105);
-        TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series, (50)),
-                Trade.sellAt(2, series, (50)), Trade.buyAt(3, series, (50)),
-                Trade.sellAt(5, series, (50)));
+        TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series, (50)), Trade.sellAt(2, series, (50)),
+                Trade.buyAt(3, series, (50)), Trade.sellAt(5, series, (50)));
 
         AnalysisCriterion profit = new ProfitLossCriterion();
         assertEquals(500 + 250, profit.calculate(series, tradingRecord));
@@ -55,9 +50,8 @@ public class ProfitLossCriterionTest extends AbstractCriterionTest {
     @Test
     public void calculateOnlyWithLossPositions() {
         MockBarSeries series = new MockBarSeries(100, 95, 100, 80, 85, 70);
-        TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series, (50)),
-                Trade.sellAt(1, series, (50)), Trade.buyAt(2, series, (50)),
-                Trade.sellAt(5, series, (50)));
+        TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series, (50)), Trade.sellAt(1, series, (50)),
+                Trade.buyAt(2, series, (50)), Trade.sellAt(5, series, (50)));
 
         AnalysisCriterion profit = new ProfitLossCriterion();
         assertEquals(-250 - 1500, profit.calculate(series, tradingRecord));
@@ -66,9 +60,8 @@ public class ProfitLossCriterionTest extends AbstractCriterionTest {
     @Test
     public void calculateOnlyWithProfitShortPositions() {
         MockBarSeries series = new MockBarSeries(100, 105, 110, 100, 95, 105);
-        TradingRecord tradingRecord = new BaseTradingRecord(Trade.sellAt(0, series, (50)),
-                Trade.buyAt(2, series, (50)), Trade.sellAt(3, series, (50)),
-                Trade.buyAt(5, series, (50)));
+        TradingRecord tradingRecord = new BaseTradingRecord(Trade.sellAt(0, series, (50)), Trade.buyAt(2, series, (50)),
+                Trade.sellAt(3, series, (50)), Trade.buyAt(5, series, (50)));
 
         AnalysisCriterion profit = new ProfitLossCriterion();
         assertEquals(-(500 + 250), profit.calculate(series, tradingRecord));
@@ -77,9 +70,8 @@ public class ProfitLossCriterionTest extends AbstractCriterionTest {
     @Test
     public void calculateOnlyWithLossShortPositions() {
         MockBarSeries series = new MockBarSeries(100, 95, 100, 80, 85, 70);
-        TradingRecord tradingRecord = new BaseTradingRecord(Trade.sellAt(0, series, (50)),
-                Trade.buyAt(1, series, (50)), Trade.sellAt(2, series, (50)),
-                Trade.buyAt(5, series, (50)));
+        TradingRecord tradingRecord = new BaseTradingRecord(Trade.sellAt(0, series, (50)), Trade.buyAt(1, series, (50)),
+                Trade.sellAt(2, series, (50)), Trade.buyAt(5, series, (50)));
 
         AnalysisCriterion profit = new ProfitLossCriterion();
         assertEquals(250 + 1500, profit.calculate(series, tradingRecord));

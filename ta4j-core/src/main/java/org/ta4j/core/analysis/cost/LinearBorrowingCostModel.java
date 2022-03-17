@@ -28,7 +28,6 @@ import org.ta4j.core.Trade;
 
 import java.util.Objects;
 
-
 public class LinearBorrowingCostModel implements CostModel {
 
     private static final long serialVersionUID = -2839623394737567618L;

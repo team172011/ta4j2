@@ -34,7 +34,6 @@ import java.time.ZonedDateTime;
 
 import static java.lang.Double.NaN;
 
-
 public class HighestValueIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries data;
@@ -75,7 +74,7 @@ public class HighestValueIndicatorTest extends AbstractIndicatorTest {
     public void onlyNaNValues() {
         BaseBarSeries series = new BaseBarSeries("NaN test");
         for (long i = 0; i <= 10000; i++) {
-            series.addBar(ZonedDateTime.now() .plusDays(i), NaN, NaN, NaN, NaN, 0);
+            series.addBar(ZonedDateTime.now().plusDays(i), NaN, NaN, NaN, NaN, 0);
         }
 
         HighestValueIndicator highestValue = new HighestValueIndicator(new ClosePriceIndicator(series), 5);
@@ -89,7 +88,7 @@ public class HighestValueIndicatorTest extends AbstractIndicatorTest {
         BaseBarSeries series = new BaseBarSeries("NaN test");
         for (long i = 0; i <= 10; i++) { // (0, NaN, 2, NaN, 3, NaN, 4, NaN, 5, ...)
             Double closePrice = i % 2 == 0 ? i : NaN;
-            series.addBar(ZonedDateTime.now() .plusDays(i), NaN, NaN, NaN, closePrice, 0);
+            series.addBar(ZonedDateTime.now().plusDays(i), NaN, NaN, NaN, closePrice, 0);
         }
 
         HighestValueIndicator highestValue = new HighestValueIndicator(new ClosePriceIndicator(series), 2);

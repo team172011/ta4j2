@@ -48,7 +48,6 @@ import org.ta4j.core.TradingRecord;
 import org.ta4j.core.analysis.CashFlow;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 
-
 import ta4jexamples.loaders.CsvTradesLoader;
 import ta4jexamples.strategies.MovingMomentumStrategy;
 
@@ -70,8 +69,7 @@ public class CashFlowToChart {
         org.jfree.data.time.TimeSeries chartBarSeries = new org.jfree.data.time.TimeSeries(name);
         for (int i = 0; i < barSeries.getBarCount(); i++) {
             Bar bar = barSeries.getBar(i);
-            chartBarSeries.add(new Minute(new Date(bar.getEndTime().toEpochSecond() * 1000)),
-                    indicator.getValue(i));
+            chartBarSeries.add(new Minute(new Date(bar.getEndTime().toEpochSecond() * 1000)), indicator.getValue(i));
         }
         return chartBarSeries;
     }

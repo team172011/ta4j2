@@ -34,8 +34,7 @@ import org.ta4j.core.mocks.MockBarSeries;
 
 import static java.lang.Double.NaN;
 
-
-public class PositionTest extends AbstractIndicatorTest{
+public class PositionTest extends AbstractIndicatorTest {
 
     private Position newPosition, uncoveredPosition, posEquals1, posEquals2, posNotEquals1, posNotEquals2;
 
@@ -237,14 +236,14 @@ public class PositionTest extends AbstractIndicatorTest{
 
     @Test
     public void testGetGrossReturnForLongPositionsUsingBarCloseOnNaN() {
-        MockBarSeries series = new MockBarSeries( 100, 105);
+        MockBarSeries series = new MockBarSeries(100, 105);
         Position position = new Position(new Trade(0, TradeType.BUY, NaN, NaN), new Trade(1, TradeType.SELL, NaN, NaN));
         assertEquals(1.05, position.getGrossReturn(series));
     }
 
     @Test
     public void testGetGrossReturnForShortPositionsUsingBarCloseOnNaN() {
-        MockBarSeries series = new MockBarSeries( 100, 95);
+        MockBarSeries series = new MockBarSeries(100, 95);
         Position position = new Position(new Trade(0, TradeType.SELL, NaN, NaN), new Trade(1, TradeType.BUY, NaN, NaN));
         assertEquals((1.05), position.getGrossReturn(series));
     }

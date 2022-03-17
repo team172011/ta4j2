@@ -30,7 +30,6 @@ import org.ta4j.core.TradingRecord;
 
 import java.util.List;
 
-
 public class MockAnalysisCriterion implements AnalysisCriterion {
 
     private final BarSeries series;
@@ -49,7 +48,8 @@ public class MockAnalysisCriterion implements AnalysisCriterion {
 
     /**
      * Gets the final criterion value.
-     *  @param series   BarSeries is ignored
+     * 
+     * @param series   BarSeries is ignored
      * @param position is ignored
      * @return
      */
@@ -59,7 +59,8 @@ public class MockAnalysisCriterion implements AnalysisCriterion {
 
     /**
      * Gets the final criterion value.
-     *  @param series        BarSeries is ignored
+     * 
+     * @param series        BarSeries is ignored
      * @param tradingRecord is ignored
      * @return
      */
@@ -76,7 +77,7 @@ public class MockAnalysisCriterion implements AnalysisCriterion {
      * @return boolean indicating first value is greater than second value
      */
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1> (criterionValue2);
+        return criterionValue1 > (criterionValue2);
     }
 
     public BarSeries getSeries() {

@@ -34,17 +34,13 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class RealBodyIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries series;
 
     @Before
     public void setUp() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         // open, close, high, low
         bars.add(new MockBar(10, 18, 20, 10));
         bars.add(new MockBar(17, 20, 21, 17));

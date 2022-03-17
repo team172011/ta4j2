@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * Know Sure Thing (KST) RCMA1 = X1-Period SMA of Y1-Period Rate-of-Change RCMA2
  * = X2-Period SMA of Y2-Period Rate-of-Change RCMA3 = X3-Period SMA of
@@ -83,6 +82,7 @@ public class KSTIndicator extends CachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        return ((RCMA1.getValue(index)*(1)) +(RCMA2.getValue(index)*(2)) +(RCMA3.getValue(index)*(3)) +(RCMA4.getValue(index)*(4)));
+        return ((RCMA1.getValue(index) * (1)) + (RCMA2.getValue(index) * (2)) + (RCMA3.getValue(index) * (3))
+                + (RCMA4.getValue(index) * (4)));
     }
 }

@@ -23,7 +23,6 @@
  */
 package org.ta4j.core.criteria;
 
-
 import org.ta4j.core.AbstractIndicatorTest;
 import org.ta4j.core.AnalysisCriterion;
 import org.ta4j.core.Position;
@@ -32,7 +31,8 @@ import org.ta4j.core.mocks.MockBarSeries;
 
 public class OpenedPositionUtils extends AbstractIndicatorTest {
 
-    public void testCalculateOneOpenPositionShouldReturnExpectedValue(AnalysisCriterion criterion, double expectedValue) {
+    public void testCalculateOneOpenPositionShouldReturnExpectedValue(AnalysisCriterion criterion,
+            double expectedValue) {
         MockBarSeries series = new MockBarSeries(100, 105, 110, 100, 95, 105);
 
         Position trade = new Position(Trade.TradeType.BUY);

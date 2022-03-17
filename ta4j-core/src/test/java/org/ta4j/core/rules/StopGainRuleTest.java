@@ -32,19 +32,16 @@ import org.ta4j.core.TradingRecord;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 
 public class StopGainRuleTest extends AbstractIndicatorTest {
 
     private ClosePriceIndicator closePrice;
+
     @Before
     public void setUp() {
-        closePrice = new ClosePriceIndicator(
-                new MockBarSeries(100, 105, 110, 120, 150, 120, 160, 180, 170, 135, 104));
+        closePrice = new ClosePriceIndicator(new MockBarSeries(100, 105, 110, 120, 150, 120, 160, 180, 170, 135, 104));
     }
 
     @Test

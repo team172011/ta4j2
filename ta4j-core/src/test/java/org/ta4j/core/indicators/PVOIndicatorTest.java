@@ -34,17 +34,13 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class PVOIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries barSeries;
 
     @Before
     public void setUp() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(new MockBar(0, 10d));
         bars.add(new MockBar(0, 11d));
         bars.add(new MockBar(0, 12d));

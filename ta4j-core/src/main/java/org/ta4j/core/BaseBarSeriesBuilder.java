@@ -26,9 +26,6 @@ package org.ta4j.core;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class BaseBarSeriesBuilder implements BarSeriesBuilder {
 
     private List<Bar> bars;

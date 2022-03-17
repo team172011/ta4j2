@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * Stochastic oscillator D.
  *
@@ -34,7 +33,7 @@ import org.ta4j.core.Indicator;
  */
 public class StochasticOscillatorDIndicator extends CachedIndicator<Double> {
 
-    private Indicator<Double> indicator;
+    private final Indicator<Double> indicator;
 
     public StochasticOscillatorDIndicator(StochasticOscillatorKIndicator k) {
         this(new SMAIndicator(k, 3));

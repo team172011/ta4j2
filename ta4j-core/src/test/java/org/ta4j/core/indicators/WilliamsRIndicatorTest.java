@@ -37,19 +37,14 @@ import org.ta4j.core.mocks.MockBar;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class WilliamsRIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries data;
 
-
     @Before
     public void setUp() {
 
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(new MockBar(44.98, 45.05, 45.17, 44.96));
         bars.add(new MockBar(45.05, 45.10, 45.15, 44.99));
         bars.add(new MockBar(45.11, 45.19, 45.32, 45.11));

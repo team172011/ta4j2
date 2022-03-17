@@ -101,7 +101,6 @@ public class BuildBarSeries {
         return series;
     }
 
-
     private static BarSeries buildManuallyAndAddBarManually() {
         BarSeries series = new BaseBarSeries("mySeries"); // uses DoubleNum
 

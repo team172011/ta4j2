@@ -53,10 +53,10 @@ public class PreviousValueIndicatorTest {
         Random r = new Random();
         this.series = new BaseBarSeries("test");
         for (int i = 0; i < 1000; i++) {
-            Double open = r.nextDouble ();
-            Double close = r.nextDouble ();
-            Double max = Math.max(close + r.nextDouble (), open + r.nextDouble ());
-            Double min = Math.min(0, Math.min(close - r.nextDouble (), open - r.nextDouble ()));
+            Double open = r.nextDouble();
+            Double close = r.nextDouble();
+            Double max = Math.max(close + r.nextDouble(), open + r.nextDouble());
+            Double min = Math.min(0, Math.min(close - r.nextDouble(), open - r.nextDouble()));
             ZonedDateTime dateTime = ZonedDateTime.now().minusSeconds(1001 - i);
             series.addBar(dateTime, open, close, max, min, i);
         }

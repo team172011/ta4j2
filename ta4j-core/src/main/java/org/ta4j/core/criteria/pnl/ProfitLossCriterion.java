@@ -28,7 +28,6 @@ import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.criteria.AbstractAnalysisCriterion;
 
-
 /**
  * Profit and loss criterion (absolute PnL) (without commissions).
  *
@@ -48,7 +47,7 @@ public class ProfitLossCriterion extends AbstractAnalysisCriterion {
                 .stream()
                 .filter(Position::isClosed)
                 .map(position -> calculate(series, position))
-                .reduce(0d, (a,b)->a+b);
+                .reduce(0d, (a, b) -> a + b);
     }
 
     /** The higher the criterion value, the better. */

@@ -26,7 +26,6 @@ package org.ta4j.core.indicators.volume;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.RecursiveCachedIndicator;
 
-
 /**
  * On-balance volume indicator.
  *
@@ -48,10 +47,10 @@ public class OnBalanceVolumeIndicator extends RecursiveCachedIndicator<Double> {
         final Double currentClose = getBarSeries().getBar(index).getClosePrice();
 
         final Double obvPrev = getValue(index - 1);
-        if (prevClose> (currentClose)) {
+        if (prevClose > (currentClose)) {
             return obvPrev - (getBarSeries().getBar(index).getVolume());
         } else if (prevClose < currentClose) {
-            return obvPrev+(getBarSeries().getBar(index).getVolume());
+            return obvPrev + (getBarSeries().getBar(index).getVolume());
         } else {
             return obvPrev;
         }

@@ -29,7 +29,6 @@ import org.ta4j.core.Trade.TradeType;
 import org.ta4j.core.analysis.cost.CostModel;
 import org.ta4j.core.analysis.cost.ZeroCostModel;
 
-
 /**
  * A manager for {@link BarSeries} objects.
  *

@@ -34,9 +34,7 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import static junit.framework.TestCase.assertEquals;
-
 
 public class MedianPriceIndicatorTest extends AbstractIndicatorTest {
     private MedianPriceIndicator average;
@@ -45,7 +43,7 @@ public class MedianPriceIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
 
         bars.add(new MockBar(0, 0, 16, 8));
         bars.add(new MockBar(0, 0, 12, 6));

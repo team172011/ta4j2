@@ -32,11 +32,6 @@ import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.indicators.statistics.StandardDeviationIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
-
-
-
 public class BollingerBandsUpperIndicatorTest extends AbstractIndicatorTest {
 
     private int barCount;
@@ -73,8 +68,7 @@ public class BollingerBandsUpperIndicatorTest extends AbstractIndicatorTest {
         assertEquals(5.633, bbuSMA.getValue(8));
         assertEquals(4.2761, bbuSMA.getValue(9));
 
-        BollingerBandsUpperIndicator bbuSMAwithK = new BollingerBandsUpperIndicator(bbmSMA, standardDeviation,
-                (1.5));
+        BollingerBandsUpperIndicator bbuSMAwithK = new BollingerBandsUpperIndicator(bbmSMA, standardDeviation, (1.5));
 
         assertEquals(1.5, bbuSMAwithK.getK());
 

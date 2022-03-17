@@ -31,10 +31,7 @@ import org.ta4j.core.indicators.SMAIndicator;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static junit.framework.TestCase.assertEquals;
-
 
 public class BollingerBandsMiddleIndicatorTest extends AbstractIndicatorTest {
 
@@ -42,7 +39,7 @@ public class BollingerBandsMiddleIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() {
-        data = new MockBarSeries( 1, 2, 3, 4, 3, 4, 5, 4, 3, 3, 4, 3, 2);
+        data = new MockBarSeries(1, 2, 3, 4, 3, 4, 5, 4, 3, 3, 4, 3, 2);
     }
 
     @Test

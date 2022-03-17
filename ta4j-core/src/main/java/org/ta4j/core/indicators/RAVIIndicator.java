@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * Chande's Range Action Verification Index (RAVI) indicator.
  * 

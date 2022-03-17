@@ -23,8 +23,6 @@
  */
 package org.ta4j.core;
 
-
-
 public interface ExternalCriterionTest {
 
     /**

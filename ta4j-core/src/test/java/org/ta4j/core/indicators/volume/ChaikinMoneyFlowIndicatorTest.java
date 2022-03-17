@@ -30,8 +30,6 @@ import org.ta4j.core.BaseBarSeries;
 
 import java.time.ZonedDateTime;
 
-
-
 public class ChaikinMoneyFlowIndicatorTest extends AbstractIndicatorTest {
 
     @Test
@@ -70,7 +68,7 @@ public class ChaikinMoneyFlowIndicatorTest extends AbstractIndicatorTest {
         series.addBar(now.minusSeconds(sec--), 0d, 65.23, 63.21, 63.28, 9411.620);
         series.addBar(now.minusSeconds(sec--), 0d, 63.40, 61.88, 62.40, 10391.690);
         series.addBar(now.minusSeconds(sec--), 0d, 63.18, 61.11, 61.55, 8926.512);
-        series.addBar(now.minusSeconds(sec--), 0d, 62.70, 61.25, 62.69, 7459.575);
+        series.addBar(now.minusSeconds(sec), 0d, 62.70, 61.25, 62.69, 7459.575);
 
         ChaikinMoneyFlowIndicator cmf = new ChaikinMoneyFlowIndicator(series, 20);
 

@@ -37,8 +37,7 @@ public class UnstableIndicatorTest extends AbstractIndicatorTest {
     @Before
     public void setUp() {
         unstablePeriod = 5;
-        unstableIndicator = new UnstableIndicator(new ClosePriceIndicator(new MockBarSeries()),
-                unstablePeriod);
+        unstableIndicator = new UnstableIndicator(new ClosePriceIndicator(new MockBarSeries()), unstablePeriod);
     }
 
     @Test

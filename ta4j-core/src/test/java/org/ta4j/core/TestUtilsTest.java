@@ -32,36 +32,34 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.function.Function;
 
-
 import static org.ta4j.core.TestUtils.*;
-
 
 public class TestUtilsTest extends AbstractIndicatorTest {
 
     private static final String stringDouble = "1234567890.12345";
     private static final String diffStringDouble = "1234567890.12346";
-    private static final BigDecimal bigDecimalDouble = new BigDecimal(stringDouble );
-    private static final BigDecimal diffBigDecimalDouble = new BigDecimal(diffStringDouble );
+    private static final BigDecimal bigDecimalDouble = new BigDecimal(stringDouble);
+    private static final BigDecimal diffBigDecimalDouble = new BigDecimal(diffStringDouble);
     private static final int aInt = 1234567890;
     private static final int diffInt = 1234567891;
     private static final Double aDouble = 1234567890.1234;
     private static final Double diffDouble = 1234567890.1235;
-    private static Double numStringDouble ;
-    private static Double diffNumStringDouble ;
+    private static Double numStringDouble;
+    private static Double diffNumStringDouble;
     private static Double numInt;
     private static Double diffNumInt;
-    private static Double numDouble ;
-    private static Double diffNumDouble ;
+    private static Double numDouble;
+    private static Double diffNumDouble;
     private static Indicator<Double> indicator;
     private static Indicator<Double> diffIndicator;
 
     public TestUtilsTest() {
         numStringDouble = bigDecimalDouble.doubleValue();
         diffNumStringDouble = diffBigDecimalDouble.doubleValue();
-        numInt = (double)aInt;
-        diffNumInt = (double)(diffInt);
-        numDouble = (double)(aDouble);
-        diffNumDouble = (double)(diffDouble);
+        numInt = (double) aInt;
+        diffNumInt = (double) (diffInt);
+        numDouble = (double) (aDouble);
+        diffNumDouble = (double) (diffDouble);
         BarSeries series = randomSeries();
         BarSeries diffSeries = randomSeries();
         indicator = new ClosePriceIndicator(series);
@@ -70,12 +68,12 @@ public class TestUtilsTest extends AbstractIndicatorTest {
 
     private BarSeries randomSeries() {
         BaseBarSeriesBuilder builder = new BaseBarSeriesBuilder();
-        BarSeries series = builder .build();
+        BarSeries series = builder.build();
         ZonedDateTime time = ZonedDateTime.of(1970, 1, 1, 1, 1, 1, 1, ZoneId.systemDefault());
         double random;
         for (int i = 0; i < 1000; i++) {
             random = Math.random();
-            time = time .plusDays(i);
+            time = time.plusDays(i);
             series.addBar(new BaseBar(Duration.ofDays(1), time, random, random, random, random, random, random, 0d));
         }
         return series;

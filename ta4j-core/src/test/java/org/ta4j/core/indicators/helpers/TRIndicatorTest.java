@@ -32,15 +32,11 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class TRIndicatorTest extends AbstractIndicatorTest {
 
     @Test
     public void getValue() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(new MockBar(0, 12, 15, 8));
         bars.add(new MockBar(0, 8, 11, 6));
         bars.add(new MockBar(0, 15, 17, 14));

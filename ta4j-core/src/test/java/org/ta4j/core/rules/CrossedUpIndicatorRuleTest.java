@@ -32,7 +32,6 @@ import org.ta4j.core.indicators.helpers.FixedDecimalIndicator;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-
 public class CrossedUpIndicatorRuleTest {
 
     private CrossedUpIndicatorRule rule;

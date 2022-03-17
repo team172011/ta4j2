@@ -26,8 +26,6 @@ package org.ta4j.core;
 import java.time.Duration;
 import java.time.ZonedDateTime;
 
-
-
 public class BaseBarBuilder {
 
     private Duration timePeriod;

@@ -30,7 +30,6 @@ import java.util.List;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * A history/record of a trading session.
  *

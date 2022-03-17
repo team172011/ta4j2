@@ -34,10 +34,7 @@ import org.ta4j.core.indicators.numeric.NumericIndicator;
 import org.ta4j.core.indicators.statistics.StandardDeviationIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertEquals;
-
 
 public class BollingerBandFacadeTest extends AbstractIndicatorTest {
 

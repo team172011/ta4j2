@@ -27,7 +27,6 @@ import org.ta4j.core.BaseTradingRecord;
 
 import java.util.List;
 
-
 public class MockTradingRecord extends BaseTradingRecord {
 
     private static final long serialVersionUID = 6220278197931451635L;

@@ -27,7 +27,6 @@ import org.ta4j.core.Bar;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.CachedIndicator;
 
-
 /**
  * Bearish engulfing pattern indicator.
  *
@@ -58,7 +57,7 @@ public class BearishEngulfingIndicator extends CachedIndicator<Boolean> {
             final double prevClosePrice = prevBar.getClosePrice();
             final double currOpenPrice = currBar.getOpenPrice();
             final double currClosePrice = currBar.getClosePrice();
-            return currOpenPrice> (prevOpenPrice) && currOpenPrice> (prevClosePrice)
+            return currOpenPrice > (prevOpenPrice) && currOpenPrice > (prevClosePrice)
                     && currClosePrice < (prevOpenPrice) && currClosePrice < (prevClosePrice);
         }
         return false;

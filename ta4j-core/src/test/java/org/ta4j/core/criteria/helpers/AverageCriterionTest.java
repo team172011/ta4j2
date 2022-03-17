@@ -33,16 +33,13 @@ import org.ta4j.core.criteria.OpenedPositionUtils;
 import org.ta4j.core.criteria.pnl.ProfitLossCriterion;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 public class AverageCriterionTest extends AbstractCriterionTest {
 
     @Test
     public void calculateStandardErrorPnL() {
         MockBarSeries series = new MockBarSeries(100, 105, 110, 100, 95, 105);
-        TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series, 1d),
-                Trade.sellAt(2, series, 1d), Trade.buyAt(3, series, 1d),
-                Trade.sellAt(5, series, 1d));
+        TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series, 1d), Trade.sellAt(2, series, 1d),
+                Trade.buyAt(3, series, 1d), Trade.sellAt(5, series, 1d));
 
         AnalysisCriterion criterion = new AverageCriterion(new ProfitLossCriterion());
         assertEquals(7.5, criterion.calculate(series, tradingRecord));
@@ -58,7 +55,8 @@ public class AverageCriterionTest extends AbstractCriterionTest {
     @Test
     public void testCalculateOneOpenPositionShouldReturnZero() {
 
-        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(new AverageCriterion(new ProfitLossCriterion()), 0);
+        new OpenedPositionUtils().testCalculateOneOpenPositionShouldReturnExpectedValue(
+                new AverageCriterion(new ProfitLossCriterion()), 0);
     }
 
 }

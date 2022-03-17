@@ -34,17 +34,13 @@ import org.ta4j.core.mocks.MockBar;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class MassIndexIndicatorTest extends AbstractIndicatorTest {
 
     private BarSeries data;
 
     @Before
     public void setUp() {
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         // open, close, high, low
         bars.add(new MockBar(44.98, 45.05, 45.17, 44.96));
         bars.add(new MockBar(45.05, 45.10, 45.15, 44.99));

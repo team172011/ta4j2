@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.helpers.LowPriceIndicator;
 import org.ta4j.core.indicators.helpers.LowestValueIndicator;
 
-
 /**
  * The Chandelier Exit (short) Indicator.
  *
@@ -66,6 +65,6 @@ public class ChandelierExitShortIndicator extends CachedIndicator<Double> {
 
     @Override
     protected Double calculate(int index) {
-        return low.getValue(index)+(atr.getValue(index)*(k));
+        return low.getValue(index) + (atr.getValue(index) * (k));
     }
 }

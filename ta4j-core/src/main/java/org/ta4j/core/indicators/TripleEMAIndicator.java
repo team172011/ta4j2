@@ -25,7 +25,6 @@ package org.ta4j.core.indicators;
 
 import org.ta4j.core.Indicator;
 
-
 /**
  * Triple exponential moving average indicator.
  *
@@ -63,7 +62,7 @@ public class TripleEMAIndicator extends CachedIndicator<Double> {
     @Override
     protected Double calculate(int index) {
         // trix = 3 * ( ema - emaEma ) + emaEmaEma
-        return (3)*(ema.getValue(index) - (emaEma.getValue(index)))+(emaEmaEma.getValue(index));
+        return (3) * (ema.getValue(index) - (emaEma.getValue(index))) + (emaEmaEma.getValue(index));
     }
 
     @Override

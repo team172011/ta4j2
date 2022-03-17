@@ -33,7 +33,6 @@ import java.util.List;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * Pivot Point indicator.
  *
@@ -87,14 +86,14 @@ public class PivotPointIndicator extends RecursiveCachedIndicator<Double> {
         if (barsOfPreviousPeriod.isEmpty())
             return NaN;
         Bar bar = getBarSeries().getBar(barsOfPreviousPeriod.get(0));
-        Double close = bar.getClosePrice();
-        Double high = bar.getHighPrice();
-        Double low = bar.getLowPrice();
+        double close = bar.getClosePrice();
+        double high = bar.getHighPrice();
+        double low = bar.getLowPrice();
         for (int i : barsOfPreviousPeriod) {
             high = Math.max(getBarSeries().getBar(i).getHighPrice(), high);
             low = Math.min(getBarSeries().getBar(i).getLowPrice(), low);
         }
-        return (high+low+close) / 3;
+        return (high + low + close) / 3;
     }
 
     /**

@@ -27,14 +27,12 @@ import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 
-
 /**
  * A stop-gain rule.
  *
  * Satisfied when the close price reaches the gain threshold.
  */
 public class StopGainRule extends AbstractRule {
-
 
     /**
      * The close price indicator
@@ -99,6 +97,6 @@ public class StopGainRule extends AbstractRule {
     private boolean isSellGainSatisfied(double entryPrice, double currentPrice) {
         double lossRatioThreshold = (100 - gainPercentage) / 100;
         double threshold = entryPrice * lossRatioThreshold;
-        return currentPrice<=(threshold);
+        return currentPrice <= (threshold);
     }
 }

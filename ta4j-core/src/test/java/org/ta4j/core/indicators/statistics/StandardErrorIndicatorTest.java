@@ -30,11 +30,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
-
-
-
 public class StandardErrorIndicatorTest extends AbstractIndicatorTest {
     private BarSeries data;
 

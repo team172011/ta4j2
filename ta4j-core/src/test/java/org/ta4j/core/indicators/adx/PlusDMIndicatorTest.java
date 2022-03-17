@@ -32,17 +32,13 @@ import org.ta4j.core.mocks.MockBarSeries;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class PlusDMIndicatorTest extends AbstractIndicatorTest {
 
     @Test
     public void zeroDirectionalMovement() {
         MockBar yesterdayBar = new MockBar(0, 0, 10, 2);
         MockBar todayBar = new MockBar(0, 0, 6, 6);
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(yesterdayBar);
         bars.add(todayBar);
         MockBarSeries series = new MockBarSeries(bars);
@@ -54,7 +50,7 @@ public class PlusDMIndicatorTest extends AbstractIndicatorTest {
     public void zeroDirectionalMovement2() {
         MockBar yesterdayBar = new MockBar(0, 0, 6, 12);
         MockBar todayBar = new MockBar(0, 0, 12, 6);
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(yesterdayBar);
         bars.add(todayBar);
         MockBarSeries series = new MockBarSeries(bars);
@@ -66,7 +62,7 @@ public class PlusDMIndicatorTest extends AbstractIndicatorTest {
     public void zeroDirectionalMovement3() {
         MockBar yesterdayBar = new MockBar(0, 0, 6, 20);
         MockBar todayBar = new MockBar(0, 0, 12, 4);
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(yesterdayBar);
         bars.add(todayBar);
         MockBarSeries series = new MockBarSeries(bars);
@@ -78,7 +74,7 @@ public class PlusDMIndicatorTest extends AbstractIndicatorTest {
     public void positiveDirectionalMovement() {
         MockBar yesterdayBar = new MockBar(0, 0, 6, 6);
         MockBar todayBar = new MockBar(0, 0, 12, 4);
-        List<Bar> bars = new ArrayList<Bar>();
+        List<Bar> bars = new ArrayList<>();
         bars.add(yesterdayBar);
         bars.add(todayBar);
         MockBarSeries series = new MockBarSeries(bars);

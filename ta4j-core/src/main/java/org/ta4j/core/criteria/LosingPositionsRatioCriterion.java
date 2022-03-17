@@ -27,7 +27,6 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.Position;
 import org.ta4j.core.TradingRecord;
 
-
 /**
  * Calculates the percentage of positions which are not profitable.
  *
@@ -52,6 +51,6 @@ public class LosingPositionsRatioCriterion extends AbstractAnalysisCriterion {
     /** The lower the criterion value, the better. */
     @Override
     public boolean betterThan(double criterionValue1, double criterionValue2) {
-        return criterionValue1 < (criterionValue2);
+        return criterionValue1 < criterionValue2;
     }
 }

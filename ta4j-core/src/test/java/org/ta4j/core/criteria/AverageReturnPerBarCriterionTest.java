@@ -27,7 +27,6 @@ import org.junit.Test;
 import org.ta4j.core.*;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
 public class AverageReturnPerBarCriterionTest extends AbstractCriterionTest {
     private MockBarSeries series;
 
@@ -54,8 +53,7 @@ public class AverageReturnPerBarCriterionTest extends AbstractCriterionTest {
         TradingRecord tradingRecord = new BaseTradingRecord(Trade.buyAt(0, series), Trade.sellAt(1, series),
                 Trade.buyAt(2, series), Trade.sellAt(5, series));
         AnalysisCriterion averageProfit = new AverageReturnPerBarCriterion();
-        assertEquals(Math.pow((95d / 100 * 70d / 100), (1d / 6)),
-                averageProfit.calculate(series, tradingRecord));
+        assertEquals(Math.pow((95d / 100 * 70d / 100), (1d / 6)), averageProfit.calculate(series, tradingRecord));
     }
 
     @Test
@@ -78,7 +76,7 @@ public class AverageReturnPerBarCriterionTest extends AbstractCriterionTest {
         series = new MockBarSeries(100, 105);
         Position position = new Position(Trade.buyAt(0, series), Trade.sellAt(1, series));
         AnalysisCriterion average = new AverageReturnPerBarCriterion();
-        assertEquals(Math.pow((105d / 100),0.5), average.calculate(series, position));
+        assertEquals(Math.pow((105d / 100), 0.5), average.calculate(series, position));
     }
 
     @Test

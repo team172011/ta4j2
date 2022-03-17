@@ -30,7 +30,6 @@ import java.util.List;
 
 import static java.lang.Double.NaN;
 
-
 /**
  * Fibonacci Reversal Indicator.
  *
@@ -44,14 +43,14 @@ public class FibonacciReversalIndicator extends RecursiveCachedIndicator<Double>
     private final FibReversalTyp fibReversalTyp;
     private final Double fibonacciFactor;
 
-    public enum  FibReversalTyp {
+    public enum FibReversalTyp {
         SUPPORT, RESISTANCE
     }
 
     /**
      * Standard Fibonacci factors
      */
-    public enum  FibonacciFactor {
+    public enum FibonacciFactor {
         FACTOR_1(0.382), FACTOR_2(0.618), FACTOR_3(1);
 
         private final double factor;
@@ -106,16 +105,16 @@ public class FibonacciReversalIndicator extends RecursiveCachedIndicator<Double>
         if (barsOfPreviousPeriod.isEmpty())
             return NaN;
         Bar bar = getBarSeries().getBar(barsOfPreviousPeriod.get(0));
-        Double high = bar.getHighPrice();
-        Double low = bar.getLowPrice();
+        double high = bar.getHighPrice();
+        double low = bar.getLowPrice();
         for (int i : barsOfPreviousPeriod) {
             high = Math.max(getBarSeries().getBar(i).getHighPrice(), high);
             low = Math.min(getBarSeries().getBar(i).getLowPrice(), low);
         }
 
         if (fibReversalTyp == FibReversalTyp.RESISTANCE) {
-            return pivotPointIndicator.getValue(index)+(fibonacciFactor*(high - (low)));
+            return pivotPointIndicator.getValue(index) + (fibonacciFactor * (high - (low)));
         }
-        return pivotPointIndicator.getValue(index) - (fibonacciFactor*(high - (low)));
+        return pivotPointIndicator.getValue(index) - (fibonacciFactor * (high - (low)));
     }
 }

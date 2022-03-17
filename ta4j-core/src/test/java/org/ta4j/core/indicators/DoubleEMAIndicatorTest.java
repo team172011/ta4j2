@@ -32,15 +32,14 @@ import org.ta4j.core.mocks.MockBarSeries;
 
 import static org.junit.Assert.assertEquals;
 
-
 public class DoubleEMAIndicatorTest extends AbstractIndicatorTest {
 
     private ClosePriceIndicator closePrice;
-    
+
     @Before
     public void setUp() {
-        BarSeries data = new MockBarSeries( 0.73, 0.72, 0.86, 0.72, 0.62, 0.76, 0.84, 0.69, 0.65, 0.71,
-                0.53, 0.73, 0.77, 0.67, 0.68);
+        BarSeries data = new MockBarSeries(0.73, 0.72, 0.86, 0.72, 0.62, 0.76, 0.84, 0.69, 0.65, 0.71, 0.53, 0.73, 0.77,
+                0.67, 0.68);
         closePrice = new ClosePriceIndicator(data);
     }
 

@@ -83,8 +83,7 @@ public class TradingBotOnMovingBarSeries {
         // Signals
         // Buy when SMA goes over close price
         // Sell when close price goes over SMA
-        return new BaseStrategy(new OverIndicatorRule(sma, closePrice),
-                new UnderIndicatorRule(sma, closePrice));
+        return new BaseStrategy(new OverIndicatorRule(sma, closePrice), new UnderIndicatorRule(sma, closePrice));
     }
 
     /**
@@ -151,17 +150,17 @@ public class TradingBotOnMovingBarSeries {
                 boolean entered = tradingRecord.enter(endIndex, newBar.getClosePrice(), (10));
                 if (entered) {
                     Trade entry = tradingRecord.getLastEntry();
-                    System.out.println("Entered on " + entry.getIndex() + " (price=" + entry.getNetPrice()
-                            + ", amount=" + entry.getAmount()+ ")");
+                    System.out.println("Entered on " + entry.getIndex() + " (price=" + entry.getNetPrice() + ", amount="
+                            + entry.getAmount() + ")");
                 }
             } else if (strategy.shouldExit(endIndex)) {
                 // Our strategy should exit
                 System.out.println("Strategy should EXIT on " + endIndex);
-                boolean exited = tradingRecord.exit(endIndex, newBar.getClosePrice(),(10));
+                boolean exited = tradingRecord.exit(endIndex, newBar.getClosePrice(), (10));
                 if (exited) {
                     Trade exit = tradingRecord.getLastExit();
-                    System.out.println("Exited on " + exit.getIndex() + " (price=" + exit.getNetPrice()
-                            + ", amount=" + exit.getAmount() + ")");
+                    System.out.println("Exited on " + exit.getIndex() + " (price=" + exit.getNetPrice() + ", amount="
+                            + exit.getAmount() + ")");
                 }
             }
         }

@@ -30,11 +30,7 @@ import org.ta4j.core.BarSeries;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static org.junit.Assert.assertTrue;
-
-
 
 public class PercentBIndicatorTest extends AbstractIndicatorTest {
 
@@ -42,8 +38,7 @@ public class PercentBIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() {
-        BarSeries data = new MockBarSeries(10, 12, 15, 14, 17, 20, 21, 20, 20, 19, 20, 17, 12, 12, 9, 8, 9,
-                10, 9, 10);
+        BarSeries data = new MockBarSeries(10, 12, 15, 14, 17, 20, 21, 20, 20, 19, 20, 17, 12, 12, 9, 8, 9, 10, 9, 10);
         closePrice = new ClosePriceIndicator(data);
     }
 

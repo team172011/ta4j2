@@ -35,10 +35,7 @@ import org.ta4j.core.mocks.MockBar;
 
 import java.time.ZonedDateTime;
 
-
 import static org.junit.Assert.assertTrue;
-
-
 
 public class CorrelationCoefficientIndicatorTest extends AbstractIndicatorTest {
 
@@ -46,7 +43,7 @@ public class CorrelationCoefficientIndicatorTest extends AbstractIndicatorTest {
 
     @Before
     public void setUp() {
-        BarSeries data = new BaseBarSeriesBuilder() .build();
+        BarSeries data = new BaseBarSeriesBuilder().build();
         int i = 20;
         // close, volume
         data.addBar(new MockBar(ZonedDateTime.now().minusSeconds(i--), 6, 100));

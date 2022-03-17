@@ -30,10 +30,7 @@ import org.ta4j.core.Bar;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
-
 import static junit.framework.TestCase.assertEquals;
-
 
 public class TypicalPriceIndicatorTest extends AbstractIndicatorTest {
 
@@ -51,7 +48,7 @@ public class TypicalPriceIndicatorTest extends AbstractIndicatorTest {
     public void indicatorShouldRetrieveBarHighPrice() {
         for (int i = 0; i < 10; i++) {
             Bar bar = barSeries.getBar(i);
-            double typicalPrice = (bar.getHighPrice() +bar.getLowPrice()  +bar.getClosePrice()) / 3;
+            double typicalPrice = (bar.getHighPrice() + bar.getLowPrice() + bar.getClosePrice()) / 3;
             assertEquals(typicalPrice, typicalPriceIndicator.getValue(i));
         }
     }

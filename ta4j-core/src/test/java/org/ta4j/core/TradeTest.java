@@ -30,11 +30,9 @@ import org.ta4j.core.analysis.cost.CostModel;
 import org.ta4j.core.analysis.cost.LinearTransactionCostModel;
 import org.ta4j.core.mocks.MockBarSeries;
 
-
 import static org.junit.Assert.*;
 
 import static java.lang.Double.NaN;
-
 
 public class TradeTest extends AbstractIndicatorTest {
 
@@ -85,7 +83,7 @@ public class TradeTest extends AbstractIndicatorTest {
 
     @Test
     public void testReturnBarSeriesCloseOnNaN() {
-        MockBarSeries series = new MockBarSeries( 100, 95, 100, 80, 85, 130);
+        MockBarSeries series = new MockBarSeries(100, 95, 100, 80, 85, 130);
         Trade trade = new Trade(1, TradeType.BUY, NaN);
         assertEquals((95), trade.getPricePerAsset(series));
     }
