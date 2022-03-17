@@ -48,8 +48,8 @@ public class TestUtils {
         org.junit.Assert.assertEquals("Size does not match,", expected.getBarSeries().getBarCount(),
                 actual.getBarSeries().getBarCount());
         for (int i = 0; i < expected.getBarSeries().getBarCount(); i++) {
-            assertEquals(String.format("Failed at index %s: %s", i, actual), expected.getValue(i),
-                    actual.getValue(i), GENERAL_OFFSET);
+            assertEquals(String.format("Failed at index %s: %s", i, actual), expected.getValue(i), actual.getValue(i),
+                    GENERAL_OFFSET);
         }
     }
 

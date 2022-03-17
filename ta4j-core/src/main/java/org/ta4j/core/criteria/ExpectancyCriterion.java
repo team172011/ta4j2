@@ -68,7 +68,7 @@ public class ExpectancyCriterion extends AbstractAnalysisCriterion {
     }
 
     private Double calculate(BarSeries series, double profitLossRatio, double numberOfWinningPositions,
-                             double numberOfAllPositions) {
+            double numberOfAllPositions) {
         if (numberOfAllPositions == 0 || profitLossRatio == 0) {
             return 0d;
         }
